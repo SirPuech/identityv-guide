@@ -13,8 +13,8 @@
     "role": "decoder",
     "difficulty": 4,
     "tier": "S",
-    "image": "/images/heroes/mechanic.svg",
-    "youtubeVideoId": "9o9fQpL5a9c",
+    "image": "/images/heroes/mechanic.png",
+    "youtubeVideoId": "3UvuvFEIlTg",
     "quote": {
       "th": "วิทยาศาสตร์และหุ่นยนต์ของฉันจะพาพวกเราทุกคนรอดออกไป",
       "en": "My inventions and my robot will lead us all to freedom."
@@ -159,8 +159,8 @@
     "role": "support",
     "difficulty": 3,
     "tier": "S",
-    "image": "/images/heroes/seer.svg",
-    "youtubeVideoId": "s3G9n8Gq0f8",
+    "image": "/images/heroes/seer.png",
+    "youtubeVideoId": "mV9PX1z8pSI",
     "quote": {
       "th": "นกฮูกของฉันมองเห็นอนาคต และปกป้องผู้บริสุทธิ์จากเงามืด",
       "en": "My owl observes destiny and shields the innocent from the dark."
@@ -277,8 +277,8 @@
     "role": "support",
     "difficulty": 3,
     "tier": "S",
-    "image": "/images/heroes/priestess.svg",
-    "youtubeVideoId": "g5D1Yv7f7s4",
+    "image": "/images/heroes/priestess.png",
+    "youtubeVideoId": "SxQmTSOo6IE",
     "quote": {
       "th": "มิติแห่งกุญแจศักดิ์สิทธิ์จะเชื่อมต่อทางรอดให้กับเรา",
       "en": "The sacred key shall bridge the dimensions to our salvation."
@@ -389,8 +389,8 @@
     "role": "rescuer",
     "difficulty": 3,
     "tier": "S",
-    "image": "/images/heroes/mercenary.svg",
-    "youtubeVideoId": "kL9xQ9_rGls",
+    "image": "/images/heroes/mercenary.png",
+    "youtubeVideoId": "SyliTM3joW8",
     "quote": {
       "th": "ฉันรอดจากสมรภูมิมาแล้ว เก้าอี้พวกนี้ไม่มีวันทำลายฉันได้",
       "en": "I have survived battlefields; your chairs cannot break me."
@@ -501,8 +501,8 @@
     "role": "kiter",
     "difficulty": 3,
     "tier": "A",
-    "image": "/images/heroes/perfumer.svg",
-    "youtubeVideoId": "7L3bBw8U_eI",
+    "image": "/images/heroes/perfumer.png",
+    "youtubeVideoId": "o3CQcZifhSA",
     "quote": {
       "th": "กลิ่นแห่งการลืมเลือนจะพาฉันย้อนเวลากลับสู่ความสมบูรณ์แบบ",
       "en": "Euphoria fragrance rewinds the hands of time."
@@ -613,8 +613,8 @@
     "role": "rescuer",
     "difficulty": 2,
     "tier": "A",
-    "image": "/images/heroes/coordinator.svg",
-    "youtubeVideoId": "9o9fQpL5a9c",
+    "image": "/images/heroes/coordinator.png",
+    "youtubeVideoId": "XHr42_g6Q34",
     "quote": {
       "th": "พลุสัญญาณกระบอกนี้ จะส่องแสงนำทางให้เพื่อนร่วมทีม",
       "en": "This flare gun will cover our comrades' retreat."
@@ -725,8 +725,8 @@
     "role": "kiter",
     "difficulty": 4,
     "tier": "A",
-    "image": "/images/heroes/prospector.svg",
-    "youtubeVideoId": "s3G9n8Gq0f8",
+    "image": "/images/heroes/prospector.png",
+    "youtubeVideoId": "lB4u3-7wQ1Y",
     "quote": {
       "th": "ขั้วแม่เหล็กผลักหรือดูด ทุกอย่างอยู่ในมือของฉัน",
       "en": "Repulsion and attraction bend to my will."
@@ -837,8 +837,8 @@
     "role": "rescuer",
     "difficulty": 4,
     "tier": "A",
-    "image": "/images/heroes/forward.svg",
-    "youtubeVideoId": "g5D1Yv7f7s4",
+    "image": "/images/heroes/forward.png",
+    "youtubeVideoId": "slD_XbfKDks",
     "quote": {
       "th": "ไม่มีกำแพงไหนขวางการพุ่งชนของลูกรักบี้ลูกนี้ได้!",
       "en": "No barrier can withstand this rugby ball!"
@@ -949,8 +949,8 @@
     "role": "kiter",
     "difficulty": 2,
     "tier": "A",
-    "image": "/images/heroes/enchantress.svg",
-    "youtubeVideoId": "7L3bBw8U_eI",
+    "image": "/images/heroes/enchantress.png",
+    "youtubeVideoId": "UKFNIIulsQ8",
     "quote": {
       "th": "คำสาปของลิงวูดูจะตอบแทนความเจ็บปวดกลับคืนไป",
       "en": "The ape curse returns every pain."
@@ -1061,8 +1061,8 @@
     "role": "support",
     "difficulty": 1,
     "tier": "B",
-    "image": "/images/heroes/doctor.svg",
-    "youtubeVideoId": "kL9xQ9_rGls",
+    "image": "/images/heroes/doctor.png",
+    "youtubeVideoId": "EdAFlgFxL1s",
     "quote": {
       "th": "เข็มฉีดยานี้จะเยียวยาทุกบาดแผล",
       "en": "This syringe tends to every wound."
@@ -1173,8 +1173,8 @@
     "role": "support",
     "difficulty": 1,
     "tier": "B",
-    "image": "/images/heroes/gardener.svg",
-    "youtubeVideoId": "s3G9n8Gq0f8",
+    "image": "/images/heroes/gardener.png",
+    "youtubeVideoId": "nBnhmLes-7g",
     "quote": {
       "th": "กล่องเครื่องมือนี้จะรื้อทำลายเก้าอี้และปกป้องพ่อ",
       "en": "My toolbox dismantles chairs to protect those I love."
@@ -1285,8 +1285,8 @@
     "role": "decoder",
     "difficulty": 2,
     "tier": "A",
-    "image": "/images/heroes/prisoner.svg",
-    "youtubeVideoId": "9o9fQpL5a9c",
+    "image": "/images/heroes/prisoner.png",
+    "youtubeVideoId": "NenMXQLNZ7E",
     "quote": {
       "th": "กระแสไฟฟ้าและการเชื่อมต่อจะเร่งความเร็วให้เรา",
       "en": "Electrical currents and connections accelerate our escape."
@@ -1397,8 +1397,8 @@
     "role": "kiter",
     "difficulty": 4,
     "tier": "S",
-    "image": "/images/heroes/antiquarian.svg",
-    "youtubeVideoId": "g5D1Yv7f7s4",
+    "image": "/images/heroes/antiquarian.png",
+    "youtubeVideoId": "D0S28fdKwOA",
     "quote": {
       "th": "เพลงกระบี่ขลุ่ยไผ่จะสลายทุกลมปราณของศัตรู",
       "en": "Flute strikes disarm and dismantle any foe."
@@ -1509,8 +1509,8 @@
     "role": "support",
     "difficulty": 2,
     "tier": "A",
-    "image": "/images/heroes/little-girl.svg",
-    "youtubeVideoId": "7L3bBw8U_eI",
+    "image": "/images/heroes/little-girl.png",
+    "youtubeVideoId": "4bGshTf83nA",
     "quote": {
       "th": "ความทรงจำในอดีตจะนำพาฉันกลับไปหาเธอ",
       "en": "Faded memories lead me back to your side."
@@ -1621,8 +1621,8 @@
     "role": "support",
     "difficulty": 3,
     "tier": "A",
-    "image": "/images/heroes/cheerleader.svg",
-    "youtubeVideoId": "s3G9n8Gq0f8",
+    "image": "/images/heroes/cheerleader.png",
+    "youtubeVideoId": "doo5zEzpVzQ",
     "quote": {
       "th": "เสียงเชียร์นี้จะปลุกพลังและรีเซ็ตคูลดาวน์ให้พวกเราทุกคน!",
       "en": "My cheers invigorate hope and refresh all cooldowns!"

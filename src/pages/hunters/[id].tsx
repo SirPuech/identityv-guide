@@ -9,6 +9,7 @@ import { RelationsPanel } from '../../components/RelationsPanel';
 import { useLang } from '../../context/LangContext';
 import { getCharacterById, getHunters } from '../../utils/characters';
 import { Character } from '../../types';
+import { getAssetUrl } from '../../utils/asset';
 
 interface HunterDetailProps {
   character: Character;
@@ -35,8 +36,14 @@ export default function HunterDetailPage({ character }: HunterDetailProps) {
       <div className="hero-detail-banner" style={{ borderColor: 'rgba(239, 68, 68, 0.3)' }}>
         <div className="hero-detail-portrait" style={{ borderColor: '#EF4444' }}>
           <img
-            src={character.image || `/images/heroes/${character.id}.svg`}
+            src={getAssetUrl(character.image || `/images/heroes/${character.id}.png`)}
             alt={character.name[lang]}
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.endsWith('.svg')) {
+                target.src = getAssetUrl(`/images/heroes/${character.id}.svg`);
+              }
+            }}
           />
         </div>
 
@@ -92,6 +99,18 @@ export default function HunterDetailPage({ character }: HunterDetailProps) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
+          </div>
+          <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'flex-end' }}>
+            <a
+              href={`https://www.youtube.com/watch?v=${character.youtubeVideoId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-sm btn-ghost"
+              style={{ gap: '6px', fontSize: '13px' }}
+            >
+              <span>↗</span>
+              <span>{lang === 'th' ? 'เปิดดูบน YouTube' : 'Watch on YouTube'}</span>
+            </a>
           </div>
         </section>
       )}

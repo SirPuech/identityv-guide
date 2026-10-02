@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Character } from '../types';
 import { useLang } from '../context/LangContext';
+import { getAssetUrl } from '../utils/asset';
 
 interface CharacterCardProps {
   character: Character;
@@ -21,7 +22,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
     >
       <div className="hero-card-banner">
         {character.image ? (
-          <img src={character.image} alt={character.name[lang]} loading="lazy" />
+          <img src={getAssetUrl(character.image)} alt={character.name[lang]} loading="lazy" />
         ) : (
           <div className="hero-placeholder-art">
             {character.name[lang].slice(0, 1)}

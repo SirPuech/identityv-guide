@@ -13,8 +13,8 @@
     "role": "control",
     "difficulty": 4,
     "tier": "S",
-    "image": "/images/heroes/sculptor.svg",
-    "youtubeVideoId": "g5D1Yv7f7s4",
+    "image": "/images/heroes/sculptor.png",
+    "youtubeVideoId": "XySbOEILT2w",
     "quote": {
       "th": "รูปปั้นหินทุกชิ้นมีจิตวิญญาณ และพวกมันจะบดขยี้เจ้า",
       "en": "Every stone sculpture has a soul to crush you."
@@ -113,8 +113,8 @@
     "role": "control",
     "difficulty": 5,
     "tier": "S",
-    "image": "/images/heroes/dream-witch.svg",
-    "youtubeVideoId": "s3G9n8Gq0f8",
+    "image": "/images/heroes/dream-witch.png",
+    "youtubeVideoId": "fa1O9UWer-0",
     "quote": {
       "th": "มนุษย์เป็นเพียงสิ่งมีชีวิตชั่วคราวในความฝันของข้า",
       "en": "Mortals are merely transient flickers in my dream."
@@ -213,8 +213,8 @@
     "role": "chase",
     "difficulty": 3,
     "tier": "A",
-    "image": "/images/heroes/geisha.svg",
-    "youtubeVideoId": "9o9fQpL5a9c",
+    "image": "/images/heroes/geisha.png",
+    "youtubeVideoId": "pHj99VrfpDM",
     "quote": {
       "th": "การร่ายรำนี้จะจบลงด้วยคราบน้ำตาแห่งความตาย",
       "en": "This dance culminates in tears of demise."
@@ -313,8 +313,8 @@
     "role": "control",
     "difficulty": 4,
     "tier": "A",
-    "image": "/images/heroes/photographer.svg",
-    "youtubeVideoId": "7L3bBw8U_eI",
+    "image": "/images/heroes/photographer.png",
+    "youtubeVideoId": "Z2FmRaxt1eg",
     "quote": {
       "th": "ภาพถ่ายจะหยุดเวลาและเก็บความงดงามไว้ชั่วนิรันดร์",
       "en": "Photographs freeze time for eternity."
@@ -413,8 +413,8 @@
     "role": "patrol",
     "difficulty": 4,
     "tier": "A",
-    "image": "/images/heroes/wu-chang.svg",
-    "youtubeVideoId": "kL9xQ9_rGls",
+    "image": "/images/heroes/wu-chang.png",
+    "youtubeVideoId": "mnJ6wysqyQI",
     "quote": {
       "th": "ขาวและดำ ร่มและกระดิ่ง ความตายไม่มีทางหลีกเลี่ยง",
       "en": "White and Black; soul umbrella and ringing bell spell doom."
@@ -513,8 +513,8 @@
     "role": "chase",
     "difficulty": 3,
     "tier": "S",
-    "image": "/images/heroes/bloody-queen.svg",
-    "youtubeVideoId": "9o9fQpL5a9c",
+    "image": "/images/heroes/bloody-queen.png",
+    "youtubeVideoId": "Lmhvoa2hwWY",
     "quote": {
       "th": "กระจกเงานี้จะสะท้อนความตายของพวกเจ้า",
       "en": "This mirror reflects your unavoidable demise."
@@ -613,8 +613,8 @@
     "role": "chase",
     "difficulty": 3,
     "tier": "S",
-    "image": "/images/heroes/night-watch.svg",
-    "youtubeVideoId": "s3G9n8Gq0f8",
+    "image": "/images/heroes/night-watch.png",
+    "youtubeVideoId": "MuF1svBB5BM",
     "quote": {
       "th": "สายลมพายุหิมะจะดูดกลืนทุกร่างเข้าสู่ความเหน็บหนาว",
       "en": "Winter blizzards drag all warmth into the void."
@@ -713,8 +713,8 @@
     "role": "chase",
     "difficulty": 4,
     "tier": "S",
-    "image": "/images/heroes/opera-singer.svg",
-    "youtubeVideoId": "g5D1Yv7f7s4",
+    "image": "/images/heroes/opera-singer.png",
+    "youtubeVideoId": "8gs6-qy7REA",
     "quote": {
       "th": "บทเพลงแห่งเงาจะพาฉันโผบินสังหารในความมืด",
       "en": "The shadow aria propels my lethal leap."
@@ -813,8 +813,8 @@
     "role": "camp",
     "difficulty": 3,
     "tier": "A",
-    "image": "/images/heroes/guard-26.svg",
-    "youtubeVideoId": "7L3bBw8U_eI",
+    "image": "/images/heroes/guard-26.png",
+    "youtubeVideoId": "cBf2lbuFIKw",
     "quote": {
       "th": "ติ๊กต่อก ติ๊กต่อก... ระเบิดเวลาทำงาน!",
       "en": "Tick tock... Time bombs armed and ready!"
@@ -913,8 +913,8 @@
     "role": "control",
     "difficulty": 3,
     "tier": "A",
-    "image": "/images/heroes/naiad.svg",
-    "youtubeVideoId": "kL9xQ9_rGls",
+    "image": "/images/heroes/naiad.png",
+    "youtubeVideoId": "AUDz9jRmixU",
     "quote": {
       "th": "สายน้ำอันลึกล้ำจะโอบล้อมและจมพวกเจ้าลงสู่ก้นบึ้ง",
       "en": "Deep waters envelop and submerge all souls."

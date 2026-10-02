@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useLang } from '../context/LangContext';
 import { searchCharacters } from '../utils/characters';
 import { Character } from '../types';
+import { getAssetUrl } from '../utils/asset';
 
 export const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -87,9 +88,15 @@ export const SearchBar: React.FC = () => {
                   }}
                 >
                   <img
-                    src={char.image || `/images/heroes/${char.id}.svg`}
+                    src={getAssetUrl(char.image || `/images/heroes/${char.id}.png`)}
                     alt={char.name[lang]}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.endsWith('.svg')) {
+                        target.src = getAssetUrl(`/images/heroes/${char.id}.svg`);
+                      }
+                    }}
                   />
                 </div>
                 <div>

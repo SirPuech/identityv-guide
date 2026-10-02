@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Layout } from '../components/Layout';
 import { useLang } from '../context/LangContext';
 import { hunters, survivors } from '../utils/characters';
+import { getAssetUrl } from '../utils/asset';
 
 export default function MatchupPage() {
   const { lang, t } = useLang();
@@ -76,7 +77,17 @@ export default function MatchupPage() {
                   border: '2px solid #EF4444',
                 }}
               >
-                <img src={hunter.image || `/images/heroes/${hunter.id}.svg`} alt={hunter.name[lang]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img
+                  src={getAssetUrl(hunter.image || `/images/heroes/${hunter.id}.png`)}
+                  alt={hunter.name[lang]}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.endsWith('.svg')) {
+                      target.src = getAssetUrl(`/images/heroes/${hunter.id}.svg`);
+                    }
+                  }}
+                />
               </div>
               <div>
                 <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>

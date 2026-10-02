@@ -5,6 +5,7 @@ import { CharacterCard } from '../components/CharacterCard';
 import { useLang } from '../context/LangContext';
 import { survivors, hunters } from '../utils/characters';
 import { SearchBar } from '../components/SearchBar';
+import { getAssetUrl } from '../utils/asset';
 
 export default function Home() {
   const { t, lang } = useLang();
@@ -113,7 +114,17 @@ export default function Home() {
                     flexShrink: 0,
                   }}
                 >
-                  <img src={char.image || `/images/heroes/${char.id}.svg`} alt={char.name[lang]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img
+                    src={getAssetUrl(char.image || `/images/heroes/${char.id}.png`)}
+                    alt={char.name[lang]}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.endsWith('.svg')) {
+                        target.src = getAssetUrl(`/images/heroes/${char.id}.svg`);
+                      }
+                    }}
+                  />
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontWeight: 600, fontSize: '14px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>

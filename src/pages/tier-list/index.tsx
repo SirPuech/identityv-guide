@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Layout } from '../../components/Layout';
 import { useLang } from '../../context/LangContext';
 import { tierList, getCharacterById } from '../../utils/characters';
+import { getAssetUrl } from '../../utils/asset';
 
 export default function TierListPage() {
   const { t, lang } = useLang();
@@ -82,8 +83,14 @@ export default function TierListPage() {
                       >
                         <div className="tier-avatar-mini">
                           <img
-                            src={char.image || `/images/heroes/${char.id}.svg`}
+                            src={getAssetUrl(char.image || `/images/heroes/${char.id}.png`)}
                             alt={char.name[lang]}
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              if (!target.src.endsWith('.svg')) {
+                                target.src = getAssetUrl(`/images/heroes/${char.id}.svg`);
+                              }
+                            }}
                           />
                         </div>
                         <div style={{ flex: 1, minWidth: 0 }}>

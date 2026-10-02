@@ -4,6 +4,7 @@ import { Layout } from '../components/Layout';
 import { useLang } from '../context/LangContext';
 import { survivors } from '../utils/characters';
 import { Character } from '../types';
+import { getAssetUrl } from '../utils/asset';
 
 export default function TeamBuilderPage() {
   const { lang, t } = useLang();
@@ -120,7 +121,17 @@ export default function TeamBuilderPage() {
                       border: '1px solid var(--blue-lift)',
                     }}
                   >
-                    <img src={char.image || `/images/heroes/${char.id}.svg`} alt={char.name[lang]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img
+                      src={getAssetUrl(char.image || `/images/heroes/${char.id}.png`)}
+                      alt={char.name[lang]}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.src.endsWith('.svg')) {
+                          target.src = getAssetUrl(`/images/heroes/${char.id}.svg`);
+                        }
+                      }}
+                    />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontWeight: 700, fontSize: '14.5px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -263,7 +274,17 @@ export default function TeamBuilderPage() {
                       flexShrink: 0,
                     }}
                   >
-                    <img src={s.image || `/images/heroes/${s.id}.svg`} alt={s.name[lang]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img
+                      src={getAssetUrl(s.image || `/images/heroes/${s.id}.png`)}
+                      alt={s.name[lang]}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.src.endsWith('.svg')) {
+                          target.src = getAssetUrl(`/images/heroes/${s.id}.svg`);
+                        }
+                      }}
+                    />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontWeight: 700, fontSize: '14.5px' }}>{s.name[lang]}</div>

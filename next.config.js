@@ -5,6 +5,9 @@ const nextConfig = {
   output: 'export',
   basePath: isProd ? '/identityv-guide' : '',
   assetPrefix: isProd ? '/identityv-guide/' : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/identityv-guide' : '',
+  },
   images: {
     unoptimized: true,
   },
