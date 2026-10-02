@@ -1,0 +1,14 @@
+{
+  "survivors": {
+    "S": ["mechanic", "seer", "priestess", "mercenary"],
+    "A": ["perfumer", "coordinator", "prospector", "forward", "enchantress"],
+    "B": ["doctor"],
+    "C": []
+  },
+  "hunters": {
+    "S": ["sculptor", "dream-witch"],
+    "A": ["geisha", "photographer", "wu-chang"],
+    "B": [],
+    "C": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "siteTitle": "Identity V Guide & Master Hub",
+  "siteSubtitle": "Deep dive into Survivors & Hunters to master the game",
+  "nav": {
+    "home": "Home",
+    "survivors": "Survivors",
+    "hunters": "Hunters",
+    "tierList": "Tier List",
+    "roles": "Roles",
+    "searchPlaceholder": "Search characters, skills, abilities..."
+  },
+  "roles": {
+    "decoder": "Decoder",
+    "rescuer": "Rescuer",
+    "kiter": "Kiter / Contain",
+    "support": "Support / Assist",
+    "chase": "Chase",
+    "camp": "Camping",
+    "control": "Map Control",
+    "patrol": "Patrol"
+  },
+  "labels": {
+    "difficulty": "Difficulty",
+    "tier": "Tier",
+    "overview": "Overview",
+    "abilities": "Abilities & Skills",
+    "perks": "Recommended Persona / Perks",
+    "tricks": "Pro Tricks & Strategies",
+    "counters": "Weak Against / Countered By",
+    "counteredBy": "Strong Against",
+    "partners": "Best Team Partners & Synergy",
+    "tutorialVideo": "Featured Video Guide",
+    "viewDetails": "View Full Guide",
+    "filterRole": "Filter by Role",
+    "all": "All",
+    "backToList": "Back to List",
+    "stats": "Attributes & Ratings"
+  },
+  "home": {
+    "badge": "Identity V Master Companion",
+    "heroTitle": "Learn, Master, and Climb Ranks Together",
+    "heroDesc": "Comprehensive insights for Survivors and Hunters — abilities, persona paths, counters, team synergies, and essential match tricks.",
+    "exploreSurvivors": "Explore Survivors",
+    "exploreHunters": "Explore Hunters",
+    "viewTierList": "Current Meta Tier List",
+    "featuredTitle": "Featured & Meta Characters",
+    "featuresHeader": "What You Will Master With This Guide",
+    "feat1Title": "Pro Kiting & Chasing Tricks",
+    "feat1Desc": "Master timing, pathing, and clutch ability usage in intense moments",
+    "feat2Title": "Optimal Persona Builds",
+    "feat2Desc": "Pick the right 36, 39, or Hunter trait builds tailored for your style",
+    "feat3Title": "Matchup Counters & Team Synergies",
+    "feat3Desc": "Understand exact matchup advantages and coordinate seamless partner combos"
+  },
+  "tierPage": {
+    "title": "Identity V Meta Tier List",
+    "desc": "Character rankings based on current tournament and ranked meta to help you pick the best characters.",
+    "survivorTab": "Survivors",
+    "hunterTab": "Hunters"
+  }
+}

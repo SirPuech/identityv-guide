@@ -1,0 +1,61 @@
+{
+  "siteTitle": "Identity V Guide & Master Hub",
+  "siteSubtitle": "คู่มือเจาะลึกตัวละคร Survivor & Hunter สู่ระดับมาสเตอร์",
+  "nav": {
+    "home": "หน้าแรก",
+    "survivors": "ผู้รอดชีวิต (Survivors)",
+    "hunters": "ฮันเตอร์ (Hunters)",
+    "tierList": "Tier List จัดอันดับ",
+    "roles": "สายการเล่น",
+    "searchPlaceholder": "ค้นหาชื่อตัวละคร, สกิล, หรือความสามารถ..."
+  },
+  "roles": {
+    "decoder": "สายถอดรหัส (Decoder)",
+    "rescuer": "สายช่วยเพื่อน (Rescuer)",
+    "kiter": "สายดึงเวลา (Kiter / Contain)",
+    "support": "สายช่วยเหลือ (Support / Assist)",
+    "chase": "สายไล่ล่า (Chase)",
+    "camp": "สายเฝ้าเก้าอี้ (Camping)",
+    "control": "สายคุมเกม (Map Control)",
+    "patrol": "สายลาดตระเวน (Patrol)"
+  },
+  "labels": {
+    "difficulty": "ระดับความยาก",
+    "tier": "ระดับพลัง (Tier)",
+    "overview": "ภาพรวมตัวละคร",
+    "abilities": "ทักษะและความสามารถ (Abilities)",
+    "perks": "การอัพสายพรสวรรค์ (Persona / Perks)",
+    "tricks": "เทคนิคการเล่นและทริคสำคัญ (Pro Tricks)",
+    "counters": "ตัวแก้ทางที่ต้องระวัง (Weak Against / Counters)",
+    "counteredBy": "ตัวที่เราได้เปรียบ (Strong Against)",
+    "partners": "เพื่อนร่วมทีมที่เข้าขากันสุดๆ (Best Partners)",
+    "tutorialVideo": "วิดีโอไกด์แนะนำการเล่น",
+    "viewDetails": "ดูข้อมูลแบบละเอียด",
+    "filterRole": "กรองตามตำแหน่ง",
+    "all": "ทั้งหมด",
+    "backToList": "กลับสู่หน้ารวม",
+    "stats": "ค่าสถานะและความถนัด"
+  },
+  "home": {
+    "badge": "คู่มือ Identity V ฉบับปรับปรุงใหม่",
+    "heroTitle": "เรียนรู้ เทคนิค และก้าวสู่ระดับ Top Tier ไปด้วยกัน",
+    "heroDesc": "รวบรวมข้อมูลตัวละครทั้ง Survivor และ Hunter แบบเจาะลึก สกิล, สายพรสวรรค์, วิธีแก้ทาง, คอมโบกับเพื่อน และทริคที่ต้องรู้ในเกม",
+    "exploreSurvivors": "สำรวจ Survivor ทั้งหมด",
+    "exploreHunters": "สำรวจ Hunter ทั้งหมด",
+    "viewTierList": "เช็ค Tier List เมต้าปัจจุบัน",
+    "featuredTitle": "ตัวละครยอดนิยม & เมต้าเด่น",
+    "featuresHeader": "สิ่งที่คุณจะได้เรียนรู้จากคู่มือนี้",
+    "feat1Title": "ทริคและเทคนิคระดับโปร",
+    "feat1Desc": "เข้าใจจังหวะจู๊ค การกดสกิล และการแก้สถานการณ์แบบทีละสเต็ป",
+    "feat2Title": "สายพรสวรรค์ที่แนะนำ",
+    "feat2Desc": "เลือกอัพ Persona 36, 39, หรือสายคุมเกมให้เหมาะกับสไตล์คุณ",
+    "feat3Title": "การแก้ทาง & คอมโบเพื่อนร่วมทีม",
+    "feat3Desc": "รู้ว่าฮันเตอร์หรือเซอร์ไวเวอร์ตัวไหนชนะทางใคร และใครเล่นด้วยกันแล้วเก่งคูณสอง"
+  },
+  "tierPage": {
+    "title": "Identity V Tier List (จัดอันดับตัวละคร)",
+    "desc": "ตารางวัดระดับความสามารถตามเมต้าปัจจุบัน ช่วยให้เลือกตัวลงแรงก์ได้ง่ายขึ้น",
+    "survivorTab": "Survivors (ผู้รอดชีวิต)",
+    "hunterTab": "Hunters (ฮันเตอร์)"
+  }
+}

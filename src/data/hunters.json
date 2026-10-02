@@ -1,0 +1,400 @@
+[
+  {
+    "id": "sculptor",
+    "name": { "th": "ประติมากร (Sculptor)", "en": "Sculptor" },
+    "title": { "th": "กะลาเทีย (Galatea)", "en": "Galatea" },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 4,
+    "tier": "S",
+    "quote": {
+      "th": "รูปปั้นหินทุกชิ้นมีจิตวิญญาณ และพวกมันจะบดขยี้เจ้า",
+      "en": "Every stone sculpture has a soul, and they shall crush you."
+    },
+    "overview": {
+      "th": "ฮันเตอร์สาวบนรถเข็นผู้สร้างรูปปั้นหินคู่บีบอัดศัตรู สามารถโจมตีได้จากระยะไกล ขัดขวางการถอดรหัสและการช่วยเพื่อนหน้าเก้าอี้ได้อย่างสมบูรณ์แบบ",
+      "en": "Formidable wheelchair-bound sculptor. Summons pairs of moving statues to crush survivors from afar, dominating camping and cipher pressure."
+    },
+    "colorAccent": "#DC2626",
+    "stats": {
+      "chase": 4,
+      "camping": 5,
+      "control": 5,
+      "mobility": 2
+    },
+    "abilities": [
+      {
+        "id": "sculpt_composition",
+        "name": { "th": "รูปปั้นแห่งความสงสาร & ปัญญา (Statues of Pity & Wisdom)", "en": "Statues of Pity & Wisdom" },
+        "type": "active",
+        "description": {
+          "th": "เรียกรวมรูปปั้นหินสองตัวเคลื่อนที่เข้าหากัน บีบอัดผู้รอดชีวิตที่อยู่ตรงกลาง สร้างความเสียหาย 0.5 ดาเมจต่อครั้ง",
+          "en": "Conjures pairs of stone statues moving horizontally or vertically; colliding with survivors deals 0.5 damage."
+        }
+      },
+      {
+        "id": "sculpt_graven",
+        "name": { "th": "การแกะสลักอันวิจิตร (Graven Form)", "en": "Graven Form" },
+        "type": "active",
+        "description": {
+          "th": "โยนมีดแกะสลักไปยังพื้นที่เป้าหมายบนแผนที่ เพื่อสร้างมุมมองจากมุมสูงและปล่อยรูปปั้นจากระยะไกลได้",
+          "en": "Flings a carving knife across the map to establish an aerial perspective, summoning statues globally."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": { "th": "สายกดดันระยะไกล (Trump Card + Detention)", "en": "Trump Card + Detention (Confined & Control)" },
+        "direction": "ล่าง-ขวา (Detention + Trump Card)",
+        "keyTalents": [
+          { "th": "Detention (ตีดอกเดียวล้มท้ายเกม)", "en": "Detention" },
+          { "th": "Trump Card (สลับสกิลเสริม)", "en": "Trump Card" },
+          { "th": "Berserk (เช็ดเลือดเร็วขึ้นตอนเฝ้าเก้าอี้)", "en": "Berserk" }
+        ],
+        "description": {
+          "th": "ช่วยให้เปลี่ยนสกิลเสริมจาก Blink เป็น Teleport ในช่วงท้ายเกม และตีดอกเดียวล้มตอนเปิดประตู",
+          "en": "Permits switching traits from Blink to Teleport late-game while securing one-hit downs at exit gates."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": { "th": "เทคนิคดักทางหน้าไม้และหน้าต่าง (Pallet Squeeze)", "en": "Pallet Squeeze" },
+        "tag": "chasing",
+        "detail": {
+          "th": "ก่อนที่เซอร์ไวเวอร์จะกระโดดข้ามหน้าต่างหรือดึงไม้ ให้เรียกดักรูปปั้นแนวขวาง บังคับให้ต้องเลือกรับดาเมจหรือหยุดเดิน",
+          "en": "Summon cross-statues right as survivors prepare to vault or pull pallets, sandwiching them inevitably."
+        }
+      },
+      {
+        "title": { "th": "ขัดขวางการช่วยหน้าเก้าอี้ด้วยดาเมจ 0.5", "en": "Chair Interception" },
+        "tag": "camping",
+        "detail": {
+          "th": "ปล่อยรูปปั้นไปสกัดตัวช่วยตั้งแต่ระยะ 15 เมตร หากโดนบีบ 1 ครั้ง เมื่อเดินมาถึงเก้าอี้ฟันธรรมดาอีก 1 ทีจะล้มทันทีโดยไม่ได้ช่วย",
+          "en": "Snipe incoming rescuers at 15m; if struck once, a follow-up melee strike downs them before the untie."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "forward",
+        "characterName": { "th": "ฟอร์เวิร์ด (Forward)", "en": "Forward" },
+        "reason": { "th": "พุ่งชนรถเข็นขัดจังหวะการเล็งปล่อยรูปปั้นได้อย่างรวดเร็ว", "en": "High-velocity football tackles interrupt statue channeling and positioning." },
+        "tip": { "th": "พกสกิล Excitement หรือหลบหลังกำแพงตอนได้ยินเสียงบอล", "en": "Carry Excitement or position against sturdy obstacles when hearing rugby audio cues." }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "dream-witch",
+    "name": { "th": "แม่มดแห่งความฝัน (Dream Witch)", "en": "Dream Witch" },
+    "title": { "th": "ยิดห์รา (Yidhra)", "en": "Yidhra" },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 5,
+    "tier": "S",
+    "quote": {
+      "th": "มนุษย์เป็นเพียงสิ่งมีชีวิตชั่วคราวในความฝันอันเป็นนิรันดร์ของข้า",
+      "en": "Mortals are merely transient flickers within my eternal reverie."
+    },
+    "overview": {
+      "th": "ฮันเตอร์ที่เล่นยากที่สุดและแข็งแกร่งที่สุดในระดับทัวร์นาเมนต์ ร่างจริงล่องหนไร้รอยเท้า บังคับบริวารหลายตัวกระจายอยู่ทั่วแผนที่เพื่อเฝ้าเครื่องและล้อมจับเซอร์ไวเวอร์",
+      "en": "The highest skill ceiling and deadliest tournament hunter. Main body is invisible, commanding multiple leech followers across the map."
+    },
+    "colorAccent": "#9333EA",
+    "stats": {
+      "chase": 4,
+      "camping": 5,
+      "control": 5,
+      "mobility": 4
+    },
+    "abilities": [
+      {
+        "id": "dw_leech",
+        "name": { "th": "ปรสิตบริวาร (Leech Follower)", "en": "Leech Follower" },
+        "type": "active",
+        "description": {
+          "th": "เพาะปรสิตใส่ผู้รอดชีวิตเพื่อสร้างบริวารประจำตัว บริวารจะเดินตามเป้าหมายและสลับร่างเข้าควบคุมได้ทันที",
+          "en": "Infects survivors with leech followers that shadow them, which Yidhra can switch into and control instantly."
+        }
+      },
+      {
+        "id": "dw_switch",
+        "name": { "th": "สลับจิตควบคุม (Consciousness Shift)", "en": "Consciousness Shift" },
+        "type": "active",
+        "description": {
+          "th": "สลับไปควบคุมบริวารตัวใดก็ได้บนแผนที่ บริวารแต่ละตัวมีคูลดาวน์สกิลเสริม (เช่น Patroller / Blink) แยกกัน!",
+          "en": "Shifts consciousness between followers globally; each follower maintains independent trait cooldowns!"
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": { "th": "สายคุมเครื่องระดับสูง (Insolence + Trump Card)", "en": "Tournament Multi-Control" },
+        "direction": "ซ้าย-ขวา (Insolence + Trump Card)",
+        "keyTalents": [
+          { "th": "Trump Card", "en": "Trump Card" },
+          { "th": "Insolence", "en": "Insolence" },
+          { "th": "WANTED ORDER (เปิดเผยตำแหน่งคนอื่น)", "en": "Wanted Order" }
+        ],
+        "description": {
+          "th": "เน้นสลับสกิลเสริม Patroller กัดศัตรูต่อเนื่อง และ Blink ล้มตัวแรกให้เร็วที่สุด",
+          "en": "Rotates multiple Patrollers and Blinks to systematically dismantle survivor defense lines."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": { "th": "ทริคโจมตีประกบ 2 ด้าน (Pincer Attack)", "en": "Pincer Attack" },
+        "tag": "chasing",
+        "detail": {
+          "th": "นำบริวารตัวแรกไปดักทางหน้าไม้ แล้วสลับมาบังคับบริวารตัวที่สองต้อนศัตรูเข้ามุมอับ",
+          "en": "Station one follower ahead at the pallet entrance, then pilot the second follower to herd the survivor into the trap."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "priestess",
+        "characterName": { "th": "นักบวชหญิง (Priestess)", "en": "Priestess" },
+        "reason": { "th": "เปิดวาร์ปพาเพื่อนและตัวเองหนีบริวารที่เดินช้าได้ง่ายดาย", "en": "Portals allow easy escapes across walls, out-distancing slow follower movements." },
+        "tip": { "th": "ทำลายช่องวาร์ปทันทีที่เห็น และวางบริวารดักทางออก", "en": "Destroy portals instantly and position leeches at portal exit routes." }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "geisha",
+    "name": { "th": "เกอิชา (Geisha)", "en": "Geisha" },
+    "title": { "th": "มิชิโกะ (Michiko)", "en": "Michiko" },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 3,
+    "tier": "A",
+    "quote": {
+      "th": "การร่ายรำนี้จะจบลงด้วยคราบน้ำตาแห่งความตาย",
+      "en": "This final dance shall culminate in tears of demise."
+    },
+    "overview": {
+      "th": "ฮันเตอร์สาวสุดฮิตอันดับหนึ่ง พุ่งทะยานผ่านสิ่งกีดขวางไปหาผีเสื้อที่ปาออกไปได้อย่างรวดเร็ว ไล่ล่ากดดันผู้รอดชีวิตได้รุนแรงที่สุดในระยะประชิด",
+      "en": "The most beloved chase hunter. Throws phantom butterflies and dashes straight through terrain towards them, relentless in pursuit."
+    },
+    "colorAccent": "#DC2626",
+    "stats": {
+      "chase": 5,
+      "camping": 3,
+      "control": 3,
+      "mobility": 5
+    },
+    "abilities": [
+      {
+        "id": "geisha_dash",
+        "name": { "th": "ระบำผีเสื้อพุ่งทะยาน (Dash Hit)", "en": "Dash Hit" },
+        "type": "active",
+        "description": {
+          "th": "พุ่งทะยานเข้าหาผู้รอดชีวิตหรือผีเสื้อที่ปาออกไปอย่างรวดเร็ว หากศัตรูไม่หันหน้ามาสบตาจะสามารถพุ่งทะลุไม้และหน้าต่างได้",
+          "en": "Dashes directly toward targeted butterflies or survivors; obstacle-passing if uninterrupted by stare."
+        }
+      },
+      {
+        "id": "geisha_butterfly",
+        "name": { "th": "ผีเสื้อวิญญาณ (Soul Butterfly)", "en": "Soul Butterfly" },
+        "type": "active",
+        "description": {
+          "th": "ปาผีเสื้อไปยังตำแหน่งที่ต้องการเพื่อเป็นจุดพุ่งทะยาน หรือปาติดตัวเซอร์ไวเวอร์เพื่อพุ่งตามติดตลอดเวลา",
+          "en": "Throws butterflies to target locations or directly onto survivors to anchor rapid gap-closing dashes."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": { "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)", "en": "Window Block & Detention" },
+        "direction": "บน-ล่าง (Confined Space + Detention)",
+        "keyTalents": [
+          { "th": "Confined Space (ปิดหน้าต่าง)", "en": "Confined Space" },
+          { "th": "Detention (ตีดอกเดียวล้ม)", "en": "Detention" },
+          { "th": "Destruction (ทุบไม้เร็ว)", "en": "Destruction" }
+        ],
+        "description": {
+          "th": "ปิดทางหนีตามหน้าต่างบ้านใหญ่ และทุบไม้เร็วเพื่อไม่ให้เซอร์ไวเวอร์วนลูปได้",
+          "en": "Blocks vaulted windows in strong structures and smashes pallets quickly to deny safe loops."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": { "th": "ทริคปาผีเสื้อทะลุช่องไม้ขวาง (Butterfly Pallet Dash)", "en": "Butterfly Pallet Dash" },
+        "tag": "chasing",
+        "detail": {
+          "th": "ปาผีเสื้อข้ามแผ่นไม้ที่ดึงลงมาแล้ว จากนั้นกดพุ่งทะยานทันที จะวาร์ปข้ามไม้ไปฟันข้างหลังได้ในเสี้ยววินาที",
+          "en": "Toss a butterfly across a dropped pallet and hit dash immediately to glide right through and strike from behind."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "characterName": { "th": "ซีเออร์ (Seer)", "en": "Seer" },
+        "reason": { "th": "ซีเออร์เดินถอยหลังสบตาเกอิชาได้เก่งมาก ทำให้พุ่งไม่ติด แถมยังเก็บชาร์จนกได้ฟรีๆ", "en": "Seer easily moonwalks to interrupt dashes while farming owl charges." },
+        "tip": { "th": "ปาผีเสื้อเยื้องมุมไปด้านข้างเพื่อพุ่งจากมุมอับสายตา", "en": "Angle butterflies diagonally behind terrain so the dash initiates outside his field of view." }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "photographer",
+    "name": { "th": "ช่างภาพ (Photographer)", "en": "Photographer" },
+    "title": { "th": "โจเซฟ (Joseph)", "en": "Joseph" },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 4,
+    "tier": "A",
+    "quote": {
+      "th": "ภาพถ่ายจะหยุดเวลา และเก็บความงดงามในอดีตไว้ชั่วนิรันดร์",
+      "en": "Photographs freeze time, preserving past beauty for eternity."
+    },
+    "overview": {
+      "th": "ฮันเตอร์ผู้ควบคุมเวลาและมิติภาพถ่าย ถ่ายรูปเพื่อสร้างโลกเสมือน โจมตีร่างเงาเพื่อทำดาเมจย้อนหลัง และลดความคืบหน้าการปั่นเครื่องรหัสลงครึ่งหนึ่งในทุกๆ การถ่ายรูป",
+      "en": "Master of temporal dimensions. Snaps cameras to create Photo Worlds, slashing mirror images to deal delayed damage and slowing ciphers by 50%."
+    },
+    "colorAccent": "#6366F1",
+    "stats": {
+      "chase": 3,
+      "camping": 3,
+      "control": 5,
+      "mobility": 4
+    },
+    "abilities": [
+      {
+        "id": "photo_camera",
+        "name": { "th": "โลกภาพถ่ายแห่งกาลเวลา (Photo World)", "en": "Photo World" },
+        "type": "active",
+        "description": {
+          "th": "ถ่ายภาพเพื่อหยุดเวลาและสร้างโลกภาพถ่าย สามารถเดินเข้าออกได้ ดาเมจและการจับนั่งเก้าอี้ในโลกภาพถ่ายจะส่งผลต่อโลกจริงครึ่งหนึ่งเมื่อเวลาหมด",
+          "en": "Captures a snapshot of the game state into the Photo World; damages inflicted there resolve into reality when it collapses."
+        }
+      },
+      {
+        "id": "photo_1_5",
+        "name": { "th": "ดาเมจ 1.5 เท่า (Curated Slash)", "en": "Curated Slash" },
+        "type": "external",
+        "description": {
+          "th": "การฟันธรรมดาทำดาเมจ 1.5 หลอดเลือด ทำให้ผู้รอดชีวิตที่รักษาไม่เต็มโดนตีล้มได้ในครั้งเดียว",
+          "en": "Regular melee strikes deal 1.5 damage increments, confounding typical healing breakpoints."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": { "th": "สายตรวจจับภาพถ่าย (Trump Card + Blink / Teleport)", "en": "Photo World Dominance" },
+        "direction": "ล่าง-ขวา (Trump Card + Detention)",
+        "keyTalents": [
+          { "th": "Trump Card", "en": "Trump Card" },
+          { "th": "Detention", "en": "Detention" },
+          { "th": "Deterioration (เพิ่มเวลาการรักษา)", "en": "Deterioration" }
+        ],
+        "description": {
+          "th": "ยื้อเกมด้วยการลดการปั่นเครื่อง และเทเลพอร์ตตบตัวบาดเจ็บ",
+          "en": "Stalls cipher rush through world collapses while tracking injured survivors."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": { "th": "การก้าวเท้าข้ามมิติ (Time Jump)", "en": "Time Jump" },
+        "tag": "chasing",
+        "detail": {
+          "th": "กดย้อนรอยเท้ากลับไปยังตำแหน่งที่เดินผ่านมาเมื่อ 15 วินาทีก่อน เพื่อดักหน้าเซอร์ไวเวอร์ที่กำลังวนไม้",
+          "en": "Activate time jump to snap back to previous steps, ambushing survivors looping around tight corners."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "doctor",
+        "characterName": { "th": "หมอ (Doctor)", "en": "Doctor" },
+        "reason": { "th": "หมอสามารถรักษาเศษเสี้ยวดาเมจ 0.5 หรือ 1.5 ให้หายเป็นปกติได้ในเวลาอันรวดเร็ว ลบล้างข้อได้เปรียบของโจเซฟ", "en": "Doctor heals 0.5 and 1.5 chip damage with unmatched speed, neutralizing Joseph's primary strength." },
+        "tip": { "th": "เล็งกำจัดหมอเป็นคนแรกตั้งแต่ต้นเกม", "en": "Prioritize hunting down and eliminating the Doctor first before she stabilizes her team." }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "wu-chang",
+    "name": { "th": "อู๋ฉาง (Wu Chang)", "en": "Wu Chang" },
+    "title": { "th": "เซียปี่อาน & ฟ่านอู๋จิ้ว (Xie Bi'an & Fan Wujiu)", "en": "Xie Bi'an & Fan Wujiu" },
+    "type": "hunter",
+    "role": "patrol",
+    "difficulty": 4,
+    "tier": "A",
+    "quote": {
+      "th": "ขาวและดำ ร่มและกระดิ่ง ความตายไม่มีทางหลีกเลี่ยง",
+      "en": "White and Black; soul umbrella and ringing bell spell inevitable doom."
+    },
+    "overview": {
+      "th": "สองวิญญาณในร่างเดียว สลับระหว่างร่างขาว (เดินเร็ว ตีไกล ดูดวิญญาณ) และร่างดำ (ตีเร็ว ทุบไม้ไว สั่นกระดิ่งกลับทิศปุ่มเดิน) วาร์ปด้วยร่มไปทุกจุดบนแผนที่ได้ทันที",
+      "en": "Dual-soul specter. Switches between White Guard (high speed, immense reach, soul siphon) and Black Guard (fast recovery, bell confusion, rapid attacks)."
+    },
+    "colorAccent": "#4B5563",
+    "stats": {
+      "chase": 4,
+      "camping": 4,
+      "control": 4,
+      "mobility": 5
+    },
+    "abilities": [
+      {
+        "id": "wu_umbrella",
+        "name": { "th": "โยนร่มสลับร่างวาร์ป (Summon Soul)", "en": "Summon Soul" },
+        "type": "active",
+        "description": {
+          "th": "ปาร่มไปยังตำแหน่งเป้าหมาย เทเลพอร์ตไปถึงทันทีพร้อมสลับเป็นร่างตรงข้าม และสร้างคลื่นกดดันเซอร์ไวเวอร์รอบๆ",
+          "en": "Hurls umbrella to teleport across significant distances, instantly switching guard forms."
+        }
+      },
+      {
+        "id": "wu_skills",
+        "name": { "th": "ดูดวิญญาณ (ร่างขาว) / สั่นกระดิ่ง (ร่างดำ)", "en": "Soul Siphon & Bell Ring" },
+        "type": "active",
+        "description": {
+          "th": "ร่างขาวบินดูดวิญญาณทำให้เซอร์ไวเวอร์ทำอะไรไม่ได้ / ร่างดำสั่นกระดิ่งทำให้ปุ่มบังคับทิศทางของผู้รอดชีวิตกลับด้านและติดดีเลย์",
+          "en": "White Guard floats to siphon souls (preventing interactions); Black Guard rings bell to invert movement controls."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": { "th": "สายเทเลพอร์ตเฝ้าประตู (Detention + Insolence)", "en": "Insolence + Detention" },
+        "direction": "ซ้าย-ล่าง (Insolence + Detention)",
+        "keyTalents": [
+          { "th": "Detention", "en": "Detention" },
+          { "th": "Insolence (ปลดล็อคสกิลเร็ว)", "en": "Insolence" },
+          { "th": "Claustrophobia (ถ่วงเวลาเปิดประตู)", "en": "Claustrophobia" }
+        ],
+        "description": {
+          "th": "ปลดล็อคสกิลโยนร่มได้ตั้งแต่ต้นเกม และโยนร่มเฝ้าประตู 2 ฝั่งในตอนท้าย",
+          "en": "Accelerates tier 1 presence to unlock umbrella early, then teleports between exit gates with Detention."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": { "th": "ทริคปาร่มดักหน้าเครื่องถอดรหัส (Cipher Snipe)", "en": "Cipher Snipe" },
+        "tag": "patrolling",
+        "detail": {
+          "th": "มองเสาอากาศเครื่องที่กำลังสั่น ปาร่มลอยฟ้าลงไปกลางเครื่อง จะวาร์ปไปประชิดตัวและฟัน Terror Shock ได้ทันที",
+          "en": "Spot vibrating cipher antennas, launch umbrella to parachute directly on top, scoring instant surprise hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "forward",
+        "characterName": { "th": "ฟอร์เวิร์ด (Forward)", "en": "Forward" },
+        "reason": { "th": "พุ่งชนร่างขาวที่กำลังบินดูดวิญญาณได้ง่ายมาก", "en": "White Guard is completely vulnerable to rugby dashes while in soul siphon float animation." },
+        "tip": { "th": "เปลี่ยนเป็นร่างดำเพื่อสั่นกระดิ่งขัดจังหวะการพุ่งของฟอร์เวิร์ด", "en": "Switch to Black Guard and ring the bell to disrupt his run trajectory." }
+      }
+    ],
+    "partners": []
+  }
+]
