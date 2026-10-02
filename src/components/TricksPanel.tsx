@@ -47,7 +47,7 @@ export const TricksPanel: React.FC<TricksPanelProps> = ({
               )}
             </div>
             <p style={{ fontSize: '13.5px', color: 'var(--ink-2)', lineHeight: 1.5 }}>
-              {trick.detail[lang]}
+              {(trick.detail || trick.description)?.[lang] || ''}
             </p>
           </div>
         ))}

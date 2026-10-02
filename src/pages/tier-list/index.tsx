@@ -60,8 +60,10 @@ export default function TierListPage() {
                     {tier === 'S'
                       ? (lang === 'th' ? 'ระดับ S (ท็อปเมต้า / แบนบ่อยที่สุด)' : 'Tier S (Dominant Meta / High Ban Rate)')
                       : tier === 'A'
-                      ? (lang === 'th' ? 'ระดับ A (ประสิทธิภาพสูง / เหมาะกับทีม)' : 'Tier A (High Competitive Viability)')
-                      : (lang === 'th' ? 'ระดับ B (เล่นได้ดีตามสถานการณ์)' : 'Tier B (Situational / Specialist)')}
+                      ? (lang === 'th' ? 'ระดับ A (ประสิทธิภาพสูง / เมต้าแข่งขัน)' : 'Tier A (High Competitive Viability)')
+                      : tier === 'B'
+                      ? (lang === 'th' ? 'ระดับ B (เล่นได้ดีตามสถานการณ์ / คลาสสิก)' : 'Tier B (Situational / Classic)')
+                      : (lang === 'th' ? 'ระดับ C (นอกเมต้า / ต้องอาศัยทักษะเฉพาะตัว)' : 'Tier C (Out of Meta / Specialist)')}
                   </h3>
                   <div style={{ fontSize: '12px', color: 'var(--ink-3)' }}>
                     {charIds.length} {lang === 'th' ? 'ตัวละคร' : 'Characters'}

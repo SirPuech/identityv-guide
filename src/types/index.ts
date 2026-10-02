@@ -16,20 +16,23 @@ export interface Ability {
 
 export interface CounterInfo {
   characterId: string;
-  characterName: LocalizedString;
-  reason: LocalizedString;
-  tip: LocalizedString;
+  characterName?: LocalizedString;
+  reason?: LocalizedString;
+  tip?: LocalizedString;
+  note?: LocalizedString;
 }
 
 export interface PartnerInfo {
   characterId: string;
-  characterName: LocalizedString;
-  synergy: LocalizedString;
+  characterName?: LocalizedString;
+  synergy?: LocalizedString;
+  reason?: LocalizedString;
 }
 
 export interface TrickItem {
   title: LocalizedString;
-  detail: LocalizedString;
+  detail?: LocalizedString;
+  description?: LocalizedString;
   tag?: 'kiting' | 'rescuing' | 'decoding' | 'patrolling' | 'chasing' | 'camping' | 'general';
 }
 
@@ -48,6 +51,7 @@ export interface Character {
   role?: 'decoder' | 'rescuer' | 'kiter' | 'support' | 'patrol' | 'chase' | 'camp' | 'control';
   difficulty: 1 | 2 | 3 | 4 | 5;
   tier: 'S' | 'A' | 'B' | 'C';
+  isMeta?: boolean;
   quote: LocalizedString;
   overview: LocalizedString;
   colorAccent?: string;

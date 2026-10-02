@@ -143,7 +143,7 @@ export default function MatchupPage() {
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
                     <div style={{ fontWeight: 700, fontSize: '15px', color: '#6EE7B7' }}>
-                      {info.characterName[lang]}
+                      {survivor ? survivor.name[lang] : (info.characterName ? info.characterName[lang] : info.characterId)}
                     </div>
                     {survivor && (
                       <Link href={`/survivors/${survivor.id}`} style={{ fontSize: '12px', color: 'var(--blue-lift)' }}>
@@ -152,7 +152,7 @@ export default function MatchupPage() {
                     )}
                   </div>
                   <div style={{ fontSize: '13px', color: 'var(--ink-2)', lineHeight: 1.5, marginBottom: '6px' }}>
-                    {info.reason[lang]}
+                    {info.reason ? info.reason[lang] : (info.note ? info.note[lang] : '')}
                   </div>
                   {info.tip && (
                     <div style={{ fontSize: '12px', color: 'var(--orange)', background: 'rgba(249, 115, 22, 0.08)', padding: '6px 10px', borderRadius: '6px' }}>
@@ -208,7 +208,7 @@ export default function MatchupPage() {
                     {cInfo && (
                       <>
                         <div style={{ fontSize: '13px', color: 'var(--ink-2)', lineHeight: 1.5, marginBottom: '6px' }}>
-                          {cInfo.reason[lang]}
+                          {cInfo.reason ? cInfo.reason[lang] : (cInfo.note ? cInfo.note[lang] : '')}
                         </div>
                         {cInfo.tip && (
                           <div style={{ fontSize: '12px', color: 'var(--blue-lift)', background: 'rgba(37, 99, 235, 0.08)', padding: '6px 10px', borderRadius: '6px' }}>

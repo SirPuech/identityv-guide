@@ -47,7 +47,7 @@ export const RelationsPanel: React.FC<RelationsPanelProps> = ({
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                     <span style={{ fontWeight: 700, fontSize: '15px', color: '#FCA5A5' }}>
-                      {c.characterName[lang]}
+                      {targetChar ? targetChar.name[lang] : c.characterName?.[lang] || c.characterId}
                     </span>
                     {targetChar && (
                       <Link href={targetLink} style={{ fontSize: '12px', color: 'var(--blue-lift)' }}>
@@ -56,7 +56,7 @@ export const RelationsPanel: React.FC<RelationsPanelProps> = ({
                     )}
                   </div>
                   <p style={{ fontSize: '13px', color: 'var(--ink-2)', lineHeight: 1.5, marginBottom: '8px' }}>
-                    {c.reason[lang]}
+                    {c.reason?.[lang] || c.note?.[lang] || ''}
                   </p>
                   {c.tip && (
                     <div style={{ fontSize: '12px', color: 'var(--orange)', background: 'rgba(249, 115, 22, 0.08)', padding: '6px 10px', borderRadius: '6px' }}>
@@ -98,7 +98,7 @@ export const RelationsPanel: React.FC<RelationsPanelProps> = ({
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                     <span style={{ fontWeight: 700, fontSize: '15px', color: '#6EE7B7' }}>
-                      {p.characterName[lang]}
+                      {targetChar ? targetChar.name[lang] : p.characterName?.[lang] || p.characterId}
                     </span>
                     {targetChar && (
                       <Link href={targetLink} style={{ fontSize: '12px', color: 'var(--blue-lift)' }}>
@@ -107,7 +107,7 @@ export const RelationsPanel: React.FC<RelationsPanelProps> = ({
                     )}
                   </div>
                   <p style={{ fontSize: '13px', color: 'var(--ink-2)', lineHeight: 1.5 }}>
-                    {p.synergy[lang]}
+                    {p.synergy?.[lang] || p.reason?.[lang] || ''}
                   </p>
                 </div>
               );

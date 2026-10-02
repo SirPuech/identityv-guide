@@ -51,10 +51,11 @@ export default function TeamBuilderPage() {
   selectedTeam.forEach((c1) => {
     c1.partners?.forEach((p) => {
       if (selectedIds.includes(p.characterId)) {
+        const pChar = survivors.find((s) => s.id === p.characterId);
         synergiesFound.push({
           char1: c1.name[lang],
-          char2: p.characterName[lang],
-          text: p.synergy[lang],
+          char2: pChar ? pChar.name[lang] : (p.characterName ? p.characterName[lang] : p.characterId),
+          text: p.synergy ? p.synergy[lang] : (p.reason ? p.reason[lang] : ''),
         });
       }
     });

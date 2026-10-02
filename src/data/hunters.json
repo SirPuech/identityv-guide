@@ -1,199 +1,499 @@
 [
   {
-    "id": "sculptor",
+    "id": "hell-ember",
     "name": {
-      "th": "ประติมากร (Sculptor)",
-      "en": "Sculptor"
+      "th": "เถ้าอเวจี (Hell Ember)",
+      "en": "Hell Ember"
     },
     "title": {
-      "th": "กะลาเทีย (Galatea)",
-      "en": "Galatea"
+      "th": "ลีโอ เบ็ค (Leo Beck)",
+      "en": "Leo Beck<br />Hell Ember"
     },
     "type": "hunter",
-    "role": "control",
-    "difficulty": 4,
-    "tier": "S",
-    "image": "/images/heroes/sculptor.png",
-    "youtubeVideoId": "XySbOEILT2w",
+    "role": "camp",
+    "difficulty": 2,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/hell-ember.png",
+    "youtubeVideoId": "cBf2lbuFIKw",
     "quote": {
-      "th": "รูปปั้นหินทุกชิ้นมีจิตวิญญาณ และพวกมันจะบดขยี้เจ้า",
-      "en": "Every stone sculpture has a soul to crush you."
+      "th": "Resurrected from the ashes, what exactly is he searching for?",
+      "en": "Resurrected from the ashes, what exactly is he searching for?"
     },
     "overview": {
-      "th": "ฮันเตอร์สาวบนรถเข็น เรียกรวมรูปปั้นหินคู่บีบอัดศัตรูจากระยะไกล ขัดขวางการปั่นเครื่องและการช่วยเก้าอี้ได้อย่างสมบูรณ์แบบ",
-      "en": "Formidable wheelchair sculptor. Summons pairs of moving statues from afar, dominating camping and cipher disruption."
+      "th": "Resurrected from the ashes, what exactly is he searching for?",
+      "en": "Resurrected from the ashes, what exactly is he searching for?"
     },
     "colorAccent": "#EF4444",
     "stats": {
-      "chase": 4,
+      "chase": 2,
+      "mapControl": 3,
       "camping": 5,
-      "control": 5,
-      "mobility": 2
+      "presence": 5
     },
     "abilities": [
       {
-        "id": "sculpt_pair",
+        "id": "hell-ember_ability_1",
         "name": {
-          "th": "รูปปั้นคู่บีบอัด (Statue Pair)",
-          "en": "Statue Pair"
+          "th": "สกิลล่า (Hell Ember Skill)",
+          "en": "Hell Ember Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "ปล่อยรูปปั้นสองตัววิ่งเข้าหากัน ทำดาเมจ 0.5",
-          "en": "Summons converging statues inflicting 0.5 chip damage."
+          "th": "Resurrected from the ashes, what exactly is he searching for?",
+          "en": "Unique hunting power of Hell Ember for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายกดดันระยะไกล (Trump Card + Detention)",
-          "en": "Trump Card + Detention"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "ล่าง-ขวา",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Detention",
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
             "en": "Detention"
           },
           {
-            "th": "Trump Card",
-            "en": "Trump Card"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "สลับสกิลเป็นเทเลพอร์ตช่วงท้ายเกม",
-          "en": "Switches traits late-game and downs survivors at exit gates."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "ดักบีบหน้าไม้และหน้าต่าง (Pallet Squeeze)",
-          "en": "Pallet Squeeze"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "chasing",
         "detail": {
-          "th": "เรียกดักรูปปั้นตอนเซอร์ไวเวอร์กำลังกระโดดข้ามไม้",
-          "en": "Summon statues right as survivor commits to vaulting."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
-        "characterId": "forward",
-        "characterName": {
-          "th": "ฟอร์เวิร์ด (Forward)",
-          "en": "Forward"
-        },
+        "characterId": "seer",
         "reason": {
-          "th": "พุ่งชนรถเข็นขัดจังหวะการเล็งรูปปั้น",
-          "en": "Rugby tackle interrupts statue aiming."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "พก Excitement หรือหลบหลังเสา",
-          "en": "Carry Excitement trait to counter tackles."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],
     "partners": []
   },
   {
-    "id": "dream-witch",
+    "id": "smiley-face",
     "name": {
-      "th": "แม่มดแห่งความฝัน (Dream Witch)",
-      "en": "Dream Witch"
+      "th": "หน้ายิ้ม (Smiley Face)",
+      "en": "Smiley Face"
     },
     "title": {
-      "th": "ยิดห์รา (Yidhra)",
-      "en": "Yidhra"
+      "th": "โจ๊กเกอร์ (Joker)",
+      "en": "Joker<br />Smiley Face"
     },
     "type": "hunter",
-    "role": "control",
-    "difficulty": 5,
-    "tier": "S",
-    "image": "/images/heroes/dream-witch.png",
-    "youtubeVideoId": "fa1O9UWer-0",
+    "role": "chase",
+    "difficulty": 3,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/smiley-face.png",
+    "youtubeVideoId": "slD_XbfKDks",
     "quote": {
-      "th": "มนุษย์เป็นเพียงสิ่งมีชีวิตชั่วคราวในความฝันของข้า",
-      "en": "Mortals are merely transient flickers in my dream."
+      "th": "The circus has two types of clowns, the smiling clown who brings joy and the crying clown who drowns in sadness. Joker was tired of his role, so he gave himself a perpetual smiley face.",
+      "en": "The circus has two types of clowns, the smiling clown who brings joy and the crying clown who drowns in sadness. Joker was tired of his role, so he gave himself a perpetual smiley face."
     },
     "overview": {
-      "th": "ฮันเตอร์ที่เล่นยากและเก่งที่สุดในระดับทัวร์นาเมนต์ ร่างจริงล่องหน บังคับบริวารหลายตัวเฝ้าเครื่องและล้อมจับทั่วแผนที่",
-      "en": "Highest skill ceiling and deadliest tournament hunter. Main body is invisible, commanding multiple leech followers across the map."
+      "th": "The circus has two types of clowns, the smiling clown who brings joy and the crying clown who drowns in sadness. Joker was tired of his role, so he gave himself a perpetual smiley face.",
+      "en": "The circus has two types of clowns, the smiling clown who brings joy and the crying clown who drowns in sadness. Joker was tired of his role, so he gave himself a perpetual smiley face."
     },
-    "colorAccent": "#A855F7",
+    "colorAccent": "#EF4444",
     "stats": {
       "chase": 4,
-      "camping": 5,
-      "control": 5,
-      "mobility": 4
+      "mapControl": 3,
+      "camping": 4,
+      "presence": 3
     },
     "abilities": [
       {
-        "id": "dw_leech",
+        "id": "smiley-face_ability_1",
         "name": {
-          "th": "ปรสิตบริวาร (Leech Follower)",
-          "en": "Leech Follower"
+          "th": "สกิลล่า (Smiley Face Skill)",
+          "en": "Smiley Face Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "เพาะบริวารติดตัวเซอร์ไวเวอร์ สลับจิตเข้าบังคับได้ทันที",
-          "en": "Infects survivors with followers, shifting consciousness instantaneously."
+          "th": "The circus has two types of clowns, the smiling clown who brings joy and the crying clown who drowns in sadness. Joker was tired of his role, so he gave himself a perpetual smiley face.",
+          "en": "Unique hunting power of Smiley Face for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายคุมเครื่องระดับสูง (Insolence + Trump Card)",
-          "en": "Multi-Control Tournament"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "ซ้าย-ขวา",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Trump Card",
-            "en": "Trump Card"
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
           },
           {
-            "th": "Insolence",
-            "en": "Insolence"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "สลับสกิล Patroller และ Blink หลายตัว",
-          "en": "Cycles multiple traits across distinct followers."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "ประกบสองด้าน (Pincer Ambush)",
-          "en": "Pincer Ambush"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "chasing",
         "detail": {
-          "th": "ดักบริวารไว้หน้าไม้แล้วบังคับอีกตัวต้อนศัตรูเข้ามา",
-          "en": "Station one leech ahead at pallet while herding with the second."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
-        "characterId": "priestess",
-        "characterName": {
-          "th": "นักบวชหญิง (Priestess)",
-          "en": "Priestess"
-        },
+        "characterId": "seer",
         "reason": {
-          "th": "เปิดวาร์ปพาหนีบริวารที่เดินช้า",
-          "en": "Portals counter slow follower movement speeds."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "ทำลายวาร์ปทันทีที่เห็น",
-          "en": "Destroy portals immediately on sight."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "gamekeeper",
+    "name": {
+      "th": "ผู้คุมป่า (Gamekeeper)",
+      "en": "Gamekeeper"
+    },
+    "title": {
+      "th": "เบน เปเรซ (Bane Perez)",
+      "en": "Bane Perez<br />Gamekeeper"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 2,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/gamekeeper.png",
+    "youtubeVideoId": "cBf2lbuFIKw",
+    "quote": {
+      "th": "Bane was once a warmhearted gamekeeper who was lenient with poachers. However, he wasn't repaid for his kindness. Now, Bane shows no mercy to trespassers.",
+      "en": "Bane was once a warmhearted gamekeeper who was lenient with poachers. However, he wasn't repaid for his kindness. Now, Bane shows no mercy to trespassers."
+    },
+    "overview": {
+      "th": "Bane was once a warmhearted gamekeeper who was lenient with poachers. However, he wasn't repaid for his kindness. Now, Bane shows no mercy to trespassers.",
+      "en": "Bane was once a warmhearted gamekeeper who was lenient with poachers. However, he wasn't repaid for his kindness. Now, Bane shows no mercy to trespassers."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 3,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "gamekeeper_ability_1",
+        "name": {
+          "th": "สกิลล่า (Gamekeeper Skill)",
+          "en": "Gamekeeper Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Bane was once a warmhearted gamekeeper who was lenient with poachers. However, he wasn't repaid for his kindness. Now, Bane shows no mercy to trespassers.",
+          "en": "Unique hunting power of Gamekeeper for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "ripper",
+    "name": {
+      "th": "เดอะ ริปเปอร์ (The Ripper)",
+      "en": "The Ripper"
+    },
+    "title": {
+      "th": "แจ็ค (Jack)",
+      "en": "Jack<br />The Ripper"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 2,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/ripper.png",
+    "youtubeVideoId": "pHj99VrfpDM",
+    "quote": {
+      "th": "Humming a tune with his arms crossed, the ripper has his own unique standards for his \"guests\".",
+      "en": "Humming a tune with his arms crossed, the ripper has his own unique standards for his \"guests\"."
+    },
+    "overview": {
+      "th": "Humming a tune with his arms crossed, the ripper has his own unique standards for his \"guests\".",
+      "en": "Humming a tune with his arms crossed, the ripper has his own unique standards for his \"guests\"."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 2,
+      "camping": 3,
+      "presence": 3
+    },
+    "abilities": [
+      {
+        "id": "ripper_ability_1",
+        "name": {
+          "th": "สกิลล่า (The Ripper Skill)",
+          "en": "The Ripper Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Humming a tune with his arms crossed, the ripper has his own unique standards for his \"guests\".",
+          "en": "Unique hunting power of The Ripper for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "soul-weaver",
+    "name": {
+      "th": "แมงมุม (Soul Weaver)",
+      "en": "Soul Weaver"
+    },
+    "title": {
+      "th": "ไวโอเล็ตต้า (Violetta)",
+      "en": "Violetta<br />Soul Weaver"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 3,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/soul-weaver.png",
+    "youtubeVideoId": "AUDz9jRmixU",
+    "quote": {
+      "th": "The curtain will never close on excellent performers. Miss Violetta's latest performance, Wonder Spider, is now showing! Of course, we strongly advise against watching it up close.",
+      "en": "The curtain will never close on excellent performers. Miss Violetta's latest performance, Wonder Spider, is now showing! Of course, we strongly advise against watching it up close."
+    },
+    "overview": {
+      "th": "The curtain will never close on excellent performers. Miss Violetta's latest performance, Wonder Spider, is now showing! Of course, we strongly advise against watching it up close.",
+      "en": "The curtain will never close on excellent performers. Miss Violetta's latest performance, Wonder Spider, is now showing! Of course, we strongly advise against watching it up close."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 3,
+      "camping": 4,
+      "presence": 3
+    },
+    "abilities": [
+      {
+        "id": "soul-weaver_ability_1",
+        "name": {
+          "th": "สกิลล่า (Soul Weaver Skill)",
+          "en": "Soul Weaver Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "The curtain will never close on excellent performers. Miss Violetta's latest performance, Wonder Spider, is now showing! Of course, we strongly advise against watching it up close.",
+          "en": "Unique hunting power of Soul Weaver for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],
@@ -207,93 +507,293 @@
     },
     "title": {
       "th": "มิชิโกะ (Michiko)",
-      "en": "Michiko"
+      "en": "Michiko<br />Geisha"
     },
     "type": "hunter",
     "role": "chase",
     "difficulty": 3,
-    "tier": "A",
+    "tier": "B",
+    "isMeta": false,
     "image": "/images/heroes/geisha.png",
     "youtubeVideoId": "pHj99VrfpDM",
     "quote": {
-      "th": "การร่ายรำนี้จะจบลงด้วยคราบน้ำตาแห่งความตาย",
-      "en": "This dance culminates in tears of demise."
+      "th": "Michiko used to be an amazing dancer. When she danced in a red kimono, it looked like a red butterfly flapping its wings. But now, no one has the courage to watch her performance.",
+      "en": "Michiko used to be an amazing dancer. When she danced in a red kimono, it looked like a red butterfly flapping its wings. But now, no one has the courage to watch her performance."
     },
     "overview": {
-      "th": "ฮันเตอร์สาวสุดฮิต ปาผีเสื้อวิญญาณแล้วพุ่งทะยานผ่านสิ่งกีดขวางไปประชิดตัวได้อย่างรวดเร็ว ไล่ล่ากดดันได้ดีเยี่ยม",
-      "en": "Most popular chase hunter. Throws phantom butterflies and dashes through terrain directly towards survivors."
+      "th": "Michiko used to be an amazing dancer. When she danced in a red kimono, it looked like a red butterfly flapping its wings. But now, no one has the courage to watch her performance.",
+      "en": "Michiko used to be an amazing dancer. When she danced in a red kimono, it looked like a red butterfly flapping its wings. But now, no one has the courage to watch her performance."
     },
     "colorAccent": "#EF4444",
     "stats": {
       "chase": 5,
+      "mapControl": 3,
       "camping": 3,
-      "control": 3,
-      "mobility": 5
+      "presence": 3
     },
     "abilities": [
       {
-        "id": "geisha_fly",
+        "id": "geisha_ability_1",
         "name": {
-          "th": "ระบำผีเสื้อพุ่งทะยาน (Dash Hit)",
-          "en": "Dash Hit"
+          "th": "สกิลล่า (Geisha Skill)",
+          "en": "Geisha Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "พุ่งทะลุไม้และหน้าต่างไปหาผีเสื้อ",
-          "en": "Dashes through dropped pallets towards targeted butterflies."
+          "th": "Michiko used to be an amazing dancer. When she danced in a red kimono, it looked like a red butterfly flapping its wings. But now, no one has the courage to watch her performance.",
+          "en": "Unique hunting power of Geisha for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายปิดหน้าต่าง 36 (Confined Space + Detention)",
-          "en": "Confined Space & Detention"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "บน-ล่าง",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Confined Space",
-            "en": "Confined Space"
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
           },
           {
-            "th": "Detention",
-            "en": "Detention"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "ปิดทางวนตามบ้านใหญ่และทุบไม้เร็ว",
-          "en": "Blocks safe loops in buildings and smashes pallets quickly."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "ปาผีเสื้อข้ามไม้ดักหน้า (Pallet Butterfly Dash)",
-          "en": "Pallet Butterfly Dash"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "chasing",
         "detail": {
-          "th": "ปาผีเสื้อข้ามไม้แล้วกดพุ่งทันทีเพื่อวาร์ปไปฟันข้างหลัง",
-          "en": "Toss butterfly past dropped pallet and dash immediately."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
         "characterId": "seer",
-        "characterName": {
-          "th": "ซีเออร์ (Seer)",
-          "en": "Seer"
-        },
         "reason": {
-          "th": "เดินถอยหลังสบตาขัดจังหวะการพุ่งได้ดี",
-          "en": "Moonwalk stare cancels dash initiates."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "ปาผีเสื้อเยื้องมุมด้านข้างหลบสายตา",
-          "en": "Angle butterflies diagonally behind walls."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "feaster",
+    "name": {
+      "th": "เจ้าแห่งหนองน้ำ (The Feaster)",
+      "en": "The Feaster"
+    },
+    "title": {
+      "th": "ฮัสตูร์ (Hastur)",
+      "en": "Hastur<br />The Feaster"
+    },
+    "type": "hunter",
+    "role": "camp",
+    "difficulty": 3,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/feaster.png",
+    "youtubeVideoId": "cBf2lbuFIKw",
+    "quote": {
+      "th": "When the sun sinks into the lake and the black stars rise, the one draped in yellow rags will rise from the depths of the lake. He is a nameless soul with an unquenching thirst for knowledge.",
+      "en": "When the sun sinks into the lake and the black stars rise, the one draped in yellow rags will rise from the depths of the lake. He is a nameless soul with an unquenching thirst for knowledge."
+    },
+    "overview": {
+      "th": "When the sun sinks into the lake and the black stars rise, the one draped in yellow rags will rise from the depths of the lake. He is a nameless soul with an unquenching thirst for knowledge.",
+      "en": "When the sun sinks into the lake and the black stars rise, the one draped in yellow rags will rise from the depths of the lake. He is a nameless soul with an unquenching thirst for knowledge."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 3,
+      "mapControl": 3,
+      "camping": 5,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "feaster_ability_1",
+        "name": {
+          "th": "สกิลล่า (The Feaster Skill)",
+          "en": "The Feaster Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "When the sun sinks into the lake and the black stars rise, the one draped in yellow rags will rise from the depths of the lake. He is a nameless soul with an unquenching thirst for knowledge.",
+          "en": "Unique hunting power of The Feaster for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "wu-chang",
+    "name": {
+      "th": "อู่ฉาง (Wu Chang)",
+      "en": "Wu Chang"
+    },
+    "title": {
+      "th": "เซี่ยปี้อาน & ฟ่านอู๋จิ้ว (Xie Bian & Fan Wujiu)",
+      "en": "Xie Bian and Fan Wujiu<br />Wu Chang"
+    },
+    "type": "hunter",
+    "role": "patrol",
+    "difficulty": 3,
+    "tier": "B",
+    "isMeta": false,
+    "image": "/images/heroes/wu-chang.png",
+    "youtubeVideoId": "mnJ6wysqyQI",
+    "quote": {
+      "th": "The White and Black Guards had their souls imbued into an umbrella where they are bound together, forever.",
+      "en": "The White and Black Guards had their souls imbued into an umbrella where they are bound together, forever."
+    },
+    "overview": {
+      "th": "The White and Black Guards had their souls imbued into an umbrella where they are bound together, forever.",
+      "en": "The White and Black Guards had their souls imbued into an umbrella where they are bound together, forever."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 4,
+      "camping": 3,
+      "presence": 5
+    },
+    "abilities": [
+      {
+        "id": "wu-chang_ability_1",
+        "name": {
+          "th": "สกิลล่า (Wu Chang Skill)",
+          "en": "Wu Chang Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "The White and Black Guards had their souls imbued into an umbrella where they are bound together, forever.",
+          "en": "Unique hunting power of Wu Chang for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],
@@ -306,194 +806,494 @@
       "en": "Photographer"
     },
     "title": {
-      "th": "โจเซฟ (Joseph)",
-      "en": "Joseph"
+      "th": "โจเซฟ เดซอลนิเยร์ (Joseph Desaulniers)",
+      "en": "Joseph Desaulniers<br />Photographer"
     },
     "type": "hunter",
     "role": "control",
     "difficulty": 4,
-    "tier": "A",
+    "tier": "B",
+    "isMeta": false,
     "image": "/images/heroes/photographer.png",
     "youtubeVideoId": "Z2FmRaxt1eg",
     "quote": {
-      "th": "ภาพถ่ายจะหยุดเวลาและเก็บความงดงามไว้ชั่วนิรันดร์",
-      "en": "Photographs freeze time for eternity."
+      "th": "In Joseph's eyes, every photograph is a mark in time.",
+      "en": "In Joseph's eyes, every photograph is a mark in time."
     },
     "overview": {
-      "th": "ถ่ายรูปสร้างโลกเสมือนเพื่อโจมตีร่างเงาทำดาเมจย้อนหลัง และลดความคืบหน้าการปั่นเครื่องรหัสลงครึ่งหนึ่ง มีดาเมจ 1.5 เท่า",
-      "en": "Snaps cameras into Photo Worlds, slashes mirror images for delayed damage, and halves cipher speeds with 1.5x damage attacks."
+      "th": "In Joseph's eyes, every photograph is a mark in time.",
+      "en": "In Joseph's eyes, every photograph is a mark in time."
     },
-    "colorAccent": "#60A5FA",
+    "colorAccent": "#EF4444",
     "stats": {
       "chase": 3,
+      "mapControl": 5,
       "camping": 3,
-      "control": 5,
-      "mobility": 4
+      "presence": 4
     },
     "abilities": [
       {
-        "id": "photo_world",
+        "id": "photographer_ability_1",
         "name": {
-          "th": "โลกภาพถ่าย (Photo World)",
-          "en": "Photo World"
+          "th": "สกิลล่า (Photographer Skill)",
+          "en": "Photographer Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "ถ่ายรูปหยุดเวลาและทำดาเมจ 1.5 หลอด",
-          "en": "Captures game state snapshot and deals 1.5 damage."
+          "th": "In Joseph's eyes, every photograph is a mark in time.",
+          "en": "Unique hunting power of Photographer for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายคุมโลกภาพถ่าย (Trump Card + Detention)",
-          "en": "Photo Dominance"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "ล่าง-ขวา",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Trump Card",
-            "en": "Trump Card"
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
           },
           {
-            "th": "Detention",
-            "en": "Detention"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "ยื้อเกมและเทเลพอร์ตตบตัวบาดเจ็บ",
-          "en": "Stalls cipher progress and teleports to injured targets."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "ก้าวเท้าข้ามมิติ (Time Jump)",
-          "en": "Time Jump"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "chasing",
         "detail": {
-          "th": "กดย้อนรอยเท้ากลับไปตำแหน่ง 15 วิก่อนดักหน้าเซอร์ไวเวอร์",
-          "en": "Snap back to previous footsteps to ambush looping survivors."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
-        "characterId": "doctor",
-        "characterName": {
-          "th": "หมอ (Doctor)",
-          "en": "Doctor"
-        },
+        "characterId": "seer",
         "reason": {
-          "th": "ฮีลดาเมจ 1.5 และ 0.5 ได้เร็วมาก",
-          "en": "Heals 1.5 and 0.5 chip damage with rapid speed."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "ตามล่ากำจัดหมอเป็นคนแรก",
-          "en": "Eliminate Doctor first before team stabilizes."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],
     "partners": []
   },
   {
-    "id": "wu-chang",
+    "id": "mad-eyes",
     "name": {
-      "th": "อู๋ฉาง (Wu Chang)",
-      "en": "Wu Chang"
+      "th": "ตาแก่คลั่ง (Mad Eyes)",
+      "en": "Mad Eyes"
     },
     "title": {
-      "th": "เซียปี่อาน & ฟ่านอู๋จิ้ว (Xie Bi'an & Fan Wujiu)",
-      "en": "Xie Bi'an & Fan Wujiu"
+      "th": "เบิร์ก ลาพาดูล่า (Burke Lapadura)",
+      "en": "Burke Lapadura<br />Mad Eyes"
     },
     "type": "hunter",
-    "role": "patrol",
-    "difficulty": 4,
-    "tier": "A",
-    "image": "/images/heroes/wu-chang.png",
-    "youtubeVideoId": "mnJ6wysqyQI",
+    "role": "control",
+    "difficulty": 5,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/mad-eyes.png",
+    "youtubeVideoId": "fa1O9UWer-0",
     "quote": {
-      "th": "ขาวและดำ ร่มและกระดิ่ง ความตายไม่มีทางหลีกเลี่ยง",
-      "en": "White and Black; soul umbrella and ringing bell spell doom."
+      "th": "Oletus Manor is Burke's site for experiments. Who knows how many devices there are buried underground, or how many types of devices there are.",
+      "en": "Oletus Manor is Burke's site for experiments. Who knows how many devices there are buried underground, or how many types of devices there are."
     },
     "overview": {
-      "th": "สองวิญญาณในร่างเดียว สลับระหว่างร่างขาว (เดินเร็ว ตีไกล ดูดวิญญาณ) และร่างดำ (ตีเร็ว ทุบไม้ไว สั่นกระดิ่งกลับทิศปุ่มเดิน) วาร์ปด้วยร่มได้ทั่วแมพ",
-      "en": "Dual-soul specter. Switches between White Guard (high speed, immense reach) and Black Guard (rapid swings, control-inverting bell) with global umbrella teleports."
+      "th": "Oletus Manor is Burke's site for experiments. Who knows how many devices there are buried underground, or how many types of devices there are.",
+      "en": "Oletus Manor is Burke's site for experiments. Who knows how many devices there are buried underground, or how many types of devices there are."
     },
-    "colorAccent": "#6B7280",
+    "colorAccent": "#EF4444",
     "stats": {
-      "chase": 4,
+      "chase": 2,
+      "mapControl": 5,
       "camping": 4,
-      "control": 4,
-      "mobility": 5
+      "presence": 5
     },
     "abilities": [
       {
-        "id": "wu_umbrella",
+        "id": "mad-eyes_ability_1",
         "name": {
-          "th": "โยนร่มสลับร่างวาร์ป (Summon Soul)",
-          "en": "Summon Soul"
+          "th": "สกิลล่า (Mad Eyes Skill)",
+          "en": "Mad Eyes Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "ปาร่มเทเลพอร์ตข้ามแผนที่พร้อมสลับร่าง",
-          "en": "Hurls umbrella to teleport across map while switching guard forms."
+          "th": "Oletus Manor is Burke's site for experiments. Who knows how many devices there are buried underground, or how many types of devices there are.",
+          "en": "Unique hunting power of Mad Eyes for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายเทเลพอร์ตเฝ้าประตู (Detention + Insolence)",
-          "en": "Insolence & Detention"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "ซ้าย-ล่าง",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Detention",
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
             "en": "Detention"
           },
           {
-            "th": "Insolence",
-            "en": "Insolence"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "ปลดล็อคสกิลร่มเร็วและวาร์ปเฝ้าประตู 2 ฝั่ง",
-          "en": "Accelerates presence for early umbrella and guards both exit gates."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "ปาร่มดักหน้าเครื่องปั่น (Cipher Snipe)",
-          "en": "Cipher Snipe"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "patrolling",
         "detail": {
-          "th": "มองเสาเครื่องที่สั่น ปาร่มลงกลางเครื่องฟัน Terror Shock",
-          "en": "Spot vibrating antennas and parachute directly for terror shocks."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
-        "characterId": "forward",
-        "characterName": {
-          "th": "ฟอร์เวิร์ด (Forward)",
-          "en": "Forward"
-        },
+        "characterId": "seer",
         "reason": {
-          "th": "พุ่งชนร่างขาวที่กำลังบินดูดวิญญาณได้ง่าย",
-          "en": "White Guard is vulnerable to tackles during soul siphon float."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "สลับเป็นร่างดำสั่นกระดิ่งขัดจังหวะการพุ่ง",
-          "en": "Switch to Black Guard and ring bell to redirect his dash."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "dream-witch",
+    "name": {
+      "th": "แม่มดแห่งความฝัน (Dream Witch)",
+      "en": "Dream Witch"
+    },
+    "title": {
+      "th": "ยิดห์รา (Yidhra)",
+      "en": "Yidhra<br />Dream Witch"
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 5,
+    "tier": "S",
+    "isMeta": true,
+    "image": "/images/heroes/dream-witch.png",
+    "youtubeVideoId": "fa1O9UWer-0",
+    "quote": {
+      "th": "She gives eternal life to her followers, but who knows what the price of that gift is.",
+      "en": "She gives eternal life to her followers, but who knows what the price of that gift is."
+    },
+    "overview": {
+      "th": "She gives eternal life to her followers, but who knows what the price of that gift is.",
+      "en": "She gives eternal life to her followers, but who knows what the price of that gift is."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 3,
+      "mapControl": 5,
+      "camping": 5,
+      "presence": 5
+    },
+    "abilities": [
+      {
+        "id": "dream-witch_ability_1",
+        "name": {
+          "th": "สกิลล่า (Dream Witch Skill)",
+          "en": "Dream Witch Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "She gives eternal life to her followers, but who knows what the price of that gift is.",
+          "en": "Unique hunting power of Dream Witch for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "axe-boy",
+    "name": {
+      "th": "เด็กขวาน (Axe Boy)",
+      "en": "Axe Boy"
+    },
+    "title": {
+      "th": "ร็อบบี้ (Robbie)",
+      "en": "Robbie<br />Axe Boy"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 3,
+    "tier": "B",
+    "isMeta": false,
+    "image": "/images/heroes/axe-boy.png",
+    "youtubeVideoId": "MuF1svBB5BM",
+    "quote": {
+      "th": "Robbie lost his head, and the boy who always cries had to pick up the axe to continue doing what he does best.",
+      "en": "Robbie lost his head, and the boy who always cries had to pick up the axe to continue doing what he does best."
+    },
+    "overview": {
+      "th": "Robbie lost his head, and the boy who always cries had to pick up the axe to continue doing what he does best.",
+      "en": "Robbie lost his head, and the boy who always cries had to pick up the axe to continue doing what he does best."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 4,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "axe-boy_ability_1",
+        "name": {
+          "th": "สกิลล่า (Axe Boy Skill)",
+          "en": "Axe Boy Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Robbie lost his head, and the boy who always cries had to pick up the axe to continue doing what he does best.",
+          "en": "Unique hunting power of Axe Boy for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "evil-reptilian",
+    "name": {
+      "th": "กิ้งก่าพิษ (Evil Reptilian)",
+      "en": "Evil Reptilian"
+    },
+    "title": {
+      "th": "ลูคิโน่ เดียรูส (Luchino Diruse)",
+      "en": "Luchino Diruse<br />Evil Reptilian"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 4,
+    "tier": "B",
+    "isMeta": false,
+    "image": "/images/heroes/evil-reptilian.png",
+    "youtubeVideoId": "MuF1svBB5BM",
+    "quote": {
+      "th": "Luchino's continuous exploration into forbidden areas has brought him endless troubles. Day in and day out, there are always more scales to remove.",
+      "en": "Luchino's continuous exploration into forbidden areas has brought him endless troubles. Day in and day out, there are always more scales to remove."
+    },
+    "overview": {
+      "th": "Luchino's continuous exploration into forbidden areas has brought him endless troubles. Day in and day out, there are always more scales to remove.",
+      "en": "Luchino's continuous exploration into forbidden areas has brought him endless troubles. Day in and day out, there are always more scales to remove."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 3,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "evil-reptilian_ability_1",
+        "name": {
+          "th": "สกิลล่า (Evil Reptilian Skill)",
+          "en": "Evil Reptilian Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Luchino's continuous exploration into forbidden areas has brought him endless troubles. Day in and day out, there are always more scales to remove.",
+          "en": "Unique hunting power of Evil Reptilian for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],
@@ -502,298 +1302,98 @@
   {
     "id": "bloody-queen",
     "name": {
-      "th": "ราชินีสีเลือด (Bloody Queen)",
+      "th": "ราชินีเลือด (Bloody Queen)",
       "en": "Bloody Queen"
     },
     "title": {
       "th": "แมรี่ (Mary)",
-      "en": "Mary"
+      "en": "Mary<br />Bloody Queen"
     },
     "type": "hunter",
     "role": "chase",
     "difficulty": 3,
-    "tier": "S",
+    "tier": "A",
+    "isMeta": true,
     "image": "/images/heroes/bloody-queen.png",
     "youtubeVideoId": "Lmhvoa2hwWY",
     "quote": {
-      "th": "กระจกเงานี้จะสะท้อนความตายของพวกเจ้า",
-      "en": "This mirror reflects your unavoidable demise."
+      "th": "Mary has no interest in playing chess because the queen is the easiest piece to take.",
+      "en": "Mary has no interest in playing chess because the queen is the easiest piece to take."
     },
     "overview": {
-      "th": "เสกกระจกน้ำสร้างร่างเงาสะท้อน ฟันทะลุกำแพงและสิ่งกีดขวางได้จากระยะไกล ข้ามแผ่นไม้และหน้าต่างได้อย่างง่ายดาย",
-      "en": "Summons aqua mirrors to project reflection clones, striking survivors through walls and terrain."
+      "th": "Mary has no interest in playing chess because the queen is the easiest piece to take.",
+      "en": "Mary has no interest in playing chess because the queen is the easiest piece to take."
     },
-    "colorAccent": "#F43F5E",
+    "colorAccent": "#EF4444",
     "stats": {
       "chase": 5,
-      "camping": 4,
-      "control": 4,
-      "mobility": 4
-    },
-    "abilities": [
-      {
-        "id": "bq_mirror",
-        "name": {
-          "th": "กระจกเงาน้ำ (Aqua Mirror)",
-          "en": "Aqua Mirror"
-        },
-        "type": "active",
-        "description": {
-          "th": "เสกร่างเงากระจกฟันทะลุสิ่งกีดขวางและสลับตำแหน่งได้",
-          "en": "Spawns mirror reflection striking through obstacles and repositions."
-        }
-      }
-    ],
-    "recommendedPerks": [
-      {
-        "name": {
-          "th": "สายกระจกล่า (Insolence + Detention)",
-          "en": "Mirror Hunter"
-        },
-        "direction": "ซ้าย-ล่าง",
-        "keyTalents": [
-          {
-            "th": "Detention",
-            "en": "Detention"
-          },
-          {
-            "th": "Insolence",
-            "en": "Insolence"
-          }
-        ],
-        "description": {
-          "th": "ปลดล็อคกระจกเงาระยะไกลต้นเกม",
-          "en": "Accelerates early mirror cooldowns and closes gates."
-        }
-      }
-    ],
-    "tricks": [
-      {
-        "title": {
-          "th": "เล็งกระจก 45 องศาตัดมุมเลี้ยว",
-          "en": "45-Degree Mirror Snipe"
-        },
-        "tag": "chasing",
-        "detail": {
-          "th": "วางกระจกเยื้อง 45 องศาตัดหน้าจุดเลี้ยวของเซอร์ไวเวอร์",
-          "en": "Place mirror at 45 degrees ahead of survivor corner turns."
-        }
-      }
-    ],
-    "counters": [
-      {
-        "characterId": "seer",
-        "characterName": {
-          "th": "ซีเออร์ (Seer)",
-          "en": "Seer"
-        },
-        "reason": {
-          "th": "กางนกป้องกันดาเมจจากร่างกระจก",
-          "en": "Owl blocks mirror reflection strikes."
-        },
-        "tip": {
-          "th": "หลอกง้างฟันให้ใช้นกก่อน",
-          "en": "Bait owl with fake mirror approaches."
-        }
-      }
-    ],
-    "partners": []
-  },
-  {
-    "id": "night-watch",
-    "name": {
-      "th": "เวรยามราตรี (Night Watch)",
-      "en": "Night Watch"
-    },
-    "title": {
-      "th": "อิธาคัว (Ithaqua)",
-      "en": "Ithaqua"
-    },
-    "type": "hunter",
-    "role": "chase",
-    "difficulty": 3,
-    "tier": "S",
-    "image": "/images/heroes/night-watch.png",
-    "youtubeVideoId": "MuF1svBB5BM",
-    "quote": {
-      "th": "สายลมพายุหิมะจะดูดกลืนทุกร่างเข้าสู่ความเหน็บหนาว",
-      "en": "Winter blizzards drag all warmth into the void."
-    },
-    "overview": {
-      "th": "ฮันเตอร์ผู้ควบคุมสายลม ดูดดึงเซอร์ไวเวอร์เข้ามาหาตัว หรือสร้างพายุลมกระโดดข้ามแผ่นไม้และหน้าต่างได้อย่างรวดเร็ว",
-      "en": "Master of winter gales. Drags survivors towards himself and vaults pallets at breakneck speeds."
-    },
-    "colorAccent": "#38BDF8",
-    "stats": {
-      "chase": 5,
-      "camping": 4,
-      "control": 3,
-      "mobility": 5
-    },
-    "abilities": [
-      {
-        "id": "nw_wind",
-        "name": {
-          "th": "สายลมดูดดึง & ลมข้ามไม้ (Wind Walk & Vortex)",
-          "en": "Wind Walk & Vortex"
-        },
-        "type": "active",
-        "description": {
-          "th": "ดูดดึงเซอร์ไวเวอร์และใช้ลมกระโดดข้ามไม้ทันที",
-          "en": "Sucks survivors in and wind-vaults over dropped pallets."
-        }
-      }
-    ],
-    "recommendedPerks": [
-      {
-        "name": {
-          "th": "สายพายุไล่ล่า 36 (Confined Space + Detention)",
-          "en": "Gale Chaser"
-        },
-        "direction": "บน-ล่าง",
-        "keyTalents": [
-          {
-            "th": "Confined Space",
-            "en": "Confined Space"
-          },
-          {
-            "th": "Detention",
-            "en": "Detention"
-          }
-        ],
-        "description": {
-          "th": "ปิดหน้าต่างและดูดตัวเข้ามาฟันอย่างต่อเนื่อง",
-          "en": "Denies vault loops and drags targets into melee range."
-        }
-      }
-    ],
-    "tricks": [
-      {
-        "title": {
-          "th": "ดูดดึงขัดจังหวะการดึงไม้ (Pallet Pull Vortex)",
-          "en": "Pallet Pull Vortex"
-        },
-        "tag": "chasing",
-        "detail": {
-          "th": "กดดูดลมจังหวะเซอร์ไวเวอร์กำลังจะดึงไม้ลง",
-          "en": "Trigger vortex right when survivor attempts to pull down pallets."
-        }
-      }
-    ],
-    "counters": [
-      {
-        "characterId": "antiquarian",
-        "characterName": {
-          "th": "ผู้เชี่ยวชาญของโบราณ (Antiquarian)",
-          "en": "Antiquarian"
-        },
-        "reason": {
-          "th": "ฟาดขลุ่ยสวนจังหวะโดนดูดเข้ามาประชิด",
-          "en": "Flute strikes counter close-range vortex pulls."
-        },
-        "tip": {
-          "th": "ใช้ลมข้ามไม้ก่อนเข้าประชิด",
-          "en": "Wind-vault to displace before engaging."
-        }
-      }
-    ],
-    "partners": []
-  },
-  {
-    "id": "opera-singer",
-    "name": {
-      "th": "นักร้องโอเปร่า (Opera Singer)",
-      "en": "Opera Singer"
-    },
-    "title": {
-      "th": "แซงเกรีย (Sangria)",
-      "en": "Sangria"
-    },
-    "type": "hunter",
-    "role": "chase",
-    "difficulty": 4,
-    "tier": "S",
-    "image": "/images/heroes/opera-singer.png",
-    "youtubeVideoId": "8gs6-qy7REA",
-    "quote": {
-      "th": "บทเพลงแห่งเงาจะพาฉันโผบินสังหารในความมืด",
-      "en": "The shadow aria propels my lethal leap."
-    },
-    "overview": {
-      "th": "ฮันเตอร์ตัวท็อปแบนในการแข่งระดับโปร ดำดิ่งลงในเงามืดเคลื่อนที่ด้วยความเร็วสูงสุดขีด กระโดดข้ามอาณาเขตเงาอย่างต่อเนื่อง",
-      "en": "Perennial tournament first-ban. Dives into shadow realms to glide at supersonic speeds, chaining shadow leaps."
-    },
-    "colorAccent": "#E11D48",
-    "stats": {
-      "chase": 5,
+      "mapControl": 4,
       "camping": 3,
-      "control": 4,
-      "mobility": 5
+      "presence": 3
     },
     "abilities": [
       {
-        "id": "opera_leap",
+        "id": "bloody-queen_ability_1",
         "name": {
-          "th": "ดำดิ่งอาณาเขตเงา (Shadow Realm Leap)",
-          "en": "Shadow Realm Leap"
+          "th": "สกิลล่า (Bloody Queen Skill)",
+          "en": "Bloody Queen Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "ดำลงเงาเพื่อวิ่งด้วยความเร็วสูงและกระโดดต่อเนื่อง",
-          "en": "Submerges in shadows for immense acceleration."
+          "th": "Mary has no interest in playing chess because the queen is the easiest piece to take.",
+          "en": "Unique hunting power of Bloody Queen for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายเงาอำมหิต (Detention + Insolence)",
-          "en": "Shadow Fury"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "ซ้าย-ล่าง",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Detention",
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
             "en": "Detention"
           },
           {
-            "th": "Insolence",
-            "en": "Insolence"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "เร่งสปีดกระโดดเงาและปิดประตูทางออก",
-          "en": "Maximizes shadow transition speed and endgame downs."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "วนกระโดดเงารอบบ้านใหญ่",
-          "en": "Continuous Shadow Chain"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "chasing",
         "detail": {
-          "th": "กระโดดข้ามเงาตามแนวกำแพงไม่ให้เกจความเร็วลดลง",
-          "en": "Chain shadow jumps along wall edges to maintain max momentum."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
         "characterId": "seer",
-        "characterName": {
-          "th": "ซีเออร์ (Seer)",
-          "en": "Seer"
-        },
         "reason": {
-          "th": "กางนกบล็อกดาเมจความเร็วสูง",
-          "en": "Owl blocks high-speed ambush hits."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "ใช้สปีดเงาไล่ติดตัวต่อทันทีหลังนกหมด",
-          "en": "Utilize shadow speed to chase down immediately after owl expires."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],
@@ -802,98 +1402,598 @@
   {
     "id": "guard-26",
     "name": {
-      "th": "การ์ด 26 (Guard 26 / Bonbon)",
-      "en": "Guard 26 / Bonbon"
+      "th": "การ์ด 26 บงบง (Guard 26)",
+      "en": "Guard 26"
     },
     "title": {
       "th": "บงบง (Bonbon)",
-      "en": "Bonbon"
+      "en": "Bonbon<br />Guard 26"
     },
     "type": "hunter",
     "role": "camp",
-    "difficulty": 3,
+    "difficulty": 4,
     "tier": "A",
+    "isMeta": true,
     "image": "/images/heroes/guard-26.png",
     "youtubeVideoId": "cBf2lbuFIKw",
     "quote": {
-      "th": "ติ๊กต่อก ติ๊กต่อก... ระเบิดเวลาทำงาน!",
-      "en": "Tick tock... Time bombs armed and ready!"
+      "th": "Burke's Guard 26 robot stores a large number of Time Bombs.",
+      "en": "Burke's Guard 26 robot stores a large number of Time Bombs."
     },
     "overview": {
-      "th": "หุ่นเพนกวินวางระเบิดลูกโซ่ สามารถวางระเบิดต่อแถวทำดาเมจ 0.5 ได้อย่างต่อเนื่อง เฝ้าเก้าอี้จรวดได้โหดที่สุดในเกม",
-      "en": "Penguin bomb-master. Deploys chain bombs dealing 0.5 damage, setting up unavoidable chair camping zones."
+      "th": "Burke's Guard 26 robot stores a large number of Time Bombs.",
+      "en": "Burke's Guard 26 robot stores a large number of Time Bombs."
     },
-    "colorAccent": "#F59E0B",
+    "colorAccent": "#EF4444",
     "stats": {
       "chase": 3,
+      "mapControl": 4,
       "camping": 5,
-      "control": 4,
-      "mobility": 2
+      "presence": 3
     },
     "abilities": [
       {
-        "id": "bon_bomb",
+        "id": "guard-26_ability_1",
         "name": {
-          "th": "ระเบิดเวลาลูกโซ่ (Chain Bomb)",
-          "en": "Chain Bomb"
+          "th": "สกิลล่า (Guard 26 Skill)",
+          "en": "Guard 26 Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "วางระเบิดต่อลูกโซ่ระเบิดพร้อมกัน",
-          "en": "Plants interlocking cross-bombs that detonate in sequence."
+          "th": "Burke's Guard 26 robot stores a large number of Time Bombs.",
+          "en": "Unique hunting power of Guard 26 for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายเฝ้าเก้าอี้ระเบิด (Trump Card + Detention)",
-          "en": "Bomb Fortress"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "ล่าง-ขวา",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Trump Card",
-            "en": "Trump Card"
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
           },
           {
-            "th": "Detention",
-            "en": "Detention"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "วางระเบิดดักทางตัวช่วยเก้าอี้",
-          "en": "Trap paths to intercept incoming rescuers."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "ระเบิดลูกโซ่ 3 ต่อดักทางเข้าเก้าอี้",
-          "en": "3-Way Chain Trap"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "camping",
         "detail": {
-          "th": "โยนระเบิดลูกแรกไว้ไกล ลูกสองกลางทาง ลูกสามหน้าเก้าอี้",
-          "en": "Toss bombs in a line from 15m to chair for instant double hits."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
-        "characterId": "mercenary",
-        "characterName": {
-          "th": "ทหารรับจ้าง (Mercenary)",
-          "en": "Mercenary"
-        },
+        "characterId": "seer",
         "reason": {
-          "th": "เกราะหน่วงดาเมจช่วยให้ทนระเบิดได้",
-          "en": "Delayed damage allows Mercenary to push through bomb barrage."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "วางระเบิดให้ระเบิดหลายจังหวะซ้อนกัน",
-          "en": "Stagger detonation timings to stack damage intervals."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "disciple",
+    "name": {
+      "th": "สาวกแมว (Disciple)",
+      "en": "Disciple"
+    },
+    "title": {
+      "th": "แอน (Ann)",
+      "en": "Ann<br />\"Disciple\""
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 2,
+    "tier": "B",
+    "isMeta": false,
+    "image": "/images/heroes/disciple.png",
+    "youtubeVideoId": "pHj99VrfpDM",
+    "quote": {
+      "th": "When the epidemic disease stroke, destiny remained cruel despite Ann's devotion and generosity. Her only redemption in life would perhaps be the agile footsteps walking towards her ahead of the reaper and the non-human eyes staring at her at the end of the night when she was on the brink of death.",
+      "en": "When the epidemic disease stroke, destiny remained cruel despite Ann's devotion and generosity. Her only redemption in life would perhaps be the agile footsteps walking towards her ahead of the reaper and the non-human eyes staring at her at the end of the night when she was on the brink of death."
+    },
+    "overview": {
+      "th": "When the epidemic disease stroke, destiny remained cruel despite Ann's devotion and generosity. Her only redemption in life would perhaps be the agile footsteps walking towards her ahead of the reaper and the non-human eyes staring at her at the end of the night when she was on the brink of death.",
+      "en": "When the epidemic disease stroke, destiny remained cruel despite Ann's devotion and generosity. Her only redemption in life would perhaps be the agile footsteps walking towards her ahead of the reaper and the non-human eyes staring at her at the end of the night when she was on the brink of death."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 5,
+      "mapControl": 2,
+      "camping": 4,
+      "presence": 3
+    },
+    "abilities": [
+      {
+        "id": "disciple_ability_1",
+        "name": {
+          "th": "สกิลล่า (Disciple Skill)",
+          "en": "Disciple Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "When the epidemic disease stroke, destiny remained cruel despite Ann's devotion and generosity. Her only redemption in life would perhaps be the agile footsteps walking towards her ahead of the reaper and the non-human eyes staring at her at the end of the night when she was on the brink of death.",
+          "en": "Unique hunting power of Disciple for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "violinist",
+    "name": {
+      "th": "นักไวโอลิน (Violinist)",
+      "en": "Violinist"
+    },
+    "title": {
+      "th": "อันโตนิโอ (Antonio)",
+      "en": "Antonio<br />Violinist"
+    },
+    "type": "hunter",
+    "role": "camp",
+    "difficulty": 3,
+    "tier": "B",
+    "isMeta": false,
+    "image": "/images/heroes/violinist.png",
+    "youtubeVideoId": "cBf2lbuFIKw",
+    "quote": {
+      "th": "So long as the melody can move the world, Antonio doesn't care who's controlling his body.",
+      "en": "So long as the melody can move the world, Antonio doesn't care who's controlling his body."
+    },
+    "overview": {
+      "th": "So long as the melody can move the world, Antonio doesn't care who's controlling his body.",
+      "en": "So long as the melody can move the world, Antonio doesn't care who's controlling his body."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 3,
+      "camping": 5,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "violinist_ability_1",
+        "name": {
+          "th": "สกิลล่า (Violinist Skill)",
+          "en": "Violinist Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "So long as the melody can move the world, Antonio doesn't care who's controlling his body.",
+          "en": "Unique hunting power of Violinist for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "sculptor",
+    "name": {
+      "th": "ประติมากร (Sculptor)",
+      "en": "Sculptor"
+    },
+    "title": {
+      "th": "กาลาเทีย (Galatea Claude)",
+      "en": "Galatea Claude<br />Sculptor"
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 4,
+    "tier": "A",
+    "isMeta": true,
+    "image": "/images/heroes/sculptor.png",
+    "youtubeVideoId": "XySbOEILT2w",
+    "quote": {
+      "th": "When she was young, Galatea always thought she was her creator's masterpiece, that is, until destiny played a sick joke on her. But she wasn't distraught. A genius sculptor can sculpt a perfect destiny for herself.",
+      "en": "When she was young, Galatea always thought she was her creator's masterpiece, that is, until destiny played a sick joke on her. But she wasn't distraught. A genius sculptor can sculpt a perfect destiny for herself."
+    },
+    "overview": {
+      "th": "When she was young, Galatea always thought she was her creator's masterpiece, that is, until destiny played a sick joke on her. But she wasn't distraught. A genius sculptor can sculpt a perfect destiny for herself.",
+      "en": "When she was young, Galatea always thought she was her creator's masterpiece, that is, until destiny played a sick joke on her. But she wasn't distraught. A genius sculptor can sculpt a perfect destiny for herself."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 5,
+      "camping": 5,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "sculptor_ability_1",
+        "name": {
+          "th": "สกิลล่า (Sculptor Skill)",
+          "en": "Sculptor Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "When she was young, Galatea always thought she was her creator's masterpiece, that is, until destiny played a sick joke on her. But she wasn't distraught. A genius sculptor can sculpt a perfect destiny for herself.",
+          "en": "Unique hunting power of Sculptor for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "undead",
+    "name": {
+      "th": "คนตายคืนชีพ (Undead)",
+      "en": "Undead"
+    },
+    "title": {
+      "th": "เพอร์ซี่ (Percy)",
+      "en": "Percy<br />\"Undead\""
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 3,
+    "tier": "B",
+    "isMeta": false,
+    "image": "/images/heroes/undead.png",
+    "youtubeVideoId": "slD_XbfKDks",
+    "quote": {
+      "th": "During that scientific experiment, Percy created a monster — then someone recreated Percy.",
+      "en": "During that scientific experiment, Percy created a monster — then someone recreated Percy."
+    },
+    "overview": {
+      "th": "During that scientific experiment, Percy created a monster — then someone recreated Percy.",
+      "en": "During that scientific experiment, Percy created a monster — then someone recreated Percy."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 5,
+      "mapControl": 3,
+      "camping": 1,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "undead_ability_1",
+        "name": {
+          "th": "สกิลล่า (Undead Skill)",
+          "en": "Undead Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "During that scientific experiment, Percy created a monster — then someone recreated Percy.",
+          "en": "Unique hunting power of Undead for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "breaking-wheel",
+    "name": {
+      "th": "ล้อทรมาน (The Breaking Wheel)",
+      "en": "The Breaking Wheel"
+    },
+    "title": {
+      "th": "พี่น้องวิลล์ (The Will Brothers)",
+      "en": "The Will Brothers<br />The Breaking Wheel"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 5,
+    "tier": "A",
+    "isMeta": true,
+    "image": "/images/heroes/breaking-wheel.png",
+    "youtubeVideoId": "MuF1svBB5BM",
+    "quote": {
+      "th": "A trio of performance artists with odd figures showed up on the street. Covered in a bedspread and wearing masks, they're performing an uninspired drama while twisting their bodies into peculiar shapes.",
+      "en": "A trio of performance artists with odd figures showed up on the street. Covered in a bedspread and wearing masks, they're performing an uninspired drama while twisting their bodies into peculiar shapes."
+    },
+    "overview": {
+      "th": "A trio of performance artists with odd figures showed up on the street. Covered in a bedspread and wearing masks, they're performing an uninspired drama while twisting their bodies into peculiar shapes.",
+      "en": "A trio of performance artists with odd figures showed up on the street. Covered in a bedspread and wearing masks, they're performing an uninspired drama while twisting their bodies into peculiar shapes."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 5,
+      "mapControl": 4,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "breaking-wheel_ability_1",
+        "name": {
+          "th": "สกิลล่า (The Breaking Wheel Skill)",
+          "en": "The Breaking Wheel Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "A trio of performance artists with odd figures showed up on the street. Covered in a bedspread and wearing masks, they're performing an uninspired drama while twisting their bodies into peculiar shapes.",
+          "en": "Unique hunting power of The Breaking Wheel for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],
@@ -907,93 +2007,1093 @@
     },
     "title": {
       "th": "เกรซ (Grace)",
-      "en": "Grace"
+      "en": "Grace<br />Naiad"
     },
     "type": "hunter",
-    "role": "control",
+    "role": "chase",
     "difficulty": 3,
     "tier": "A",
+    "isMeta": true,
     "image": "/images/heroes/naiad.png",
     "youtubeVideoId": "AUDz9jRmixU",
     "quote": {
-      "th": "สายน้ำอันลึกล้ำจะโอบล้อมและจมพวกเจ้าลงสู่ก้นบึ้ง",
-      "en": "Deep waters envelop and submerge all souls."
+      "th": "\"The unheard are doomed to be slaughtered, like fish in a net.\" It was only after grasping this harsh truth that Grace took up her harpoon.",
+      "en": "\"The unheard are doomed to be slaughtered, like fish in a net.\" It was only after grasping this harsh truth that Grace took up her harpoon."
     },
     "overview": {
-      "th": "ปาตรีศูลและว่ายน้ำสร้างแอ่งน้ำขัง เซอร์ไวเวอร์ที่อยู่ในน้ำจะติดสแต็คความชื้นจนจมน้ำเสียดาเมจ 0.5 ถึง 1 หลอด",
-      "en": "Hurls harpoons to carve water pools; survivors in water accumulate humidity stacks to take water damage."
+      "th": "\"The unheard are doomed to be slaughtered, like fish in a net.\" It was only after grasping this harsh truth that Grace took up her harpoon.",
+      "en": "\"The unheard are doomed to be slaughtered, like fish in a net.\" It was only after grasping this harsh truth that Grace took up her harpoon."
     },
-    "colorAccent": "#10B981",
+    "colorAccent": "#EF4444",
     "stats": {
-      "chase": 4,
-      "camping": 5,
-      "control": 5,
-      "mobility": 4
+      "chase": 5,
+      "mapControl": 4,
+      "camping": 4,
+      "presence": 4
     },
     "abilities": [
       {
-        "id": "naiad_water",
+        "id": "naiad_ability_1",
         "name": {
-          "th": "แอ่งน้ำขัง & ตรีศูล (Water Abyss)",
-          "en": "Water Abyss"
+          "th": "สกิลล่า (Naiad Skill)",
+          "en": "Naiad Hunting Skill"
         },
         "type": "active",
         "description": {
-          "th": "ลากเส้นเชื่อมสายน้ำปิดล้อมพื้นที่",
-          "en": "Draws water circuits around loops to trap survivors."
+          "th": "\"The unheard are doomed to be slaughtered, like fish in a net.\" It was only after grasping this harsh truth that Grace took up her harpoon.",
+          "en": "Unique hunting power of Naiad for chases and cipher pressure."
         }
       }
     ],
     "recommendedPerks": [
       {
         "name": {
-          "th": "สายน้ำล้อมเมือง 36 (Confined Space + Detention)",
-          "en": "Abyss Hunter"
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
         },
-        "direction": "บน-ล่าง",
+        "direction": "36 (บน-ล่าง)",
         "keyTalents": [
           {
-            "th": "Confined Space",
-            "en": "Confined Space"
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
           },
           {
-            "th": "Detention",
-            "en": "Detention"
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
           }
         ],
         "description": {
-          "th": "ล้อมน้ำรอบบ้านใหญ่ไม่ให้เซอร์ไวเวอร์วนไม้",
-          "en": "Circles entire structures with water to force exits."
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
         }
       }
     ],
     "tricks": [
       {
         "title": {
-          "th": "ล้อมน้ำปิดทางเก้าอี้จรวด (Chair Water Ring)",
-          "en": "Chair Water Ring"
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
         },
-        "tag": "camping",
         "detail": {
-          "th": "ปาตรีศูลข้ามเก้าอี้และว่ายน้ำวนรอบเก้าอี้เป็นวงกลม",
-          "en": "Swim a full circle around the chair to saturate rescuer with 100% water."
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
         }
       }
     ],
     "counters": [
       {
-        "characterId": "priestess",
-        "characterName": {
-          "th": "นักบวชหญิง (Priestess)",
-          "en": "Priestess"
-        },
+        "characterId": "seer",
         "reason": {
-          "th": "เจาะวาร์ปข้ามแอ่งน้ำได้โดยไม่เหยียบน้ำ",
-          "en": "Portals bypass water rings completely."
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         },
-        "tip": {
-          "th": "ดึงตรีศูลกลับมาเพื่อฟันขัดจังหวะวาร์ป",
-          "en": "Recall harpoon to dash strike during portal entry."
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "wax-artist",
+    "name": {
+      "th": "ศิลปินขี้ผึ้ง (Wax Artist)",
+      "en": "Wax Artist"
+    },
+    "title": {
+      "th": "ฟิลิปป์ (Philippe)",
+      "en": "Philippe<br />Wax Artist"
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 4,
+    "tier": "A",
+    "isMeta": true,
+    "image": "/images/heroes/wax-artist.png",
+    "youtubeVideoId": "cBf2lbuFIKw",
+    "quote": {
+      "th": "In the selection of models, Philippe has a unique set of criteria, and in terms of wax sculpture decoration, he always listens to his sister.",
+      "en": "In the selection of models, Philippe has a unique set of criteria, and in terms of wax sculpture decoration, he always listens to his sister."
+    },
+    "overview": {
+      "th": "In the selection of models, Philippe has a unique set of criteria, and in terms of wax sculpture decoration, he always listens to his sister.",
+      "en": "In the selection of models, Philippe has a unique set of criteria, and in terms of wax sculpture decoration, he always listens to his sister."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 4,
+      "camping": 5,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "wax-artist_ability_1",
+        "name": {
+          "th": "สกิลล่า (Wax Artist Skill)",
+          "en": "Wax Artist Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "In the selection of models, Philippe has a unique set of criteria, and in terms of wax sculpture decoration, he always listens to his sister.",
+          "en": "Unique hunting power of Wax Artist for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "nightmare",
+    "name": {
+      "th": "ฝันร้าย (Nightmare)",
+      "en": "Nightmare"
+    },
+    "title": {
+      "th": "ออร์เฟียส (Orpheus)",
+      "en": "\"Orpheus\"<br />\"Nightmare\""
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 2,
+    "tier": "C",
+    "isMeta": false,
+    "image": "/images/heroes/nightmare.png",
+    "youtubeVideoId": "MuF1svBB5BM",
+    "quote": {
+      "th": "Perhaps known only to \"Orpheus,\" this nightmare of his memory.",
+      "en": "Perhaps known only to \"Orpheus,\" this nightmare of his memory."
+    },
+    "overview": {
+      "th": "Perhaps known only to \"Orpheus,\" this nightmare of his memory.",
+      "en": "Perhaps known only to \"Orpheus,\" this nightmare of his memory."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 4,
+      "camping": 3,
+      "presence": 3
+    },
+    "abilities": [
+      {
+        "id": "nightmare_ability_1",
+        "name": {
+          "th": "สกิลล่า (Nightmare Skill)",
+          "en": "Nightmare Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Perhaps known only to \"Orpheus,\" this nightmare of his memory.",
+          "en": "Unique hunting power of Nightmare for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "clerk",
+    "name": {
+      "th": "เสมียน (Clerk)",
+      "en": "Clerk"
+    },
+    "title": {
+      "th": "เคแกน นิโคลัส คีโอห์ (Keigan Nicholas Keogh)",
+      "en": "Keigan Nicholas Keogh<br />Clerk"
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 5,
+    "tier": "A",
+    "isMeta": true,
+    "image": "/images/heroes/clerk.png",
+    "youtubeVideoId": "fa1O9UWer-0",
+    "quote": {
+      "th": "As she got older, Keigan came to understand that only the voices of people with \"power\" were heard. But it doesn't matter, now she is enough to be the one who can decide everything.",
+      "en": "As she got older, Keigan came to understand that only the voices of people with \"power\" were heard. But it doesn't matter, now she is enough to be the one who can decide everything."
+    },
+    "overview": {
+      "th": "As she got older, Keigan came to understand that only the voices of people with \"power\" were heard. But it doesn't matter, now she is enough to be the one who can decide everything.",
+      "en": "As she got older, Keigan came to understand that only the voices of people with \"power\" were heard. But it doesn't matter, now she is enough to be the one who can decide everything."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 3,
+      "mapControl": 5,
+      "camping": 4,
+      "presence": 5
+    },
+    "abilities": [
+      {
+        "id": "clerk_ability_1",
+        "name": {
+          "th": "สกิลล่า (Clerk Skill)",
+          "en": "Clerk Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "As she got older, Keigan came to understand that only the voices of people with \"power\" were heard. But it doesn't matter, now she is enough to be the one who can decide everything.",
+          "en": "Unique hunting power of Clerk for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "hermit",
+    "name": {
+      "th": "ฤๅษี (Hermit)",
+      "en": "Hermit"
+    },
+    "title": {
+      "th": "อัลวา ลอเรนซ์ (Alva Lorenz)",
+      "en": "Alva Lorenz<br />Hermit"
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 4,
+    "tier": "A",
+    "isMeta": true,
+    "image": "/images/heroes/hermit.png",
+    "youtubeVideoId": "fa1O9UWer-0",
+    "quote": {
+      "th": "After going through countless letdowns, disputes, and betrayals, Alva came to the conclusion that no formula nor theory could predict human nature. Only his savior could ever stand by his side.",
+      "en": "After going through countless letdowns, disputes, and betrayals, Alva came to the conclusion that no formula nor theory could predict human nature. Only his savior could ever stand by his side."
+    },
+    "overview": {
+      "th": "After going through countless letdowns, disputes, and betrayals, Alva came to the conclusion that no formula nor theory could predict human nature. Only his savior could ever stand by his side.",
+      "en": "After going through countless letdowns, disputes, and betrayals, Alva came to the conclusion that no formula nor theory could predict human nature. Only his savior could ever stand by his side."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 5,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "hermit_ability_1",
+        "name": {
+          "th": "สกิลล่า (Hermit Skill)",
+          "en": "Hermit Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "After going through countless letdowns, disputes, and betrayals, Alva came to the conclusion that no formula nor theory could predict human nature. Only his savior could ever stand by his side.",
+          "en": "Unique hunting power of Hermit for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "night-watch",
+    "name": {
+      "th": "ยามราตรี (Night Watch)",
+      "en": "Night Watch"
+    },
+    "title": {
+      "th": "อิธากวา (Ithaqua)",
+      "en": "Ithaqua<br />Night Watch"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 3,
+    "tier": "S",
+    "isMeta": true,
+    "image": "/images/heroes/night-watch.png",
+    "youtubeVideoId": "MuF1svBB5BM",
+    "quote": {
+      "th": "Civility and morality were buried before dawn. As he walks alone through the blizzard, Ithaqua has long forgotten who he watches over during the long night.",
+      "en": "Civility and morality were buried before dawn. As he walks alone through the blizzard, Ithaqua has long forgotten who he watches over during the long night."
+    },
+    "overview": {
+      "th": "Civility and morality were buried before dawn. As he walks alone through the blizzard, Ithaqua has long forgotten who he watches over during the long night.",
+      "en": "Civility and morality were buried before dawn. As he walks alone through the blizzard, Ithaqua has long forgotten who he watches over during the long night."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 5,
+      "mapControl": 4,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "night-watch_ability_1",
+        "name": {
+          "th": "สกิลล่า (Night Watch Skill)",
+          "en": "Night Watch Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Civility and morality were buried before dawn. As he walks alone through the blizzard, Ithaqua has long forgotten who he watches over during the long night.",
+          "en": "Unique hunting power of Night Watch for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "opera-singer",
+    "name": {
+      "th": "นักร้องโอเปร่า (Opera Singer)",
+      "en": "Opera Singer"
+    },
+    "title": {
+      "th": "ซานเกรีย (Sangria)",
+      "en": "Sangria<br />Opera Singer"
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 5,
+    "tier": "S",
+    "isMeta": true,
+    "image": "/images/heroes/opera-singer.png",
+    "youtubeVideoId": "8gs6-qy7REA",
+    "quote": {
+      "th": "Before encountering the touch of ‘red,’ Sangria lost herself to false praise until she realized that her success came at a terrible price. She watched as her own stage was reduced to ashes, and a new stage awaited her arrival in the Manor.",
+      "en": "Before encountering the touch of ‘red,’ Sangria lost herself to false praise until she realized that her success came at a terrible price. She watched as her own stage was reduced to ashes, and a new stage awaited her arrival in the Manor."
+    },
+    "overview": {
+      "th": "Before encountering the touch of ‘red,’ Sangria lost herself to false praise until she realized that her success came at a terrible price. She watched as her own stage was reduced to ashes, and a new stage awaited her arrival in the Manor.",
+      "en": "Before encountering the touch of ‘red,’ Sangria lost herself to false praise until she realized that her success came at a terrible price. She watched as her own stage was reduced to ashes, and a new stage awaited her arrival in the Manor."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 5,
+      "mapControl": 5,
+      "camping": 3,
+      "presence": 5
+    },
+    "abilities": [
+      {
+        "id": "opera-singer_ability_1",
+        "name": {
+          "th": "สกิลล่า (Opera Singer Skill)",
+          "en": "Opera Singer Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Before encountering the touch of ‘red,’ Sangria lost herself to false praise until she realized that her success came at a terrible price. She watched as her own stage was reduced to ashes, and a new stage awaited her arrival in the Manor.",
+          "en": "Unique hunting power of Opera Singer for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "fools-gold",
+    "name": {
+      "th": "ทองคนโง่ (Fool's Gold)",
+      "en": "Fools Gold"
+    },
+    "title": {
+      "th": "นอร์ตัน แคมป์เบลล์ (Norton Campbell)",
+      "en": "Norton Campbell<br />\"Fools Gold\""
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 3,
+    "tier": "A",
+    "isMeta": true,
+    "image": "/images/heroes/fools-gold.png",
+    "youtubeVideoId": "cBf2lbuFIKw",
+    "quote": {
+      "th": "With the desire to escape from a life in the darkness of the mines, Norton Campbell believes that Manor will present him with another new \"opportunity.\"",
+      "en": "With the desire to escape from a life in the darkness of the mines, Norton Campbell believes that Manor will present him with another new \"opportunity.\""
+    },
+    "overview": {
+      "th": "With the desire to escape from a life in the darkness of the mines, Norton Campbell believes that Manor will present him with another new \"opportunity.\"",
+      "en": "With the desire to escape from a life in the darkness of the mines, Norton Campbell believes that Manor will present him with another new \"opportunity.\""
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 4,
+      "camping": 5,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "fools-gold_ability_1",
+        "name": {
+          "th": "สกิลล่า (Fools Gold Skill)",
+          "en": "Fools Gold Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "With the desire to escape from a life in the darkness of the mines, Norton Campbell believes that Manor will present him with another new \"opportunity.\"",
+          "en": "Unique hunting power of Fools Gold for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "the-shadow",
+    "name": {
+      "th": "เงามรณะ (The Shadow)",
+      "en": "The Shadow"
+    },
+    "title": {
+      "th": "ไอวี่ (Ivy)",
+      "en": "\"Ivy\"<br />The Shadow"
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 5,
+    "tier": "S",
+    "isMeta": true,
+    "image": "/images/heroes/the-shadow.png",
+    "youtubeVideoId": "fa1O9UWer-0",
+    "quote": {
+      "th": "Once the friend left, that bizarre journal provided the perfect explanation for Ivy's symptoms, and the \"gifts\" of the Yithian brought her to a distant place.",
+      "en": "Once the friend left, that bizarre journal provided the perfect explanation for Ivy's symptoms, and the \"gifts\" of the Yithian brought her to a distant place."
+    },
+    "overview": {
+      "th": "Once the friend left, that bizarre journal provided the perfect explanation for Ivy's symptoms, and the \"gifts\" of the Yithian brought her to a distant place.",
+      "en": "Once the friend left, that bizarre journal provided the perfect explanation for Ivy's symptoms, and the \"gifts\" of the Yithian brought her to a distant place."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 5,
+      "camping": 4,
+      "presence": 5
+    },
+    "abilities": [
+      {
+        "id": "the-shadow_ability_1",
+        "name": {
+          "th": "สกิลล่า (The Shadow Skill)",
+          "en": "The Shadow Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Once the friend left, that bizarre journal provided the perfect explanation for Ivy's symptoms, and the \"gifts\" of the Yithian brought her to a distant place.",
+          "en": "Unique hunting power of The Shadow for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "goatman",
+    "name": {
+      "th": "ชายแพะ (Goatman)",
+      "en": "Goatman"
+    },
+    "title": {
+      "th": "เจฟฟรีย์ โบนาวิต้า (Jeffrey Bonavita)",
+      "en": "Jeffrey Bonavita<br />\"Goatman\""
+    },
+    "type": "hunter",
+    "role": "control",
+    "difficulty": 4,
+    "tier": "S",
+    "isMeta": true,
+    "image": "/images/heroes/goatman.png",
+    "youtubeVideoId": "fa1O9UWer-0",
+    "quote": {
+      "th": "Jeffrey used to believe that animals were no different from humans, experiencing a range of emotions from joy, anger, and sorrow to happiness. Now, he is even more convinced that humans are just another type of animal.",
+      "en": "Jeffrey used to believe that animals were no different from humans, experiencing a range of emotions from joy, anger, and sorrow to happiness. Now, he is even more convinced that humans are just another type of animal."
+    },
+    "overview": {
+      "th": "Jeffrey used to believe that animals were no different from humans, experiencing a range of emotions from joy, anger, and sorrow to happiness. Now, he is even more convinced that humans are just another type of animal.",
+      "en": "Jeffrey used to believe that animals were no different from humans, experiencing a range of emotions from joy, anger, and sorrow to happiness. Now, he is even more convinced that humans are just another type of animal."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 5,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "goatman_ability_1",
+        "name": {
+          "th": "สกิลล่า (Goatman Skill)",
+          "en": "Goatman Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Jeffrey used to believe that animals were no different from humans, experiencing a range of emotions from joy, anger, and sorrow to happiness. Now, he is even more convinced that humans are just another type of animal.",
+          "en": "Unique hunting power of Goatman for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        }
+      }
+    ],
+    "partners": []
+  },
+  {
+    "id": "hullabaloo",
+    "name": {
+      "th": "Hullabaloo (Hullabaloo)",
+      "en": "Hullabaloo"
+    },
+    "title": {
+      "th": "Mike Morton<br />\"Hullabaloo\"",
+      "en": "Mike Morton<br />\"Hullabaloo\""
+    },
+    "type": "hunter",
+    "role": "chase",
+    "difficulty": 3,
+    "tier": "B",
+    "isMeta": false,
+    "image": "/images/heroes/hullabaloo.png",
+    "youtubeVideoId": "pHj99VrfpDM",
+    "quote": {
+      "th": "Mike Morton is the last tattered vestige of \"Hullabaloo.\" Although Mike was not present at the Moon River Massacre and miraculously survived, he did not escape unscathed. The destruction of Moon River Park mirrored the devastation of his mental state, leaving him a fragile shell. From that point on, he endeavored to find fragments of memory to fill the void.",
+      "en": "Mike Morton is the last tattered vestige of \"Hullabaloo.\" Although Mike was not present at the Moon River Massacre and miraculously survived, he did not escape unscathed. The destruction of Moon River Park mirrored the devastation of his mental state, leaving him a fragile shell. From that point on, he endeavored to find fragments of memory to fill the void."
+    },
+    "overview": {
+      "th": "Mike Morton is the last tattered vestige of \"Hullabaloo.\" Although Mike was not present at the Moon River Massacre and miraculously survived, he did not escape unscathed. The destruction of Moon River Park mirrored the devastation of his mental state, leaving him a fragile shell. From that point on, he endeavored to find fragments of memory to fill the void.",
+      "en": "Mike Morton is the last tattered vestige of \"Hullabaloo.\" Although Mike was not present at the Moon River Massacre and miraculously survived, he did not escape unscathed. The destruction of Moon River Park mirrored the devastation of his mental state, leaving him a fragile shell. From that point on, he endeavored to find fragments of memory to fill the void."
+    },
+    "colorAccent": "#EF4444",
+    "stats": {
+      "chase": 4,
+      "mapControl": 3,
+      "camping": 4,
+      "presence": 4
+    },
+    "abilities": [
+      {
+        "id": "hullabaloo_ability_1",
+        "name": {
+          "th": "สกิลล่า (Hullabaloo Skill)",
+          "en": "Hullabaloo Hunting Skill"
+        },
+        "type": "active",
+        "description": {
+          "th": "Mike Morton is the last tattered vestige of \"Hullabaloo.\" Although Mike was not present at the Moon River Massacre and miraculously survived, he did not escape unscathed. The destruction of Moon River Park mirrored the devastation of his mental state, leaving him a fragile shell. From that point on, he endeavored to find fragments of memory to fill the void.",
+          "en": "Unique hunting power of Hullabaloo for chases and cipher pressure."
+        }
+      }
+    ],
+    "recommendedPerks": [
+      {
+        "name": {
+          "th": "สายไล่ล่าปิดเกม 36 (Confined Space + Detention)",
+          "en": "Chase & Detention (36)"
+        },
+        "direction": "36 (บน-ล่าง)",
+        "keyTalents": [
+          {
+            "th": "Detention (ตีทีเดียวล้มตอนเปิดประตู)",
+            "en": "Detention"
+          },
+          {
+            "th": "Confined Space (ปิดหน้าต่าง)",
+            "en": "Confined Space"
+          }
+        ],
+        "description": {
+          "th": "สาย Persona มาตรฐานการแข่งขันที่ช่วยปิดเกมช่วงท้ายได้อย่างเด็ดขาด",
+          "en": "Competitive standard persona build for endgame lethal pressure."
+        }
+      }
+    ],
+    "tricks": [
+      {
+        "title": {
+          "th": "การคุมพื้นที่และการไล่ล่า",
+          "en": "Map Control & Chase"
+        },
+        "detail": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        },
+        "description": {
+          "th": "พยายามบีบให้เซอร์ไวเวอร์วิ่งเข้าโซนตันหรือพื้นที่โล่งเพื่อชิงความได้เปรียบ",
+          "en": "Zone survivors into dead areas or open zones for quick hits."
+        }
+      }
+    ],
+    "counters": [
+      {
+        "characterId": "seer",
+        "reason": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
+        },
+        "note": {
+          "th": "ระวังหวังนกป้องกันดาเมจ",
+          "en": "Beware owl protection"
         }
       }
     ],

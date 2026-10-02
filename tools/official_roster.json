@@ -1,0 +1,622 @@
+{
+  "survs": [
+    {
+      "fileName": "Doctor.png",
+      "link": "Doctor",
+      "realName": "Emily Dyer",
+      "title": "Doctor",
+      "rumor": "Kindness alone won't help you survive in this crazy world. Not all patients receive proper care and not all doctors possess a benevolent heart."
+    },
+    {
+      "fileName": "Lawyer.png",
+      "link": "Lawyer",
+      "realName": "Freddy Riley",
+      "title": "Lawyer",
+      "rumor": "Even after losing that disgraceful lawsuit, Freddy still firmly believes the purpose of law is not to permit an act, but to prevent one. What else is forbidden?"
+    },
+    {
+      "fileName": "Thief.png",
+      "link": "Thief",
+      "realName": "Kreacher Pierson",
+      "title": "Thief",
+      "rumor": "After handing over control of the orphanage on White Sand Street to the Church, Kreacher hasn't indulged in extravagance. His thoughts have since been preoccupied on whether he should try to help more children, but perhaps it's time others help foot the bill."
+    },
+    {
+      "fileName": "Gardener.png",
+      "link": "Gardener",
+      "realName": "Emma Woods",
+      "title": "Gardener",
+      "rumor": "Her amazing gardening skills serve only her dearest scarecrow. What's wrong with decorating your dream lover when you have the money?"
+    },
+    {
+      "fileName": "LuckyGuy.png",
+      "link": "Lucky Guy",
+      "realName": "Lucky Guy",
+      "title": "Deduction Substitute",
+      "rumor": "No one knows how many people have taken part in this game; we know that he played the game."
+    },
+    {
+      "fileName": "Magician.png",
+      "link": "Magician",
+      "realName": "Servais Le Roy",
+      "title": "Magician",
+      "rumor": "This magician, who specializes in disappearing magic acts, is not popular amongst the masses. Perhaps in Oletus Manor, the home to countless famous artists, he can find some inspiration for his act."
+    },
+    {
+      "fileName": "Explorer.png",
+      "link": "Explorer",
+      "realName": "Kurt Frank",
+      "title": "Explorer",
+      "rumor": "He once sailed across the English Channel, flew over forests in a hot air balloon, and visited countless wondrous countries... Kurt Frank's life is as exciting as a travel novel!"
+    },
+    {
+      "fileName": "Mercenary.png",
+      "link": "Naib Subedar",
+      "realName": "Naib Subedar",
+      "title": "Mercenary",
+      "rumor": "As a retired mercenary, Naib Subedar is used to a life full of risks. Can this dangerous game give him the same experience as the battlefield did?"
+    },
+    {
+      "fileName": "Coordinator.png",
+      "link": "Coordinator",
+      "realName": "Martha Behamfil",
+      "title": "Coordinator",
+      "rumor": "Sick and tired of being grounded and doing the same old thing day in day out, Martha wants to pilot her own plane. Perhaps by winning this game she'll fulfill her wish."
+    },
+    {
+      "fileName": "Mechanic.png",
+      "link": "Tracy Reznik",
+      "realName": "Tracy Reznik",
+      "title": "Mechanic",
+      "rumor": "Although a handsome reward was promised in the invitation letter, it was the secret gears in the manor that truly attracted Tracy. A mechanic needs inspiration more than money!"
+    },
+    {
+      "fileName": "Forward.png",
+      "link": "William Ellis",
+      "realName": "William Ellis",
+      "title": "Forward",
+      "rumor": "Rugby is attracting attention, but William Ellis, who claims to be the founder of this emerging sport, is being forgotten. Maybe the owner of Oletus Manor can offer him some help?"
+    },
+    {
+      "fileName": "TheMindsEye.png",
+      "link": "Helena Adams",
+      "realName": "Helena Adams",
+      "title": "The Minds Eye",
+      "rumor": "Although Helena lost her vision due to a disease, she can still perceive the outside world through hearing. In this game, she firmly grasps her cane, seeking a way to victory."
+    },
+    {
+      "fileName": "Priestess.png",
+      "link": "Fiona Gilman",
+      "realName": "Fiona Gilman",
+      "title": "Priestess",
+      "rumor": "Fiona Gilman is a mystic, who claims that a spirit guided her to Oletus Manor. But nobody takes her seriously."
+    },
+    {
+      "fileName": "Perfumer.png",
+      "link": "Perfumer",
+      "realName": "Vera Nair",
+      "title": "Perfumer",
+      "rumor": "This unique fragrance, 'Euphoria' was inspired by a mysterious formula from the black market, but the perfume has not yet been perfected, so she came to the manor in search of the formula's source."
+    },
+    {
+      "fileName": "Cowboy.png",
+      "link": "Kevin Ayuso",
+      "realName": "Kevin Ayuso",
+      "title": "Cowboy",
+      "rumor": "An adventurous cowboy from the Americas. He lived together with the mysterious native Americans where he perfected the art of using a lasso."
+    },
+    {
+      "fileName": "FemaleDancer.png",
+      "link": "Margaretha Zelle",
+      "realName": "Margaretha Zelle",
+      "title": "Female Dancer",
+      "rumor": "Since she and her estranged husband divorced, Margaretha, without a stable source of income, has developed a new understanding of \"freedom\". How could she pass up an opportunity to become a millionaire?"
+    },
+    {
+      "fileName": "Seer.png",
+      "link": "Eli Clark",
+      "realName": "Eli Clark",
+      "title": "Seer",
+      "rumor": "Eli Clark is a Seer possessing the Great Eye, and this mysterious ability is obviously related to his trusted owl who accompanies him."
+    },
+    {
+      "fileName": "Embalmer.png",
+      "link": "Aesop Carl",
+      "realName": "Aesop Carl",
+      "title": "Embalmer",
+      "rumor": "Life’s journey always ends in a similar way, and, in most people's dreams Aesop Carl is the person who helps them with their final journey. He strictly adheres to procedure and gives the greatest respect for those travelers who have come to their final stop."
+    },
+    {
+      "fileName": "Prospector.png",
+      "link": "Prospector",
+      "realName": "Norton Campbell",
+      "title": "Prospector",
+      "rumor": "After surviving a terrible mining accident, Norton Campbell become even more reserved and gloomy. With the meteorite magnet obtained from the accident, he changed his profession and became a geological surveyor to avoid entering the darkness of the mine."
+    },
+    {
+      "fileName": "Enchantress.png",
+      "link": "Patricia Dorval",
+      "realName": "Patricia Dorval",
+      "title": "Enchantress",
+      "rumor": "Patricia Dorval, who has a curse hidden in her blood, has brought endless pain and great power to herself. She believes that to wear a crown is to bear its weight."
+    },
+    {
+      "fileName": "Wildling.png",
+      "link": "Murro",
+      "realName": "Murro",
+      "title": "Wildling",
+      "rumor": "After experiencing betrayals and struggles, Murro decided to give up trying to fit into so-called civilized society. Perhaps the Oletus Manor would be his ultimate destination?"
+    },
+    {
+      "fileName": "Acrobat.png",
+      "link": "Acrobat",
+      "realName": "Mike Morton",
+      "title": "Acrobat",
+      "rumor": "Mike Morton is the most popular guy in the traveling circus \"Hullabaloo\". After surviving the disaster, Mike Morton's only goal is to find the real killer who destroyed his home"
+    },
+    {
+      "fileName": "FirstOfficer.png",
+      "link": "Jose Baden",
+      "realName": "Jose Baden",
+      "title": "First Officer",
+      "rumor": "In order to find the whereabouts of his loved ones and restore his family's reputation, the sea knight, Jose Baden, decided to enter the cursed Oletus Manor. This time, will his magical pocket watch assure smooth sailing?"
+    },
+    {
+      "fileName": "Barmaid.png",
+      "link": "Demi Bourbon",
+      "realName": "Demi Bourbon",
+      "title": "Barmaid",
+      "rumor": "A sunny girl who can make a miracle-like Dovlin has come to the Manor in search for her missing brother."
+    },
+    {
+      "fileName": "Postman.png",
+      "link": "Victor Grantz",
+      "realName": "Victor Grantz",
+      "title": "Postman",
+      "rumor": "Contrary to the general impressions of postmen, Victor isn't particularly verbal and prefers staying away from people. After receiving his first letter with great excitement, he embarked on a journey to the Manor with his reliable partner, Wick the Post Dog."
+    },
+    {
+      "fileName": "GraveKeeper.png",
+      "link": "Andrew Kreiss",
+      "realName": "Andrew Kreiss",
+      "title": "Grave Keeper",
+      "rumor": "For Andrew, gossip is more terrifying than illnesses. The invitation sent from the Manor gives Andrew the hope to be understood after years of being the Grave Keeper."
+    },
+    {
+      "fileName": "Prisoner.png",
+      "link": "Luca Balsa",
+      "realName": "Luca Balsa",
+      "title": "\"Prisoner\"",
+      "rumor": "Luca Balsa was once a world-renowned inventor. He never gave up his deepest aspiration even when he was in jail. Now that he's free, nothing is stopping him from completing his greatest invention."
+    },
+    {
+      "fileName": "Entomologist.png",
+      "link": "Entomologist",
+      "realName": "Melly Plinius",
+      "title": "Entomologist",
+      "rumor": "After the unfortunate incident, Melly realized that humanity is no different from the nature of insects; loyalty only exists when one has value."
+    },
+    {
+      "fileName": "Painter.png",
+      "link": "Edgar Valden",
+      "realName": "Edgar Valden",
+      "title": "Painter",
+      "rumor": "As the single male heir of the Valden family, Edgar has long been weary of the gossip and hypocrisy, thinking he, himself, is the only person who understands the true essence of art. A mysterious letter once again ignites his passion for the pursuit of artistic inspiration, so despite his family's opposition, he ventures to the manor from where the letter was sent."
+    },
+    {
+      "fileName": "Batter.png",
+      "link": "Ganji Gupta",
+      "realName": "Ganji Gupta",
+      "title": "Batter",
+      "rumor": "No one, no matter how affable they are, can tolerate repeated deception. Even after all this time, Ganji struggles to find a sense of belonging."
+    },
+    {
+      "fileName": "ToyMerchant.png",
+      "link": "Anne Lester",
+      "realName": "Anne Lester",
+      "title": "Toy Merchant",
+      "rumor": "Having escaped from a life of humiliation and deception, Anne finally realizes her power and gains a true sense of security from her small toy shop. This time, she vows to reclaim what she deserves."
+    },
+    {
+      "fileName": "Patient.png",
+      "link": "Patient",
+      "realName": "Emil",
+      "title": "Patient",
+      "rumor": "After escaping from the asylum, Emil became an object of curiosity for Ada's research, choosing to accept Ada's treatment than face those fragmented and painful memories. Unconditional obedience, protection, dependence... These were his unique ways of forming a bond with his lover."
+    },
+    {
+      "fileName": "Psychologist.png",
+      "link": "\"Psychologist\"",
+      "realName": "Ada Mesmer",
+      "title": "\"Psychologist\"",
+      "rumor": "After leaving the asylum, healing Emil became Ada's most important goal in life. In order to awaken Emil's \"love\" and seek out effective treatment methods, she agreed to a deal put forward by an old acquaintance."
+    },
+    {
+      "fileName": "Novelist.png",
+      "link": "Novelist",
+      "realName": "\"Orpheus\"",
+      "title": "Novelist",
+      "rumor": "\"Orpheus,\" a renowned novelist whose past is a total mystery to all, even to himself."
+    },
+    {
+      "fileName": "LittleGirl.png",
+      "link": "\"Little Girl\"",
+      "realName": "\"Memory\"",
+      "title": "\"Little Girl\"",
+      "rumor": "Trapped in the nightmare of his memory, perhaps even \"Orpheus\" doesn't know her."
+    },
+    {
+      "fileName": "WeepingClown.png",
+      "link": "Weeping Clown",
+      "realName": "Joker",
+      "title": "Weeping Clown",
+      "rumor": "Perhaps Joker really was a natural born money tree as his parents suggested. All he could do to make himself feel needed was to tolerate and play dumb. '"
+    },
+    {
+      "fileName": "Professor.png",
+      "link": "Professor",
+      "realName": "Luchino Diruse",
+      "title": "Professor",
+      "rumor": "Professor Luchino used to explore the origin of human beings. However, he touched the evolution on this road. '"
+    },
+    {
+      "fileName": "Antiquarian.png",
+      "link": "Antiquarian",
+      "realName": "Qi Shiyi",
+      "title": "Antiquarian",
+      "rumor": "Life isn't fair, and few live their lives to the fullest. Qi Shiyi knew this was a life of hardship — a life of uncertainty and diligence. '"
+    },
+    {
+      "fileName": "Composer.png",
+      "link": "Composer",
+      "realName": "Frederick Kreiburg",
+      "title": "Composer",
+      "rumor": "<blockquote>Before his family exiled him, Frederick Kreiburg desperately needed a change in his life.</blockquote>"
+    },
+    {
+      "fileName": "Journalist.png",
+      "link": "Journalist",
+      "realName": "Alice DeRoss",
+      "title": "Journalist",
+      "rumor": "<blockquote>Films are silent, but memories are not.</blockquote>"
+    },
+    {
+      "fileName": "Aeroplanist.png",
+      "link": "Aeroplanist",
+      "realName": "Charles Holt",
+      "title": "Aeroplanist",
+      "rumor": "<blockquote>Throughout his life, Charles Holt has sought to break free, first of gravity and then of fate.</blockquote>"
+    },
+    {
+      "fileName": "Cheerleader.png",
+      "link": "Cheerleader",
+      "realName": "Lily Barriere",
+      "title": "Cheerleader",
+      "rumor": "<blockquote>\"Go to the Manor and reclaim what is mine, and I will redeem what is yours.\"</blockquote>"
+    },
+    {
+      "fileName": "Puppeteer.png",
+      "link": "Puppeteer",
+      "realName": "Matthias Czernin",
+      "title": "Puppeteer",
+      "rumor": "<blockquote>Everyone has always expected Matthias to be \"Louis\", but Matthias himself and the person who sent the \"invitation\" were exceptions to that.</blockquote>"
+    },
+    {
+      "fileName": "FireInvestigator.png",
+      "link": "Fire Investigator",
+      "realName": "Florian Brand",
+      "title": "Fire Investigator",
+      "rumor": "<blockquote>Florian views the fire from which he emerged as the sole survivor as a \"miracle.\" Now, he strives to create miracles in each new fire.</blockquote>"
+    },
+    {
+      "fileName": "FaroLady.png",
+      "link": "\"Faro Lady\"",
+      "realName": "Evelyn Mora",
+      "title": "\"Faro Lady\"",
+      "rumor": "<blockquote>Evelyn Mora is an expert at reaping the rewards while outmaneuvering danger. Therefore, she would never allow a single failure to restrain her to the most charming of shackles.</blockquote>"
+    },
+    {
+      "fileName": "Knight.png",
+      "link": "\"Knight\"",
+      "realName": "Richard Sterling",
+      "title": "\"Knight\"",
+      "rumor": "<blockquote>The \"Knight\" is on a quest to find clues about his sister. Wearing the knight helmet from his childhood, he firmly believes that a true duel with his destined enemy is imminent.</blockquote>"
+    },
+    {
+      "fileName": "Meteorologist.png",
+      "link": "Meteorologist",
+      "realName": "Wendy Foote",
+      "title": "Meteorologist",
+      "rumor": "<blockquote>In an effort to leave a lasting impression at a prestigious scientific conference, she has adopted a bold and dramatic approach, unleashing a powerful storm at the manor to showcase her expertise.</blockquote>"
+    },
+    {
+      "fileName": "Archer.png",
+      "link": "Archer",
+      "realName": "Brynhildr Vilulf",
+      "title": "Archer",
+      "rumor": "<blockquote>The weight of the times was overwhelming, dragging the drunken wanderer to the ground as she sobered, while the heavy anchor pinned the Vilulfs to the sea as dusk fell.</blockquote>"
+    },
+    {
+      "fileName": "Escapologist.png",
+      "link": "\"Escapologist\"",
+      "realName": "Efron Weisz",
+      "title": "\"Escapologist\"",
+      "rumor": "<blockquote>A failed escape act left Efron Weisz with a wound that would not heal. Medicine repaired his body, faith soothed his soul, but since receiving the invitation, he believes only the mysterious manor holds the key to his lost memories.</blockquote>"
+    },
+    {
+      "fileName": "Lanternist.png",
+      "link": "Lanternist",
+      "realName": "Amanda Gaddis",
+      "title": "Lanternist",
+      "rumor": "<blockquote>Trained under Mr. Leroux, Amanda Gaddis became a rising star in the world of optical exhibitions—her focus fell not on pleasant vistas, but on crime scenes and murky, indistinct nightmares.</blockquote>"
+    },
+    {
+      "fileName": "Matador.png",
+      "link": "Matador",
+      "realName": "Hernando Romero",
+      "title": "Matador",
+      "rumor": "<blockquote>Resolute in leaving his timid past behind, Hernando Romero pushes ever closer to the edge of danger. To him, only the applause won at the brink between life and death is true glory.</blockquote>"
+    },
+    {
+      "fileName": "MimeArtist.png",
+      "link": "Mime Artist",
+      "realName": "Cléo Decroux",
+      "title": "Mime Artist",
+      "rumor": "<blockquote>Cléo Decroux's delusions grow unchecked in her mind, leaving her unable to find her place in reality or beneath the spotlight.</blockquote>"
+    }
+  ],
+  "hunts": [
+    {
+      "fileName": "HellEmber.png",
+      "link": "Leo Beck",
+      "realName": "Leo Beck<br />Hell Ember",
+      "title": "Leo Beck<br />Hell Ember",
+      "rumor": "Resurrected from the ashes, what exactly is he searching for?"
+    },
+    {
+      "fileName": "SmileyFace.png",
+      "link": "Smiley Face",
+      "realName": "Joker<br />Smiley Face",
+      "title": "Joker<br />Smiley Face",
+      "rumor": "The circus has two types of clowns, the smiling clown who brings joy and the crying clown who drowns in sadness. Joker was tired of his role, so he gave himself a perpetual smiley face."
+    },
+    {
+      "fileName": "Gamekeeper.png",
+      "link": "Gamekeeper",
+      "realName": "Bane Perez<br />Gamekeeper",
+      "title": "Bane Perez<br />Gamekeeper",
+      "rumor": "Bane was once a warmhearted gamekeeper who was lenient with poachers. However, he wasn't repaid for his kindness. Now, Bane shows no mercy to trespassers."
+    },
+    {
+      "fileName": "TheRipper.png",
+      "link": "The Ripper",
+      "realName": "Jack<br />The Ripper",
+      "title": "Jack<br />The Ripper",
+      "rumor": "Humming a tune with his arms crossed, the ripper has his own unique standards for his \"guests\"."
+    },
+    {
+      "fileName": "SoulWeaver.png",
+      "link": "Soul Weaver",
+      "realName": "Violetta<br />Soul Weaver",
+      "title": "Violetta<br />Soul Weaver",
+      "rumor": "The curtain will never close on excellent performers. Miss Violetta's latest performance, Wonder Spider, is now showing! Of course, we strongly advise against watching it up close."
+    },
+    {
+      "fileName": "Geisha.png",
+      "link": "Geisha",
+      "realName": "Michiko<br />Geisha",
+      "title": "Michiko<br />Geisha",
+      "rumor": "Michiko used to be an amazing dancer. When she danced in a red kimono, it looked like a red butterfly flapping its wings. But now, no one has the courage to watch her performance."
+    },
+    {
+      "fileName": "TheFeaster.png",
+      "link": "The Feaster",
+      "realName": "Hastur<br />The Feaster",
+      "title": "Hastur<br />The Feaster",
+      "rumor": "When the sun sinks into the lake and the black stars rise, the one draped in yellow rags will rise from the depths of the lake. He is a nameless soul with an unquenching thirst for knowledge."
+    },
+    {
+      "fileName": "WuChang.png",
+      "link": "Wu Chang",
+      "realName": "Xie Bian and Fan Wujiu<br />Wu Chang",
+      "title": "Xie Bian and Fan Wujiu<br />Wu Chang",
+      "rumor": "The White and Black Guards had their souls imbued into an umbrella where they are bound together, forever."
+    },
+    {
+      "fileName": "Photographer.png",
+      "link": "Joseph Desaulniers",
+      "realName": "Joseph Desaulniers<br />Photographer",
+      "title": "Joseph Desaulniers<br />Photographer",
+      "rumor": "In Joseph's eyes, every photograph is a mark in time."
+    },
+    {
+      "fileName": "MadEyes.png",
+      "link": "Burke Lapadura",
+      "realName": "Burke Lapadura<br />Mad Eyes",
+      "title": "Burke Lapadura<br />Mad Eyes",
+      "rumor": "Oletus Manor is Burke's site for experiments. Who knows how many devices there are buried underground, or how many types of devices there are."
+    },
+    {
+      "fileName": "DreamWitch.png",
+      "link": "Yidhra",
+      "realName": "Yidhra<br />Dream Witch",
+      "title": "Yidhra<br />Dream Witch",
+      "rumor": "She gives eternal life to her followers, but who knows what the price of that gift is."
+    },
+    {
+      "fileName": "AxeBoy.png",
+      "link": "Axe Boy",
+      "realName": "Robbie<br />Axe Boy",
+      "title": "Robbie<br />Axe Boy",
+      "rumor": "Robbie lost his head, and the boy who always cries had to pick up the axe to continue doing what he does best."
+    },
+    {
+      "fileName": "EvilReptilian.png",
+      "link": "Evil Reptilian",
+      "realName": "Luchino Diruse<br />Evil Reptilian",
+      "title": "Luchino Diruse<br />Evil Reptilian",
+      "rumor": "Luchino's continuous exploration into forbidden areas has brought him endless troubles. Day in and day out, there are always more scales to remove."
+    },
+    {
+      "fileName": "BloodyQueen.png",
+      "link": "Bloody Queen",
+      "realName": "Mary<br />Bloody Queen",
+      "title": "Mary<br />Bloody Queen",
+      "rumor": "Mary has no interest in playing chess because the queen is the easiest piece to take."
+    },
+    {
+      "fileName": "Guard26.png",
+      "link": "Guard 26",
+      "realName": "Bonbon<br />Guard 26",
+      "title": "Bonbon<br />Guard 26",
+      "rumor": "Burke's Guard 26 robot stores a large number of Time Bombs."
+    },
+    {
+      "fileName": "Disciple.png",
+      "link": "\"Disciple\"",
+      "realName": "Ann<br />\"Disciple\"",
+      "title": "Ann<br />\"Disciple\"",
+      "rumor": "When the epidemic disease stroke, destiny remained cruel despite Ann's devotion and generosity. Her only redemption in life would perhaps be the agile footsteps walking towards her ahead of the reaper and the non-human eyes staring at her at the end of the night when she was on the brink of death."
+    },
+    {
+      "fileName": "Violinist.png",
+      "link": "Violinist",
+      "realName": "Antonio<br />Violinist",
+      "title": "Antonio<br />Violinist",
+      "rumor": "So long as the melody can move the world, Antonio doesn't care who's controlling his body."
+    },
+    {
+      "fileName": "Sculptor.png",
+      "link": "Sculptor",
+      "realName": "Galatea Claude<br />Sculptor",
+      "title": "Galatea Claude<br />Sculptor",
+      "rumor": "When she was young, Galatea always thought she was her creator's masterpiece, that is, until destiny played a sick joke on her. But she wasn't distraught. A genius sculptor can sculpt a perfect destiny for herself."
+    },
+    {
+      "fileName": "Undead.png",
+      "link": "\"Undead\"",
+      "realName": "Percy<br />\"Undead\"",
+      "title": "Percy<br />\"Undead\"",
+      "rumor": "During that scientific experiment, Percy created a monster — then someone recreated Percy."
+    },
+    {
+      "fileName": "TheBreakingWheel.png",
+      "link": "The Breaking Wheel",
+      "realName": "The Will Brothers<br />The Breaking Wheel",
+      "title": "The Will Brothers<br />The Breaking Wheel",
+      "rumor": "A trio of performance artists with odd figures showed up on the street. Covered in a bedspread and wearing masks, they're performing an uninspired drama while twisting their bodies into peculiar shapes."
+    },
+    {
+      "fileName": "Naiad.png",
+      "link": "Naiad",
+      "realName": "Grace<br />Naiad",
+      "title": "Grace<br />Naiad",
+      "rumor": "\"The unheard are doomed to be slaughtered, like fish in a net.\" It was only after grasping this harsh truth that Grace took up her harpoon."
+    },
+    {
+      "fileName": "WaxArtist.png",
+      "link": "Wax Artist",
+      "realName": "Philippe<br />Wax Artist",
+      "title": "Philippe<br />Wax Artist",
+      "rumor": "In the selection of models, Philippe has a unique set of criteria, and in terms of wax sculpture decoration, he always listens to his sister."
+    },
+    {
+      "fileName": "\"Nightmare\".png",
+      "link": "\"Nightmare\"",
+      "realName": "\"Orpheus\"<br />\"Nightmare\"",
+      "title": "\"Orpheus\"<br />\"Nightmare\"",
+      "rumor": "Perhaps known only to \"Orpheus,\" this nightmare of his memory."
+    },
+    {
+      "fileName": "Clerk.png",
+      "link": "Clerk",
+      "realName": "Keigan Nicholas Keogh<br />Clerk",
+      "title": "Keigan Nicholas Keogh<br />Clerk",
+      "rumor": "As she got older, Keigan came to understand that only the voices of people with \"power\" were heard. But it doesn't matter, now she is enough to be the one who can decide everything."
+    },
+    {
+      "fileName": "Hermit.png",
+      "link": "Hermit",
+      "realName": "Alva Lorenz<br />Hermit",
+      "title": "Alva Lorenz<br />Hermit",
+      "rumor": "After going through countless letdowns, disputes, and betrayals, Alva came to the conclusion that no formula nor theory could predict human nature. Only his savior could ever stand by his side."
+    },
+    {
+      "fileName": "NightWatch.png",
+      "link": "Night Watch",
+      "realName": "Ithaqua<br />Night Watch",
+      "title": "Ithaqua<br />Night Watch",
+      "rumor": "Civility and morality were buried before dawn. As he walks alone through the blizzard, Ithaqua has long forgotten who he watches over during the long night."
+    },
+    {
+      "fileName": "OperaSinger.png",
+      "link": "Opera Singer",
+      "realName": "Sangria<br />Opera Singer",
+      "title": "Sangria<br />Opera Singer",
+      "rumor": "Before encountering the touch of ‘red,’ Sangria lost herself to false praise until she realized that her success came at a terrible price. She watched as her own stage was reduced to ashes, and a new stage awaited her arrival in the Manor."
+    },
+    {
+      "fileName": "FoolsGold.png",
+      "link": "\"Fool's Gold\"",
+      "realName": "Norton Campbell<br />\"Fools Gold\"",
+      "title": "Norton Campbell<br />\"Fools Gold\"",
+      "rumor": "With the desire to escape from a life in the darkness of the mines, Norton Campbell believes that Manor will present him with another new \"opportunity.\""
+    },
+    {
+      "fileName": "TheShadow.png",
+      "link": "The Shadow",
+      "realName": "\"Ivy\"<br />The Shadow",
+      "title": "\"Ivy\"<br />The Shadow",
+      "rumor": "Once the friend left, that bizarre journal provided the perfect explanation for Ivy's symptoms, and the \"gifts\" of the Yithian brought her to a distant place."
+    },
+    {
+      "fileName": "Goatman.png",
+      "link": "\"Goatman\"",
+      "realName": "Jeffrey Bonavita<br />\"Goatman\"",
+      "title": "Jeffrey Bonavita<br />\"Goatman\"",
+      "rumor": "Jeffrey used to believe that animals were no different from humans, experiencing a range of emotions from joy, anger, and sorrow to happiness. Now, he is even more convinced that humans are just another type of animal."
+    },
+    {
+      "fileName": "Hullabaloo.png",
+      "link": "\"Hullabaloo\"",
+      "realName": "Mike Morton<br />\"Hullabaloo\"",
+      "title": "Mike Morton<br />\"Hullabaloo\"",
+      "rumor": "Mike Morton is the last tattered vestige of \"Hullabaloo.\" Although Mike was not present at the Moon River Massacre and miraculously survived, he did not escape unscathed. The destruction of Moon River Park mirrored the devastation of his mental state, leaving him a fragile shell. From that point on, he endeavored to find fragments of memory to fill the void."
+    },
+    {
+      "fileName": "Peddler.png",
+      "link": "Peddler",
+      "realName": "Valentina Yaga Vasilieva<br />Peddler",
+      "title": "Valentina Yaga Vasilieva<br />Peddler",
+      "rumor": "When the once happy home crumbled into ruin, the old Valentina disappeared with it. The ghastly moonlight cast its pale glow upon the distant, withered figure, and that haunting melody would forever echo through the night..."
+    },
+    {
+      "fileName": "Cueist.png",
+      "link": "\"Cueist\"",
+      "realName": "Marcus Thorne<br />\"Cueist\"",
+      "title": "Marcus Thorne<br />\"Cueist\"",
+      "rumor": "Marcus Thorne is certain he will reclaim his dominance as a champion. This time, however, his arena is not just the billiard hall, but the very heart of the manor's deadly game—where he will break every sphere that stands in his way."
+    },
+    {
+      "fileName": "QueenBee.png",
+      "link": "\"Queen Bee\"",
+      "realName": "Melly Plinius<br />\"Queen Bee\"",
+      "title": "Melly Plinius<br />\"Queen Bee\"",
+      "rumor": "It was only when she was stung in the old apiary, a place that had once held their sweetest memories, as venom surged through her veins and she writhed at the brink of life and death, that Melly Plinius finally understood that the final metamorphosis of human nature is always born from betrayal."
+    },
+    {
+      "fileName": "\"Dentist\".png",
+      "link": "\"Dentist\"",
+      "realName": "Finsen Hunter<br />\"Dentist\"",
+      "title": "Finsen Hunter<br />\"Dentist\"",
+      "rumor": "Born with congenital insensitivity to pain, Finsen Hunter became obsessed with the warped images created by refracting lenses. Through his deranged light therapy experiments and fixation on his \"deciduous teeth,\" he seeks proof that his own existence is real."
+    },
+    {
+      "fileName": "HerztierPosterEN.jpg",
+      "link": "\"Herztier\"",
+      "realName": "Emil<br />\"Herztier\"",
+      "title": "Emil<br />\"Herztier\"",
+      "rumor": "To fully cure Emil, [[\"Psychologist\"|Ada]] began a new treatment based on \"Delphi.\" At first, everything went smoothly. But as memories of fear were gradually replaced by the unknown, Emil grew increasingly volatile and violent. Like a beast stripped of its humanity, he became hostile toward anything he perceived as a threat."
+    }
+  ]
+}
