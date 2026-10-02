@@ -7,53 +7,47 @@ interface PerkPanelProps {
   accentColor?: string;
 }
 
-export const PerkPanel: React.FC<PerkPanelProps> = ({ perks, accentColor = '#8B5CF6' }) => {
+export const PerkPanel: React.FC<PerkPanelProps> = ({
+  perks,
+  accentColor = 'var(--orange)',
+}) => {
   const { lang, t } = useLang();
 
   return (
-    <section className="guide-section">
-      <h2 className="guide-section-title">
-        <span style={{ color: accentColor }}>🕸</span>
-        <span>{t('labels.perks')}</span>
-      </h2>
+    <section className="panel">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px' }}>
+        <span style={{ fontSize: '18px', color: accentColor }}>🕸</span>
+        <h2 style={{ font: '700 20px Outfit, Prompt, sans-serif', color: 'var(--ink)' }}>
+          {t('labels.perks')}
+        </h2>
+      </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
         {perks.map((build, idx) => (
           <div
             key={idx}
+            className="card"
             style={{
-              background: 'rgba(16, 12, 30, 0.6)',
-              border: '1px solid rgba(139, 92, 246, 0.18)',
-              borderRadius: 'var(--radius-sm)',
-              padding: '18px',
+              padding: '20px',
+              border: '1px solid var(--line-2)',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-              <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#EDE9FE' }}>
+              <h3 style={{ font: '700 16px Outfit, Prompt, sans-serif', color: 'var(--ink)' }}>
                 {build.name[lang]}
               </h3>
-              <span
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  padding: '2px 8px',
-                  borderRadius: '9999px',
-                  background: 'rgba(139, 92, 246, 0.2)',
-                  color: '#C4B5FD',
-                  border: '1px solid rgba(139, 92, 246, 0.3)',
-                }}
-              >
+              <span className="chip chip-role" style={{ fontSize: '10px' }}>
                 {build.direction}
               </span>
             </div>
 
-            <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: '1.5', marginBottom: '12px' }}>
+            <p style={{ fontSize: '13.5px', color: 'var(--ink-2)', lineHeight: 1.5, marginBottom: '14px' }}>
               {build.description[lang]}
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', fontWeight: 600 }}>
-                {lang === 'th' ? 'สกิลสำคัญที่ต้องอัพ' : 'Key Talents'}
+            <div>
+              <span className="section-label" style={{ display: 'block', marginBottom: '6px' }}>
+                {lang === 'th' ? 'สกิลจำเป็น (Key Talents):' : 'Key Talents:'}
               </span>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {build.keyTalents.map((talent, tIdx) => (
@@ -61,11 +55,11 @@ export const PerkPanel: React.FC<PerkPanelProps> = ({ perks, accentColor = '#8B5
                     key={tIdx}
                     style={{
                       fontSize: '12px',
-                      background: 'rgba(255, 255, 255, 0.06)',
-                      padding: '3px 8px',
+                      background: 'var(--raise)',
+                      padding: '4px 10px',
                       borderRadius: '6px',
-                      color: '#E0E7FF',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      color: 'var(--ink)',
+                      border: '1px solid var(--line)',
                     }}
                   >
                     ✓ {talent[lang]}

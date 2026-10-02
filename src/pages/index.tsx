@@ -4,219 +4,183 @@ import { Layout } from '../components/Layout';
 import { CharacterCard } from '../components/CharacterCard';
 import { useLang } from '../context/LangContext';
 import { survivors, hunters } from '../utils/characters';
+import { SearchBar } from '../components/SearchBar';
 
 export default function Home() {
   const { t, lang } = useLang();
 
-  // Top meta picks
   const featuredSurvivors = survivors.filter((s) => s.tier === 'S').slice(0, 3);
-  const featuredHunters = hunters.filter((h) => h.tier === 'S' || h.id === 'geisha').slice(0, 3);
+  const featuredHunters = hunters.filter((h) => h.tier === 'S').slice(0, 3);
 
   return (
     <Layout
       pageTitle={lang === 'th' ? 'หน้าแรก' : 'Home'}
       pageDescription={t('home.heroDesc')}
     >
-      {/* Gothic Hero Banner */}
-      <section className="hero-banner">
-        <div className="hero-glow" />
-        <div className="hero-glow-alt" />
-        <div className="hero-content">
+      {/* KRIDA Hero Section */}
+      <section className="hero">
+        <div>
           <div className="hero-badge">
-            <span>✨</span>
-            <span>{t('home.badge')}</span>
+            <span>●</span>
+            <span>{lang === 'th' ? 'คู่มือผู้เล่น IDENTITY V ระดับมาสเตอร์' : 'IDENTITY V COMPETITIVE COMPANION'}</span>
           </div>
 
-          <h1 className="hero-title">{t('home.heroTitle')}</h1>
-          <p className="hero-desc">{t('home.heroDesc')}</p>
+          <h1>
+            {lang === 'th' ? (
+              <>
+                เรียนรู้ ทริคจู๊ค และก้าวสู่ <em>ระดับท็อปแรงก์</em>
+              </>
+            ) : (
+              <>
+                Master Every Hero, Counter & <em>Climb to Top Tier</em>
+              </>
+            )}
+          </h1>
 
-          <div className="hero-actions">
-            <Link href="/survivors" className="btn-primary">
+          <p className="lede">
+            {lang === 'th'
+              ? 'เจาะลึกทุกตัวละครทั้ง Survivor และ Hunter — สกิล, สาย Persona 36/39, ทริคระดับโปร, ตารางแก้ทาง และวิดีโอแนะนำ'
+              : 'Deep dive into Survivors and Hunters — abilities, 36/39 persona builds, pro tricks, matchup counters, and video guides.'}
+          </p>
+
+          <div style={{ marginTop: '20px', maxWidth: '440px' }}>
+            <SearchBar />
+          </div>
+
+          <div className="hero-cta">
+            <Link href="/survivors" className="btn btn-accent">
               <span>🟢</span>
-              <span>{t('home.exploreSurvivors')}</span>
+              <span>{t('home.exploreSurvivors')} ({survivors.length})</span>
             </Link>
 
-            <Link href="/hunters" className="btn-primary btn-hunter">
+            <Link href="/hunters" className="btn btn-primary">
               <span>🔴</span>
-              <span>{t('home.exploreHunters')}</span>
+              <span>{t('home.exploreHunters')} ({hunters.length})</span>
             </Link>
 
-            <Link href="/tier-list" className="btn-secondary">
-              <span>📊</span>
-              <span>{t('home.viewTierList')}</span>
+            <Link href="/quiz" className="btn btn-ghost">
+              <span>🎯</span>
+              <span>{lang === 'th' ? 'ทำควิซทดสอบ' : 'Practice Quiz'}</span>
+            </Link>
+          </div>
+
+          <div className="hero-stats">
+            <div>
+              <b style={{ color: 'var(--orange)' }}>{survivors.length}</b>
+              <span>{lang === 'th' ? 'ผู้รอดชีวิต' : 'Survivors'}</span>
+            </div>
+            <div>
+              <b style={{ color: 'var(--blue-lift)' }}>{hunters.length}</b>
+              <span>{lang === 'th' ? 'ฮันเตอร์' : 'Hunters'}</span>
+            </div>
+            <div>
+              <b style={{ color: '#F8FAFC' }}>100%</b>
+              <span>{lang === 'th' ? 'มีคลิป & ไกด์' : 'Full Guides'}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Unlock-style Side Card in KRIDA */}
+        <div className="unlock-card">
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+            <span className="eyebrow">{lang === 'th' ? 'ตัวละครเมต้าท็อปปิค' : 'Meta Priority Picks'}</span>
+            <span className="mono" style={{ fontSize: '11px', color: 'var(--ink-3)' }}>TIER S / A</span>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {[...survivors.slice(0, 3), ...hunters.slice(0, 2)].map((char, idx) => (
+              <Link
+                key={char.id}
+                href={`/${char.type}s/${char.id}`}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '10px 12px',
+                  borderRadius: 'var(--r-sm)',
+                  background: 'var(--raise)',
+                  border: '1px solid var(--line)',
+                  color: 'var(--ink)',
+                }}
+              >
+                <div
+                  style={{
+                    width: '34px',
+                    height: '34px',
+                    borderRadius: '8px',
+                    background: '#1e293b',
+                    overflow: 'hidden',
+                    flexShrink: 0,
+                  }}
+                >
+                  <img src={char.image || `/images/heroes/${char.id}.svg`} alt={char.name[lang]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontWeight: 600, fontSize: '14px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    {char.name[lang]}
+                  </div>
+                  <div style={{ fontSize: '11px', color: 'var(--ink-3)' }}>
+                    {char.type === 'survivor' ? 'Survivor' : 'Hunter'} • Tier {char.tier}
+                  </div>
+                </div>
+                <span style={{ fontSize: '12px', color: 'var(--orange)' }}>→</span>
+              </Link>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '18px', paddingTop: '14px', borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Link href="/team-builder" style={{ fontSize: '12px', color: 'var(--blue-lift)', fontWeight: 600 }}>
+              {lang === 'th' ? '🛠️ เปิดโหมดจัดทีม 4 คน →' : '🛠️ Open Team Builder →'}
+            </Link>
+            <Link href="/matchup" style={{ fontSize: '12px', color: 'var(--orange)', fontWeight: 600 }}>
+              {lang === 'th' ? '⚡ ดูตารางแก้ทาง →' : '⚡ View Matchup Chart →'}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Quick Stats Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '16px',
-          marginBottom: '40px',
-        }}
-      >
-        <div
-          style={{
-            background: 'rgba(23, 18, 42, 0.6)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-md)',
-            padding: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-          }}
-        >
-          <div
-            style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '12px',
-              background: 'rgba(16, 185, 129, 0.15)',
-              border: '1px solid #10B981',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '22px',
-            }}
-          >
-            🟢
-          </div>
-          <div>
-            <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: 'var(--font-gothic)', color: '#34D399' }}>
-              {survivors.length}
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-              {lang === 'th' ? 'ผู้รอดชีวิตในคู่มือ' : 'Survivors Guided'}
-            </div>
-          </div>
-        </div>
+      {/* Interactive Tool Banner Strip */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px', marginBottom: '44px' }}>
+        <Link href="/matchup" className="panel" style={{ display: 'block', transition: 'transform 0.2s', borderColor: 'rgba(37, 99, 235, 0.3)' }}>
+          <div style={{ fontSize: '26px', marginBottom: '8px' }}>⚔️</div>
+          <h3 style={{ fontSize: '17px', color: 'var(--ink)', marginBottom: '4px' }}>
+            {lang === 'th' ? 'ตารางวิเคราะห์การแก้ทาง' : 'Hunter vs Survivor Matchup'}
+          </h3>
+          <p style={{ fontSize: '13px', color: 'var(--ink-2)' }}>
+            {lang === 'th' ? 'เลือกฮันเตอร์เพื่อดูว่าเซอร์ไวเวอร์คนไหนได้เปรียบ และคนไหนเสียเปรียบ' : 'Direct counters and matchup matrix for every hunter.'}
+          </p>
+        </Link>
 
-        <div
-          style={{
-            background: 'rgba(23, 18, 42, 0.6)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-md)',
-            padding: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-          }}
-        >
-          <div
-            style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '12px',
-              background: 'rgba(239, 68, 68, 0.15)',
-              border: '1px solid #EF4444',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '22px',
-            }}
-          >
-            🔴
-          </div>
-          <div>
-            <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: 'var(--font-gothic)', color: '#F87171' }}>
-              {hunters.length}
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-              {lang === 'th' ? 'ฮันเตอร์ในคู่มือ' : 'Hunters Guided'}
-            </div>
-          </div>
-        </div>
+        <Link href="/team-builder" className="panel" style={{ display: 'block', transition: 'transform 0.2s', borderColor: 'rgba(249, 115, 22, 0.3)' }}>
+          <div style={{ fontSize: '26px', marginBottom: '8px' }}>🛡️</div>
+          <h3 style={{ fontSize: '17px', color: 'var(--ink)', marginBottom: '4px' }}>
+            {lang === 'th' ? 'จำลองจัดทีม & คอมโบ' : 'Team Builder & Synergies'}
+          </h3>
+          <p style={{ fontSize: '13px', color: 'var(--ink-2)' }}>
+            {lang === 'th' ? 'จัดทีม 4 คนเพื่อคำนวณสมดุลการปั่นเครื่องและคอมโบสกิล' : 'Draft 4 survivors to measure cipher rush and rescue safety.'}
+          </p>
+        </Link>
 
-        <div
-          style={{
-            background: 'rgba(23, 18, 42, 0.6)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-md)',
-            padding: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-          }}
-        >
-          <div
-            style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '12px',
-              background: 'rgba(245, 158, 11, 0.15)',
-              border: '1px solid #F59E0B',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '22px',
-            }}
-          >
-            ⚡
-          </div>
-          <div>
-            <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: 'var(--font-gothic)', color: '#FBBF24' }}>
-              {survivors.length + hunters.length}
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-              {lang === 'th' ? 'ตัวละครพร้อมทริคและ Perk' : 'Characters with Full Data'}
-            </div>
-          </div>
-        </div>
-
-        <div
-          style={{
-            background: 'rgba(23, 18, 42, 0.6)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-md)',
-            padding: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-          }}
-        >
-          <div
-            style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '12px',
-              background: 'rgba(139, 92, 246, 0.15)',
-              border: '1px solid #8B5CF6',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '22px',
-            }}
-          >
-            🏆
-          </div>
-          <div>
-            <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: 'var(--font-gothic)', color: '#C084FC' }}>
-              S & A
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-              {lang === 'th' ? 'เน้นเมต้าทัวร์นาเมนต์' : 'Meta & Tournament Picks'}
-            </div>
-          </div>
-        </div>
+        <Link href="/quiz" className="panel" style={{ display: 'block', transition: 'transform 0.2s', borderColor: 'rgba(16, 185, 129, 0.3)' }}>
+          <div style={{ fontSize: '26px', marginBottom: '8px' }}>🎯</div>
+          <h3 style={{ fontSize: '17px', color: 'var(--ink)', marginBottom: '4px' }}>
+            {lang === 'th' ? 'ควิซฝึกฝน & วัดระดับ' : 'Interactive Practice Quiz'}
+          </h3>
+          <p style={{ fontSize: '13px', color: 'var(--ink-2)' }}>
+            {lang === 'th' ? 'ทดสอบความรู้เรื่องสกิลและการแก้ทาง พร้อมเฉลยละเอียด' : 'Practice questions with instant score and gameplay tips.'}
+          </p>
+        </Link>
       </div>
 
       {/* Featured Survivors */}
-      <section style={{ marginBottom: '40px' }}>
-        <div className="section-header">
+      <section style={{ marginBottom: '48px' }}>
+        <div className="page-head" style={{ marginBottom: '20px' }}>
           <div>
-            <h2 className="section-title">
-              <span style={{ color: '#10B981' }}>🟢</span>
-              <span>{lang === 'th' ? 'ผู้รอดชีวิตระดับท็อปเมต้า' : 'Top Meta Survivors'}</span>
-            </h2>
-            <p className="section-subtitle">
-              {lang === 'th' ? 'ตัวละครที่ถูกเลือกมากที่สุดในการแข่งและแรงก์สูง' : 'Most picked in high-tier rank and tournaments'}
-            </p>
+            <span className="eyebrow">{lang === 'th' ? 'เมต้าท็อปเทียร์' : 'S-Tier Picks'}</span>
+            <h2>{lang === 'th' ? 'ผู้รอดชีวิตระดับท็อปเมต้า' : 'Featured Meta Survivors'}</h2>
           </div>
-          <Link href="/survivors" style={{ fontSize: '13px', color: 'var(--accent-purple-light)', fontWeight: 600 }}>
-            {lang === 'th' ? 'ดูทั้งหมด 10 ตัว →' : 'View all 10 →'}
+          <Link href="/survivors" className="btn btn-sm btn-ghost">
+            {lang === 'th' ? `ดูทั้งหมด (${survivors.length}) →` : `View all (${survivors.length}) →`}
           </Link>
         </div>
 
@@ -229,18 +193,13 @@ export default function Home() {
 
       {/* Featured Hunters */}
       <section style={{ marginBottom: '48px' }}>
-        <div className="section-header">
+        <div className="page-head" style={{ marginBottom: '20px' }}>
           <div>
-            <h2 className="section-title">
-              <span style={{ color: '#EF4444' }}>🔴</span>
-              <span>{lang === 'th' ? 'ฮันเตอร์สุดแกร่งที่พบบ่อย' : 'Deadliest Meta Hunters'}</span>
-            </h2>
-            <p className="section-subtitle">
-              {lang === 'th' ? 'คุมเกมเร็ว ไล่ล่าดุเดือด และพลังเฝ้าเก้าอี้สูง' : 'Fast-paced map control and punishing chase potential'}
-            </p>
+            <span className="eyebrow">{lang === 'th' ? 'ฮันเตอร์สุดอันตราย' : 'Deadliest Killers'}</span>
+            <h2>{lang === 'th' ? 'ฮันเตอร์ระดับท็อปเมต้า' : 'Featured Meta Hunters'}</h2>
           </div>
-          <Link href="/hunters" style={{ fontSize: '13px', color: 'var(--accent-purple-light)', fontWeight: 600 }}>
-            {lang === 'th' ? 'ดูฮันเตอร์ทั้งหมด 5 ตัว →' : 'View all 5 →'}
+          <Link href="/hunters" className="btn btn-sm btn-ghost">
+            {lang === 'th' ? `ดูทั้งหมด (${hunters.length}) →` : `View all (${hunters.length}) →`}
           </Link>
         </div>
 
@@ -248,38 +207,6 @@ export default function Home() {
           {featuredHunters.map((char) => (
             <CharacterCard key={char.id} character={char} />
           ))}
-        </div>
-      </section>
-
-      {/* Features Overview */}
-      <section style={{ marginBottom: '32px' }}>
-        <div className="section-header">
-          <div>
-            <h2 className="section-title">
-              <span>📖</span>
-              <span>{t('home.featuresHeader')}</span>
-            </h2>
-          </div>
-        </div>
-
-        <div className="feature-box-grid">
-          <div className="feature-box">
-            <div className="feature-box-icon">⚡</div>
-            <h3>{t('home.feat1Title')}</h3>
-            <p>{t('home.feat1Desc')}</p>
-          </div>
-
-          <div className="feature-box">
-            <div className="feature-box-icon">🕸</div>
-            <h3>{t('home.feat2Title')}</h3>
-            <p>{t('home.feat2Desc')}</p>
-          </div>
-
-          <div className="feature-box">
-            <div className="feature-box-icon">🛡️</div>
-            <h3>{t('home.feat3Title')}</h3>
-            <p>{t('home.feat3Desc')}</p>
-          </div>
         </div>
       </section>
     </Layout>

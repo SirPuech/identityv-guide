@@ -13,46 +13,54 @@ interface RelationsPanelProps {
 export const RelationsPanel: React.FC<RelationsPanelProps> = ({
   counters,
   partners,
-  accentColor = '#8B5CF6',
+  accentColor = 'var(--blue-lift)',
 }) => {
   const { lang, t } = useLang();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
       {/* Counters Section */}
       {counters && counters.length > 0 && (
-        <section className="guide-section">
-          <h2 className="guide-section-title">
-            <span style={{ color: '#EF4444' }}>⚠️</span>
-            <span>{t('labels.counters')}</span>
-          </h2>
+        <section className="panel" style={{ borderColor: 'rgba(239, 68, 68, 0.3)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px' }}>
+            <span style={{ fontSize: '18px', color: '#EF4444' }}>⚠️</span>
+            <h2 style={{ font: '700 20px Outfit, Prompt, sans-serif', color: 'var(--ink)' }}>
+              {t('labels.counters')}
+            </h2>
+          </div>
 
-          <div className="relation-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
             {counters.map((c, idx) => {
               const targetChar = getCharacterById(c.characterId);
               const targetLink = targetChar ? `/${targetChar.type}s/${targetChar.id}` : '#';
 
               return (
-                <div key={idx} className="relation-card danger">
-                  <div className="relation-card-name">
-                    <span style={{ color: '#FCA5A5' }}>{c.characterName[lang]}</span>
+                <div
+                  key={idx}
+                  style={{
+                    background: 'var(--onyx)',
+                    border: '1px solid var(--line)',
+                    borderLeft: '3px solid #EF4444',
+                    borderRadius: 'var(--r-sm)',
+                    padding: '16px',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <span style={{ fontWeight: 700, fontSize: '15px', color: '#FCA5A5' }}>
+                      {c.characterName[lang]}
+                    </span>
                     {targetChar && (
-                      <Link
-                        href={targetLink}
-                        style={{
-                          fontSize: '11px',
-                          color: 'var(--accent-purple-light)',
-                          textDecoration: 'underline',
-                        }}
-                      >
-                        {lang === 'th' ? 'ดูไกด์ตัวนี้ →' : 'View guide →'}
+                      <Link href={targetLink} style={{ fontSize: '12px', color: 'var(--blue-lift)' }}>
+                        {lang === 'th' ? 'ดูไกด์ →' : 'Guide →'}
                       </Link>
                     )}
                   </div>
-                  <p className="relation-text">{c.reason[lang]}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--ink-2)', lineHeight: 1.5, marginBottom: '8px' }}>
+                    {c.reason[lang]}
+                  </p>
                   {c.tip && (
-                    <div className="relation-tip">
-                      🛡️ <strong>{lang === 'th' ? 'วิธีแก้ทาง:' : 'Counter strategy:'}</strong> {c.tip[lang]}
+                    <div style={{ fontSize: '12px', color: 'var(--orange)', background: 'rgba(249, 115, 22, 0.08)', padding: '6px 10px', borderRadius: '6px' }}>
+                      🛡️ <strong>{lang === 'th' ? 'วิธีรับมือ:' : 'Tip:'}</strong> {c.tip[lang]}
                     </div>
                   )}
                 </div>
@@ -64,35 +72,43 @@ export const RelationsPanel: React.FC<RelationsPanelProps> = ({
 
       {/* Partners Section */}
       {partners && partners.length > 0 && (
-        <section className="guide-section">
-          <h2 className="guide-section-title">
-            <span style={{ color: '#10B981' }}>🤝</span>
-            <span>{t('labels.partners')}</span>
-          </h2>
+        <section className="panel" style={{ borderColor: 'rgba(16, 185, 129, 0.3)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px' }}>
+            <span style={{ fontSize: '18px', color: '#10B981' }}>🤝</span>
+            <h2 style={{ font: '700 20px Outfit, Prompt, sans-serif', color: 'var(--ink)' }}>
+              {t('labels.partners')}
+            </h2>
+          </div>
 
-          <div className="relation-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
             {partners.map((p, idx) => {
               const targetChar = getCharacterById(p.characterId);
               const targetLink = targetChar ? `/${targetChar.type}s/${targetChar.id}` : '#';
 
               return (
-                <div key={idx} className="relation-card synergy">
-                  <div className="relation-card-name">
-                    <span style={{ color: '#6EE7B7' }}>{p.characterName[lang]}</span>
+                <div
+                  key={idx}
+                  style={{
+                    background: 'var(--onyx)',
+                    border: '1px solid var(--line)',
+                    borderLeft: '3px solid #10B981',
+                    borderRadius: 'var(--r-sm)',
+                    padding: '16px',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <span style={{ fontWeight: 700, fontSize: '15px', color: '#6EE7B7' }}>
+                      {p.characterName[lang]}
+                    </span>
                     {targetChar && (
-                      <Link
-                        href={targetLink}
-                        style={{
-                          fontSize: '11px',
-                          color: 'var(--accent-purple-light)',
-                          textDecoration: 'underline',
-                        }}
-                      >
-                        {lang === 'th' ? 'ดูไกด์ตัวนี้ →' : 'View guide →'}
+                      <Link href={targetLink} style={{ fontSize: '12px', color: 'var(--blue-lift)' }}>
+                        {lang === 'th' ? 'ดูไกด์ →' : 'Guide →'}
                       </Link>
                     )}
                   </div>
-                  <p className="relation-text">{p.synergy[lang]}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--ink-2)', lineHeight: 1.5 }}>
+                    {p.synergy[lang]}
+                  </p>
                 </div>
               );
             })}

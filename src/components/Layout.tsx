@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import { Sidebar } from './Sidebar';
-import { TopHeader } from './TopHeader';
+import { Header } from './Header';
 import { useLang } from '../context/LangContext';
 
 interface LayoutProps {
@@ -15,58 +14,47 @@ export const Layout: React.FC<LayoutProps> = ({
   pageTitle,
   pageDescription,
 }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const { t, lang } = useLang();
 
   const title = pageTitle
-    ? `${pageTitle} | Identity V Guide`
-    : t('siteTitle');
+    ? `${pageTitle} · IDV Master Guide`
+    : `IDV Master Guide · คู่มือเจาะลึก Identity V`;
 
   const desc = pageDescription || t('siteSubtitle');
 
   return (
-    <div className="app-container">
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#0F172A" />
       </Head>
 
-      <Sidebar
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+      <a className="skip-link" href="#main">
+        {lang === 'th' ? 'ข้ามไปยังเนื้อหา' : 'Skip to content'}
+      </a>
 
-      {/* Backdrop for mobile drawer */}
-      {sidebarOpen && (
-        <div
-          onClick={() => setSidebarOpen(false)}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(0, 0, 0, 0.65)',
-            backdropFilter: 'blur(4px)',
-            zIndex: 90,
-          }}
-        />
-      )}
+      <Header />
 
-      <div className="main-wrapper">
-        <TopHeader onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
-        <main className="content-area">{children}</main>
-        
-        <footer style={{
-          padding: '24px 32px',
-          borderTop: '1px solid var(--border-subtle)',
-          textAlign: 'center',
-          fontSize: '12px',
-          color: 'var(--text-dim)',
-          background: 'rgba(9, 7, 16, 0.4)'
-        }}>
-          Identity V Player Guide Hub • Made for practice and mastery • {new Date().getFullYear()}
-        </footer>
-      </div>
-    </div>
+      <main id="main" tabIndex={-1}>
+        <div className="wrap">
+          {children}
+        </div>
+      </main>
+
+      <footer className="site-footer">
+        <div className="wrap footer-inner">
+          <span>
+            {lang === 'th'
+              ? 'Identity V Master Guide · ออกแบบและสร้างขึ้นเพื่อฝึกฝนและพิชิตแรงก์สูงสุด'
+              : 'Identity V Master Guide · Built for learning and competitive mastery'}
+          </span>
+          <span className="mono" id="footer-meta">
+            v2.0 · Prompt / Outfit / KRIDA UI
+          </span>
+        </div>
+      </footer>
+    </>
   );
 };

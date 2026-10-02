@@ -1,51 +1,89 @@
-# Identity V Master Guide Hub (คู่มือผู้เล่น Identity V ฉบับเจาะลึก)
+# IDV. Master Guide (คู่มือผู้เล่น Identity V ฉบับเจาะลึก)
 
-เว็บแอปพลิเคชันคู่มือเกม **Identity V** ภาษาไทย (พร้อมสลับภาษาอังกฤษได้) ออกแบบในสไตล์ **Dark Gothic Purple/Blue** เพื่อการเรียนรู้และฝึกฝนเทคนิคตัวละครทั้ง Survivor และ Hunter สู่ระดับมาสเตอร์ พร้อมระบบ Deploy อัตโนมัติขึ้น GitHub Pages
+เว็บแอปพลิเคชันคู่มือเกม **Identity V** ภาษาไทย (พร้อมสลับภาษาอังกฤษได้) ออกแบบในสไตล์ **KRIDA Cyber Kinetic UI/UX** (Deep Onyx, Tech Blue, Kinetic Orange, ฟอนต์ Prompt & Outfit) เพื่อการเรียนรู้และฝึกฝนเทคนิคตัวละครทั้ง Survivor และ Hunter สู่ระดับมาสเตอร์ พร้อมระบบ Deploy อัตโนมัติขึ้น GitHub Pages
 
 ---
 
-## 🌟 ฟีเจอร์ในเวอร์ชัน MVP
+## 🌟 ฟีเจอร์หลัก (KRIDA UI Edition)
 
-- 🟢 **Hero Database — ผู้รอดชีวิต (Survivors) 10 ตัวละครยอดนิยม:**
+### 1. 🟢 ฐานข้อมูลผู้รอดชีวิต (Survivors Database)
+- **รวบรวมตัวละครครบครัน:**
   - ช่างเครื่อง (Mechanic) - Tier S
   - ซีเออร์ (Seer) - Tier S
   - นักบวชหญิง (Priestess) - Tier S
   - ทหารรับจ้าง (Mercenary) - Tier S
+  - ผู้เชี่ยวชาญของโบราณ (Antiquarian) - Tier S
   - ช่างน้ำหอม (Perfumer) - Tier A
   - ผู้ประสานงาน (Coordinator) - Tier A
   - นักสำรวจแร่ (Prospector) - Tier A
   - ฟอร์เวิร์ด (Forward) - Tier A
   - แม่มดเสน่ห์ (Enchantress) - Tier A
+  - นักโทษ ("Prisoner") - Tier A
+  - เด็กหญิง ("Little Girl") - Tier A
+  - เชียร์ลีดเดอร์ (Cheerleader) - Tier A
   - หมอ (Doctor) - Tier B
+  - คนทำสวน (Gardener) - Tier B
+- **ทุกตัวละครมี:**
+  - 🖼️ รูปภาพพอร์ตเทรตประจำตัวฮีโร่
+  - 🎬 **วิดีโอคลิปไกด์ (Video Tutorial Embed)** ฝัง YouTube เล่นได้ทันที
+  - ✦ ทักษะและความสามารถ (Abilities & Cooldowns)
+  - 🕸 สายพรสวรรค์แนะนำ (Persona 36 / 39)
+  - ⚡ ทริคระดับโปร (Pro Kiting & Rescuing Tricks)
+  - ⚠️ การแก้ทาง (Counters) พร้อมวิธีรับมือ
+  - 🤝 คู่หูคอมโบเสริมพลัง (Best Partners)
 
-- 🔴 **Hero Database — ฮันเตอร์ (Hunters) 5 ตัวละครยอดนิยม:**
+### 2. 🔴 ฐานข้อมูลฮันเตอร์ (Hunters Database)
+- **รวบรวมฮันเตอร์เมต้า:**
   - ประติมากร (Sculptor - Galatea) - Tier S
   - แม่มดแห่งความฝัน (Dream Witch - Yidhra) - Tier S
+  - ราชินีสีเลือด (Bloody Queen - Mary) - Tier S
+  - เวรยามราตรี (Night Watch - Ithaqua) - Tier S
+  - นักร้องโอเปร่า (Opera Singer - Sangria) - Tier S
   - เกอิชา (Geisha - Michiko) - Tier A
   - ช่างภาพ (Photographer - Joseph) - Tier A
   - อู๋ฉาง (Wu Chang) - Tier A
+  - การ์ด 26 (Guard 26 / Bonbon) - Tier A
+  - พรายน้ำ (Naiad - Grace) - Tier A
+- พร้อมคลิปวิดีโอไกด์ สกิลประจำตัว สายพรสวรรค์ล่า และทริคคุมเกม
 
-- 📊 **Tier List จัดอันดับเมต้า:**
-  - แสดงการจัดระดับ S / A / B ของทั้งฝั่ง Survivor และ Hunter
-  - คลิกเพื่อเข้าไปดูหน้ารายละเอียดของแต่ละตัวละครได้ทันที
+### 3. ⚔️ ตารางวิเคราะห์การแก้ทาง (Interactive Matchup Chart)
+- เลือกฮันเตอร์เพื่อดูว่าเซอร์ไวเวอร์คนไหนได้เปรียบ และคนไหนที่เสียเปรียบ พร้อมคำแนะนำยุทธวิธีเอาตัวรอด
 
-- 🇹🇭 / 🇬🇧 **ระบบสลับภาษา (TH / EN Toggle):**
-  - สลับภาษาได้ทันทีทุกหน้าแบบ Realtime
+### 4. 🛡️ จำลองจัดทีม 4 คน & วิเคราะห์คอมโบ (Team Builder)
+- เลือกลงทีม 4 คนเพื่อคำนวณสมดุล:
+  - ⚡ ความเร็วถอดรหัส (Cipher Rush)
+  - 🛡️ ความปลอดภัยในการช่วยเก้าอี้ (Rescue Safety)
+  - 🏃 ประสิทธิภาพการจู๊กดึงเวลา (Kiting Stamina)
+  - ✨ การซัพพอร์ตและฟื้นฟู (Support & Sustain)
+  - ตรวจจับคอมโบเสริมพลังระหว่างเพื่อนร่วมทีมอัตโนมัติ
 
-- 🔍 **Instant Search Bar:**
-  - ค้นหาตัวละครได้ทันทีทั้งชื่อไทยและชื่ออังกฤษ
+### 5. 🎯 ควิซฝึกฝน & วัดระดับ (Interactive Practice Quiz)
+- แบบทดสอบวัดความรู้เรื่องสกิล การแก้ทาง และสายพรสวรรค์ พร้อมคำอธิบายเฉลยและระบบคำนวณคะแนน
 
-- 📱 **Fully Responsive Design:**
-  - รองรับทั้ง Mobile, Tablet, และ Laptop มี Navigation Drawer บนหน้าจอมือถือ
+### 6. 📊 Tier List จัดอันดับเมต้า (KRIDA Style)
+- แสดงระดับ Tier S, A, B ของทั้งสองฝั่ง สลับดูได้สะดวกรวดเร็ว
+
+### 7. 🇹🇭 / 🇬🇧 ภาษาไทยฟอนต์ Prompt & สลับภาษาแบบ Realtime
+- ใช้ฟอนต์ **Prompt** สำหรับภาษาไทยและเนื้อหาหลัก เพื่อความอ่านง่าย คมชัด ทันสมัย
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js (TypeScript)
-- **Styling:** Vanilla CSS (Curated Dark Gothic Theme, Glassmorphism, Responsive Grid)
-- **Data Architecture:** Modular JSON Data (`survivors.json`, `hunters.json`, `tier-list.json`, i18n dictionaries)
-- **CI/CD:** GitHub Actions (`.github/workflows/deploy.yml`) สำหรับ Deploy ไปยัง GitHub Pages แบบ Static HTML Export
+## 🎨 KRIDA Design System
+- **โทนสี:**
+  - Tech Blue (`#2563EB`)
+  - Kinetic Orange (`#F97316`)
+  - Deep Onyx (`#0F172A`)
+  - Clean Field (`#0B1220`)
+  - Off-White (`#F8FAFC`)
+- **Typography:**
+  - Thai: **Prompt**
+  - English & Headings: **Outfit**
+  - Data, Chips & Codes: **JetBrains Mono**
+- **Navigation:**
+  - Sticky Top Bar (`.site-header`)
+  - Wordmark: `IDV.`
+  - Pill Lang Switcher (`TH / EN`)
+  - Mobile Menu Drawer
 
 ---
 
@@ -67,22 +105,11 @@ http://localhost:3000
 ## 📦 การนำขึ้น GitHub และเปิด GitHub Pages
 
 ```bash
-# 1. เริ่มต้น Git Repository
-git init
+# Push โค้ดขึ้น GitHub
 git add .
-git commit -m "feat: IdentityV Guide MVP with Survivors, Hunters, Tier List, and Thai/EN i18n"
-
-# 2. เชื่อมต่อไปยัง Repository บน GitHub
-git branch -M main
-git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/identityv-guide.git
-
-# 3. Push โค้ดขึ้น GitHub
+git commit -m "feat: Transform to KRIDA UI/UX with Prompt fonts, video guides, expanded roster, Matchups, Team Builder, and Quiz"
 git push -u origin main
 ```
 
-### การตั้งค่าบน GitHub Pages:
-1. ไปที่แท็บ **Settings** ของ Repository บน GitHub
-2. ไปที่เมนู **Pages** (ทางซ้าย)
-3. ใต้หัวข้อ **Build and deployment > Source** เลือกเป็น **GitHub Actions**
-4. เมื่อ Push โค้ดขึ้นไปแล้ว Workflow จะทำการ Build และ Deploy ให้อัตโนมัติที่:
-   `https://<YOUR_GITHUB_USERNAME>.github.io/identityv-guide/`
+ระบบ GitHub Actions (`.github/workflows/deploy.yml`) จะทำการ Build และ Deploy ให้แฟนของคุณเข้าใช้งานได้ทันทีที่:
+`https://<YOUR_GITHUB_USERNAME>.github.io/identityv-guide/`

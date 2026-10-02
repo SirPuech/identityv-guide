@@ -7,45 +7,48 @@ interface TricksPanelProps {
   accentColor?: string;
 }
 
-export const TricksPanel: React.FC<TricksPanelProps> = ({ tricks, accentColor = '#8B5CF6' }) => {
+export const TricksPanel: React.FC<TricksPanelProps> = ({
+  tricks,
+  accentColor = 'var(--blue-lift)',
+}) => {
   const { lang, t } = useLang();
 
   if (!tricks || tricks.length === 0) return null;
 
   return (
-    <section className="guide-section">
-      <h2 className="guide-section-title">
-        <span style={{ color: accentColor }}>⚡</span>
-        <span>{t('labels.tricks')}</span>
-      </h2>
+    <section className="panel">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px' }}>
+        <span style={{ fontSize: '18px', color: 'var(--orange)' }}>⚡</span>
+        <h2 style={{ font: '700 20px Outfit, Prompt, sans-serif', color: 'var(--ink)' }}>
+          {t('labels.tricks')}
+        </h2>
+      </div>
 
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {tricks.map((trick, idx) => (
           <div
             key={idx}
-            className="trick-item"
-            style={{ borderLeftColor: accentColor }}
+            style={{
+              background: 'var(--onyx)',
+              border: '1px solid var(--line)',
+              borderLeft: '3px solid var(--orange)',
+              borderRadius: 'var(--r-sm)',
+              padding: '14px 18px',
+            }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
-              <div className="trick-title">{trick.title[lang]}</div>
+              <div style={{ fontWeight: 700, fontSize: '15px', color: 'var(--ink)' }}>
+                {trick.title[lang]}
+              </div>
               {trick.tag && (
-                <span
-                  style={{
-                    fontSize: '10px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.8px',
-                    fontWeight: 700,
-                    padding: '2px 6px',
-                    borderRadius: '4px',
-                    background: 'rgba(255, 255, 255, 0.08)',
-                    color: 'var(--text-muted)',
-                  }}
-                >
+                <span className="chip" style={{ fontSize: '10px', textTransform: 'uppercase', background: 'var(--raise)', color: 'var(--ink-2)' }}>
                   {trick.tag}
                 </span>
               )}
             </div>
-            <p className="trick-detail">{trick.detail[lang]}</p>
+            <p style={{ fontSize: '13.5px', color: 'var(--ink-2)', lineHeight: 1.5 }}>
+              {trick.detail[lang]}
+            </p>
           </div>
         ))}
       </div>

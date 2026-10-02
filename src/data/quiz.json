@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q1",
+    "question": {
+      "th": "ฮันเตอร์ตัวไหนโจมตีปกติสร้างความเสียหาย 1.5 หลอดเลือดเป็นเอกลักษณ์?",
+      "en": "Which hunter deals 1.5 damage increments on regular melee attacks?"
+    },
+    "options": [
+      { "th": "ช่างภาพ (Photographer - Joseph)", "en": "Photographer (Joseph)" },
+      { "th": "เกอิชา (Geisha - Michiko)", "en": "Geisha (Michiko)" },
+      { "th": "ประติมากร (Sculptor - Galatea)", "en": "Sculptor (Galatea)" },
+      { "th": "อู๋ฉาง (Wu Chang)", "en": "Wu Chang" }
+    ],
+    "correctIndex": 0,
+    "explanation": {
+      "th": "ช่างภาพ (Joseph) สร้างความเสียหาย 1.5 เท่า ทำให้หมอ (Doctor) เป็นตัวแก้ทางที่ดีที่สุดเพราะสามารถรักษาเศษ 0.5 ได้อย่างรวดเร็ว",
+      "en": "Photographer deals 1.5 damage, making Doctor the best counter due to her rapid 0.5 chip healing."
+    }
+  },
+  {
+    "id": "q2",
+    "question": {
+      "th": "สายพรสวรรค์ '36' ของฝั่ง Survivor ประกอบด้วยทักษะหลักคู่ใด?",
+      "en": "Which key persona talents constitute the standard survivor '36' build?"
+    },
+    "options": [
+      { "th": "Borrowed Time (รหัสครบเด้งเลือด) + Knee Jerk Reflex (สปีดข้ามไม้)", "en": "Borrowed Time + Knee Jerk Reflex" },
+      { "th": "Borrowed Time (ขวา) + Tide Turner (ล่าง - อมตะ 20 วิหลังช่วยเพื่อน)", "en": "Borrowed Time + Tide Turner" },
+      { "th": "Flywheel Effect + Tide Turner", "en": "Flywheel Effect + Tide Turner" },
+      { "th": "Broken Windows + Borrowed Time", "en": "Broken Windows + Borrowed Time" }
+    ],
+    "correctIndex": 1,
+    "explanation": {
+      "th": "เลข 3 คือทิศขวา (Borrowed Time) และเลข 6 คือทิศล่าง (Tide Turner) ซึ่งเป็นสายหลักของตัวช่วยเพื่อน (Rescuer)",
+      "en": "3 represents Right (Borrowed Time) and 6 represents Down (Tide Turner), the essential rescuer build."
+    }
+  },
+  {
+    "id": "q3",
+    "question": {
+      "th": "ผู้รอดชีวิตคนใดสามารถกางโล่กันดาเมจให้เพื่อนร่วมทีมได้จากทั่วทุกมุมของแผนที่?",
+      "en": "Which survivor can cast an invulnerability shield on teammates from anywhere on the map?"
+    },
+    "options": [
+      { "th": "ซีเออร์ (Seer - Eli Clark)", "en": "Seer (Eli Clark)" },
+      { "th": "ช่างเครื่อง (Mechanic)", "en": "Mechanic" },
+      { "th": "ช่างน้ำหอม (Perfumer)", "en": "Perfumer" },
+      { "th": "ฟอร์เวิร์ด (Forward)", "en": "Forward" }
+    ],
+    "correctIndex": 0,
+    "explanation": {
+      "th": "ซีเออร์ใช้นกฮูก Brooke Rose ส่งไปปกป้องดาเมจให้เพื่อนได้ 1 ครั้งแบบ Global",
+      "en": "Seer uses his owl Brooke Rose to bestow a damage-absorbing shield globally."
+    }
+  },
+  {
+    "id": "q4",
+    "question": {
+      "th": "ใครเป็นตัวแก้ทางที่ได้เปรียบ 'เกอิชา (Geisha)' มากที่สุดในการจู๊ค?",
+      "en": "Which survivor has the strongest direct matchup advantage against Geisha?"
+    },
+    "options": [
+      { "th": "หมอ (Doctor)", "en": "Doctor" },
+      { "th": "ซีเออร์ (Seer - สบตาถอยหลังชาร์จนก)", "en": "Seer (Moonwalk stare cancels dash & charges owl)" },
+      { "th": "ช่างเครื่อง (Mechanic)", "en": "Mechanic" },
+      { "th": "คนทำสวน (Gardener)", "en": "Gardener" }
+    ],
+    "correctIndex": 1,
+    "explanation": {
+      "th": "ซีเออร์สามารถเดินถอยหลังสบตาเพื่อขัดจังหวะการพุ่งทะยานของเกอิชา พร้อมทั้งชาร์จเกจนกฮูกตัวใหม่ได้ฟรีๆ",
+      "en": "Seer's moonwalk stare stops Geisha's dash in its tracks while charging up extra owls."
+    }
+  },
+  {
+    "id": "q5",
+    "question": {
+      "th": "ทักษะใดของ Mercenary ที่ช่วยให้ไม่ล้มลงทันทีเมื่อโดน Terror Shock?",
+      "en": "Which ability prevents Mercenary from immediately going down from a Terror Shock?"
+    },
+    "options": [
+      { "th": "สนับศอกเหล็ก (Elbow Pads)", "en": "Elbow Pads" },
+      { "th": "ความเจ็บปวดที่ล่าช้า (Delayed Damage 15s)", "en": "Delayed Damage (15s delay)" },
+      { "th": "เหล็กไหลพิทักษ์", "en": "Iron Will" },
+      { "th": "อดทนเก้าอี้จรวด", "en": "Rocket Chair Endurance" }
+    ],
+    "correctIndex": 1,
+    "explanation": {
+      "th": "Delayed Damage จะหน่วงความเสียหายไว้ 15 วินาที ทำให้แม้โดน Terror Shock ก็ยังมีเวลาช่วยเพื่อนลงมาได้สำเร็จ",
+      "en": "Delayed damage buffers hits for 15 seconds, allowing Mercenary to complete saves even through Terror Shocks."
+    }
+  }
+]

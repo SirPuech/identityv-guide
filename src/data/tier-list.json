@@ -1,13 +1,43 @@
 {
   "survivors": {
-    "S": ["mechanic", "seer", "priestess", "mercenary"],
-    "A": ["perfumer", "coordinator", "prospector", "forward", "enchantress"],
-    "B": ["doctor"],
+    "S": [
+      "mechanic",
+      "seer",
+      "priestess",
+      "mercenary",
+      "antiquarian"
+    ],
+    "A": [
+      "perfumer",
+      "coordinator",
+      "prospector",
+      "forward",
+      "enchantress",
+      "prisoner",
+      "little-girl",
+      "cheerleader"
+    ],
+    "B": [
+      "doctor",
+      "gardener"
+    ],
     "C": []
   },
   "hunters": {
-    "S": ["sculptor", "dream-witch"],
-    "A": ["geisha", "photographer", "wu-chang"],
+    "S": [
+      "sculptor",
+      "dream-witch",
+      "bloody-queen",
+      "night-watch",
+      "opera-singer"
+    ],
+    "A": [
+      "geisha",
+      "photographer",
+      "wu-chang",
+      "guard-26",
+      "naiad"
+    ],
     "B": [],
     "C": []
   }

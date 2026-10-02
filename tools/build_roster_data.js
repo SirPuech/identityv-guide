@@ -1,0 +1,992 @@
+const fs = require('fs');
+const path = require('path');
+
+const survivors = [
+  {
+    id: "mechanic",
+    name: { th: "ช่างเครื่อง (Mechanic)", en: "Mechanic" },
+    title: { th: "เทรซี่ เรซนิค (Tracy Reznik)", en: "Tracy Reznik" },
+    type: "survivor",
+    role: "decoder",
+    difficulty: 4,
+    tier: "S",
+    image: "/images/heroes/mechanic.svg",
+    youtubeVideoId: "9o9fQpL5a9c",
+    quote: {
+      th: "วิทยาศาสตร์และหุ่นยนต์ของฉันจะพาพวกเราทุกคนรอดออกไป",
+      en: "My inventions and my robot will lead us all to freedom."
+    },
+    overview: {
+      th: "สุดยอดตัวถอดรหัสระดับท็อป สามารถบังคับหุ่นยนต์คู่ใจไปถอดรหัสอีกเครื่องพร้อมกัน หรือใช้หุ่นช่วยเพื่อนและเปิดประตูได้แม้ตัวจริงจะโดนตีล้มหรือนั่งเก้าอี้จรวดอยู่",
+      en: "Top-tier decoder who can deploy and remotely pilot her mechanical robot to decode a second cipher simultaneously, rescue teammates, or open exit gates even while injured or chaired."
+    },
+    colorAccent: "#10B981",
+    stats: { decoding: 5, kiting: 2, rescuing: 3, support: 4 },
+    abilities: [
+      {
+        id: "mech_robot",
+        name: { th: "รีโมตคอนโทรลหุ่นยนต์ (Remote Control)", en: "Remote Control" },
+        type: "active",
+        cooldown: "ไม่มี (ใช้แบตเตอรี่)",
+        description: {
+          th: "พกพารีโมตสั่งการหุ่นยนต์ สามารถบังคับหุ่นไปถอดรหัส เปิดเก้าอี้ หรือถ่วงเวลาฮันเตอร์ หุ่นยนต์มีความเร็วในการถอดรหัสเทียบเท่าคนปกติ และถอดรหัสต่อเนื่องได้แม้ตัวจริงจะละมือจากรีโมต",
+          en: "Controls a robot clone capable of decoding, opening gates, or healing. The robot can continue decoding on its own once set up, allowing dual-cipher pressure."
+        },
+        tips: [
+          { th: "วางหุ่นกดเครื่องไว้ก่อน แล้วตัวจริงเดินไปถอดเครื่องอื่น", en: "Set the robot on a cipher first, then rotate your main body to another cipher." }
+        ]
+      },
+      {
+        id: "mech_fragile",
+        name: { th: "ร่างกายอ่อนแอ & หวาดกลัว (Cowardly & Fragile)", en: "Cowardly & Fragile" },
+        type: "external",
+        description: {
+          th: "กระโดดข้ามหน้าต่างและแผ่นไม้ช้าลง 30% และเมื่อเพื่อนร่วมทีมบาดเจ็บความเร็วถอดรหัสจะลดลง (แต่หุ่นยนต์ไม่ลด)",
+          en: "Vaulting and pallet pulling speed reduced by 30%. Decoding penalty on injury (robot unaffected)."
+        }
+      }
+    ],
+    recommendedPerks: [
+      {
+        name: { th: "สายมาตรฐาน 36 (Borrowed Time + Tide Turner)", en: "Standard 36 (Borrowed Time + Tide Turner)" },
+        direction: "36 (ขวา-ล่าง)",
+        keyTalents: [
+          { th: "Borrowed Time", en: "Borrowed Time" },
+          { th: "Tide Turner", en: "Tide Turner" },
+          { th: "Snooze (นั่งเก้าอี้นานขึ้น)", en: "Snooze" }
+        ],
+        description: {
+          th: "นั่งเก้าอี้ได้นานเพื่อให้หุ่นยนต์ทำงานต่อ และช่วยเพื่อนจังหวะฉุกเฉิน",
+          en: "Prolongs chair endurance so the robot finishes machines and allows clutch saves."
+        }
+      }
+    ],
+    tricks: [
+      {
+        title: { th: "ทริคถอดรหัส 2 เครื่องพร้อมกัน (Dual Decoding)", en: "Dual Decoding Rhythm" },
+        tag: "decoding",
+        detail: {
+          th: "กดให้หุ่นถอดรหัส สลับกลับมาตัวจริงนับ 3-4 วิ แล้วสลับไปเช็ค Calibrate กันเครื่องช็อต",
+          en: "Tap robot to cipher, switch to body for 3-4s, tap back briefly to check calibrations."
+        }
+      },
+      {
+        title: { th: "บล็อกดาเมจด้วยหุ่นยนต์ (Meat Shield)", en: "Robot Meat Shield" },
+        tag: "kiting",
+        detail: {
+          th: "จังหวะฮันเตอร์ง้างฟันด้านหลัง กดเรียกรีโมตปล่อยหุ่นออกมาบังดาเมจแทน 1 ครั้ง",
+          en: "Deploy the robot right behind you during the hunter's swing to absorb the hit."
+        }
+      }
+    ],
+    counters: [
+      {
+        characterId: "geisha",
+        characterName: { th: "เกอิชา (Geisha)", en: "Geisha" },
+        reason: { th: "พุ่งประชิดตัวเร็วมาก ลงโทษดีบัฟกระโดดช้าของช่างเครื่อง", en: "Rapid gap closing punishes slow vault speed." },
+        tip: { th: "กดปุ่มสบตาค้างไว้และจู๊คในกำแพงทึบสูง", en: "Hold gaze button and navigate dense wall loops." }
+      }
+    ],
+    partners: [
+      {
+        characterId: "seer",
+        characterName: { th: "ซีเออร์ (Seer)", en: "Seer" },
+        synergy: { th: "ส่งนกฮูกมาช่วยกางโล่กันดาเมจให้ช่วงต้นเกม", en: "Protects Mechanic early with damage-nullifying owl shields." }
+      }
+    ]
+  },
+  {
+    id: "seer",
+    name: { th: "ซีเออร์ (Seer)", en: "Seer" },
+    title: { th: "อีไล คลาร์ก (Eli Clark)", en: "Eli Clark" },
+    type: "survivor",
+    role: "support",
+    difficulty: 3,
+    tier: "S",
+    image: "/images/heroes/seer.svg",
+    youtubeVideoId: "s3G9n8Gq0f8",
+    quote: {
+      th: "นกฮูกของฉันมองเห็นอนาคต และปกป้องผู้บริสุทธิ์จากเงามืด",
+      en: "My owl observes destiny and shields the innocent from the dark."
+    },
+    overview: {
+      th: "ซัพพอร์ตระดับเทพตลอดกาล มีนกฮูกคู่ใจส่งไปกางโล่ป้องกันดาเมจให้ตัวเองหรือเพื่อนได้ทั่วทั้งแผนที่ และมองเห็นฮันเตอร์ตั้งแต่เริ่มเกม",
+      en: "Top-tier god support. Commands an owl that shields anyone globally and reveals the hunter at match start."
+    },
+    colorAccent: "#3B82F6",
+    stats: { decoding: 3, kiting: 4, rescuing: 4, support: 5 },
+    abilities: [
+      {
+        id: "seer_owl",
+        name: { th: "นกฮูกพิทักษ์ (Brooke Rose)", en: "Brooke Rose" },
+        type: "active",
+        description: {
+          th: "ส่งนกฮูกไปป้องกันการโจมตีของฮันเตอร์ 1 ครั้งอย่างสมบูรณ์",
+          en: "Dispatches owl to absorb 1 instance of full damage globally."
+        },
+        tips: [
+          { th: "ดูจังหวะฮันเตอร์ง้างฟันจึงกดส่งนก", en: "Send owl strictly when hunter begins their attack swing." }
+        ]
+      }
+    ],
+    recommendedPerks: [
+      {
+        name: { th: "สายซัพพอร์ต 36 (Borrowed Time + Tide Turner)", en: "Support Anchor 36" },
+        direction: "36 (ขวา-ล่าง)",
+        keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Tide Turner", en: "Tide Turner" }],
+        description: { th: "ทำหน้าที่เป็นตัวช่วยเพื่อนสำรองและกางโล่", en: "Enables secondary rescuer role with invulnerability." }
+      }
+    ],
+    tricks: [
+      {
+        title: { th: "ทริคเดินถอยหลังชาร์จนก (Moonwalk Stare)", en: "Moonwalk Stare" },
+        tag: "kiting",
+        detail: { th: "เดินถอยหลังเล็งมุมกล้องให้ฮันเตอร์อยู่กลางจอเพื่อชาร์จนกเร็วขึ้น 2 เท่า", en: "Path backwards with hunter centered in camera to charge gauge rapidly." }
+      }
+    ],
+    counters: [
+      {
+        characterId: "sculptor",
+        characterName: { th: "ประติมากร (Sculptor)", en: "Sculptor" },
+        reason: { th: "รูปปั้นดาเมจ 0.5 ทำลายนกฮูกได้ง่าย", en: "Statues deal 0.5 chip damage to strip owl shields." },
+        tip: { th: "รอนกตอนฮันเตอร์เดินมาฟันมือเท่านั้น", en: "Save owl for melee attacks rather than statue projectiles." }
+      }
+    ],
+    partners: [
+      {
+        characterId: "priestess",
+        characterName: { th: "นักบวชหญิง (Priestess)", en: "Priestess" },
+        synergy: { th: "ใส่นกให้ตอนเปิดวาร์ปใหญ่ระยะไกล", en: "Shields Priestess during global long portal channeling." }
+      }
+    ]
+  },
+  {
+    id: "priestess",
+    name: { th: "นักบวชหญิง (Priestess)", en: "Priestess" },
+    title: { th: "ฟิโอน่า กิลแมน (Fiona Gilman)", en: "Fiona Gilman" },
+    type: "survivor",
+    role: "support",
+    difficulty: 3,
+    tier: "S",
+    image: "/images/heroes/priestess.svg",
+    youtubeVideoId: "g5D1Yv7f7s4",
+    quote: {
+      th: "มิติแห่งกุญแจศักดิ์สิทธิ์จะเชื่อมต่อทางรอดให้กับเรา",
+      en: "The sacred key shall bridge the dimensions to our salvation."
+    },
+    overview: {
+      th: "ราชินีแห่งการเปิดวาร์ป เจาะช่องมิติทะลุกำแพง และสร้างอุโมงค์มิติระยะไกลข้ามแผนที่เพื่อพาเพื่อนหนีได้ในพริบตา",
+      en: "Queen of portals. Opens direct wall portals and map-wide long portals for instantaneous global team escapes."
+    },
+    colorAccent: "#8B5CF6",
+    stats: { decoding: 3, kiting: 4, rescuing: 4, support: 5 },
+    abilities: [
+      {
+        id: "priest_portal",
+        name: { th: "กุญแจศักดิ์สิทธิ์ (Holy Key Portal)", en: "Holy Key Portal" },
+        type: "active",
+        description: { th: "เจาะรูวาร์ปทะลุกำแพง ฮันเตอร์เดินผ่านจะติดสตั๊น", en: "Opens straight portals through walls, stunning traversing hunters." }
+      }
+    ],
+    recommendedPerks: [
+      {
+        name: { th: "สายมาตรฐาน 36 (Borrowed Time + Tide Turner)", en: "Standard 36" },
+        direction: "36 (ขวา-ล่าง)",
+        keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Tide Turner", en: "Tide Turner" }],
+        description: { th: "ช่วยเพื่อนแล้วเจาะวาร์ปพาหนี", en: "Rescue with Tide Turner then portal through adjacent walls." }
+      }
+    ],
+    tricks: [
+      {
+        title: { th: "วาร์ปทะลุชั้นสอง (Two-Story Portals)", en: "Two-Story Portals" },
+        tag: "kiting",
+        detail: { th: "เจาะรูวาร์ปพื้นชั้นสองลงมาชั้นล่าง บังคับฮันเตอร์เดินอ้อมบันได", en: "Vertical portals force hunters on massive stair detours." }
+      }
+    ],
+    counters: [
+      {
+        characterId: "wu-chang",
+        characterName: { th: "อู๋ฉาง (Wu Chang)", en: "Wu Chang" },
+        reason: { th: "โยนร่มวาร์ปดักหน้าปลายทางได้ทันที", en: "Umbrella throws intercept portal exits." },
+        tip: { th: "เช็คคูลดาวน์ร่มก่อนเปิดวาร์ปใหญ่", en: "Track umbrella cooldown before casting global portals." }
+      }
+    ],
+    partners: [
+      {
+        characterId: "mercenary",
+        characterName: { th: "ทหารรับจ้าง (Mercenary)", en: "Mercenary" },
+        synergy: { th: "ทหารรับจ้างข้ามวาร์ปใหญ่ได้ไม่กลัวเงาแตกตาย", en: "Mercenary delayed damage withstands ghost portal injuries." }
+      }
+    ]
+  },
+  {
+    id: "mercenary",
+    name: { th: "ทหารรับจ้าง (Mercenary)", en: "Mercenary" },
+    title: { th: "นาอิบ ซูบิดาร์ (Naib Subedar)", en: "Naib Subedar" },
+    type: "survivor",
+    role: "rescuer",
+    difficulty: 3,
+    tier: "S",
+    image: "/images/heroes/mercenary.svg",
+    youtubeVideoId: "kL9xQ9_rGls",
+    quote: {
+      th: "ฉันรอดจากสมรภูมิมาแล้ว เก้าอี้พวกนี้ไม่มีวันทำลายฉันได้",
+      en: "I have survived battlefields; your chairs cannot break me."
+    },
+    overview: {
+      th: "ราชาแห่งการช่วยเพื่อน นั่งเก้าอี้นานที่สุดในเกม มีปลอกแขนดีดตัวพุ่งหนี และมีเกราะหน่วงดาเมจ โดนตี 2 ทีไม่ล้มทันที",
+      en: "Premier rescuer. Unmatched chair endurance, wall-spring elbow pads, and 15s delayed damage."
+    },
+    colorAccent: "#10B981",
+    stats: { decoding: 2, kiting: 5, rescuing: 5, support: 3 },
+    abilities: [
+      {
+        id: "merc_pads",
+        name: { th: "สนับศอกเหล็ก (Elbow Pads)", en: "Elbow Pads" },
+        type: "active",
+        description: { th: "ชนกำแพงแล้วดีดตัวพุ่งไปข้างหน้าอย่างรวดเร็ว", en: "Springs forward upon contacting terrain obstacles." }
+      }
+    ],
+    recommendedPerks: [
+      {
+        name: { th: "สายกู้ภัยตายยาก 36", en: "Core Rescuer 36" },
+        direction: "36 (ขวา-ล่าง)",
+        keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Tide Turner", en: "Tide Turner" }],
+        description: { th: "ช่วยได้ชัวร์ 100% แม้ฮันเตอร์จะเฝ้าโหด", en: "Ensures successful rescues in all camping scenarios." }
+      }
+    ],
+    tricks: [
+      {
+        title: { th: "ทริคปิด-เปิดสนับศอกกันเด้งมั่ว", en: "Pad Toggle Timing" },
+        tag: "kiting",
+        detail: { th: "เปิดสนับศอกเฉพาะเสี้ยววินาทีก่อนชนกำแพงแล้วปิดทันที", en: "Toggle on right before wall impact to save durability." }
+      }
+    ],
+    counters: [
+      {
+        characterId: "sculptor",
+        characterName: { th: "ประติมากร (Sculptor)", en: "Sculptor" },
+        reason: { th: "รูปปั้นซัดอัดดาเมจสะสมทำให้เกราะหน่วงหมดเร็ว", en: "Statue chip damage triggers delayed downing faster." },
+        tip: { th: "พุ่งสนับศอกอ้อมหลบรัศมีรูปปั้นก่อนเข้าช่วย", en: "Dash around statue zones before the rescue attempt." }
+      }
+    ],
+    partners: [
+      {
+        characterId: "mechanic",
+        characterName: { th: "ช่างเครื่อง (Mechanic)", en: "Mechanic" },
+        synergy: { th: "ช่วยช่างเครื่องลงมาให้หุ่นปั่นเครื่องต่อจนจบ", en: "Rescues Mechanic safely to sustain maximum cipher rush." }
+      }
+    ]
+  },
+  {
+    id: "perfumer",
+    name: { th: "ช่างน้ำหอม (Perfumer)", en: "Perfumer" },
+    title: { th: "เวร่า แนร์ (Vera Nair)", en: "Vera Nair" },
+    type: "survivor",
+    role: "kiter",
+    difficulty: 3,
+    tier: "A",
+    image: "/images/heroes/perfumer.svg",
+    youtubeVideoId: "7L3bBw8U_eI",
+    quote: { th: "กลิ่นแห่งการลืมเลือนจะพาฉันย้อนเวลากลับสู่ความสมบูรณ์แบบ", en: "Euphoria fragrance rewinds the hands of time." },
+    overview: {
+      th: "พกน้ำหอมยูโฟเรีย 3 ขวด กดใช้เพื่อจดจำตำแหน่งและเลือด โดนตีภายใน 5 วินาทีกดย้อนเวลากลับมาเลือดเต็มได้",
+      en: "Carries 3 Euphoria perfumes; rewinds health and coordinates within 5 seconds of damage."
+    },
+    colorAccent: "#EC4899",
+    stats: { decoding: 3, kiting: 5, rescuing: 3, support: 3 },
+    abilities: [
+      {
+        id: "perf_bottle",
+        name: { th: "น้ำหอมยูโฟเรีย (Euphoria)", en: "Euphoria" },
+        type: "active",
+        description: { th: "ฉีดเพื่อจำตำแหน่งและเลือดย้อนเวลาได้ใน 5 วินาที", en: "Records coordinates and health; recasting rewinds state." }
+      }
+    ],
+    recommendedPerks: [
+      {
+        name: { th: "สายจู๊คมั่นใจ 39", en: "Kiting 39" },
+        direction: "39 (ขวา-ซ้าย)",
+        keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Knee Jerk Reflex", en: "Knee Jerk Reflex" }],
+        description: { th: "วิ่งเร็วข้ามไม้พร้อมน้ำหอม 3 ขวด ดึงเวลาได้สบาย", en: "High mobility with 3 rewinds provides long kiting duration." }
+      }
+    ],
+    tricks: [
+      {
+        title: { th: "ฉีดน้ำหอมแล้วกระโดดตึก (Ledge Drop Bait)", en: "Ledge Drop Bait" },
+        tag: "kiting",
+        detail: { th: "ฉีดบนชั้นสองโดดลงมาชั้นล่าง พอนักล่าโดดตามกดย้อนเวลากลับขึ้นไป", en: "Spray on ledges, jump down to bait hunter, then rewind back up." }
+      }
+    ],
+    counters: [
+      { characterId: "geisha", characterName: { th: "เกอิชา (Geisha)", en: "Geisha" }, reason: { th: "ดึงจังหวะไม่ฟันเพื่อรอน้ำหอมหมดเวลา", en: "Baits perfume timer before striking." }, tip: { th: "รอเห็นแอนิเมชันง้างฟันชัดเจนค่อยกดน้ำหอม", en: "Hold perfume until swing animation confirms." } }
+    ],
+    partners: [
+      { characterId: "seer", characterName: { th: "ซีเออร์ (Seer)", en: "Seer" }, synergy: { th: "เพิ่มชีวิตที่ 4 ด้วยนกฮูกหลังน้ำหอมหมด", en: "Owl shield acts as a 4th life after perfumes are spent." } }
+    ]
+  },
+  {
+    id: "coordinator",
+    name: { th: "ผู้ประสานงาน (Coordinator)", en: "Coordinator" },
+    title: { th: "มาร์ธา เบฮัมฟิล (Martha Behamfil)", en: "Martha Behamfil" },
+    type: "survivor",
+    role: "rescuer",
+    difficulty: 2,
+    tier: "A",
+    image: "/images/heroes/coordinator.svg",
+    youtubeVideoId: "9o9fQpL5a9c",
+    quote: { th: "พลุสัญญาณกระบอกนี้ จะส่องแสงนำทางให้เพื่อนร่วมทีม", en: "This flare gun will cover our comrades' retreat." },
+    overview: {
+      th: "พกปืนพลุสัญญาณยิงสตั๊นฮันเตอร์ได้นานถึง 4-5 วินาที ช่วยเพื่อนหน้าเก้าอี้และเปิดทางเปิดประตู",
+      en: "Fires a military flare gun that stuns hunters for 4-5 seconds, ensuring clutch unhooks and gate escapes."
+    },
+    colorAccent: "#F59E0B",
+    stats: { decoding: 2, kiting: 4, rescuing: 5, support: 4 },
+    abilities: [
+      { id: "coord_gun", name: { th: "ปืนพลุสัญญาณ (Flare Gun)", en: "Flare Gun" }, type: "active", description: { th: "ยิงสตั๊นฮันเตอร์ติดตามเป้าหมาย", en: "Fires homing flare that heavily stuns hunter." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายช่วยชัวร์ 36", en: "Sure Rescue 36" }, direction: "36 (ขวา-ล่าง)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Tide Turner", en: "Tide Turner" }], description: { th: "ช่วยเก้าอี้เสร็จยิงปืนเปิดทาง", en: "Rescue with Tide Turner then fire flare to cover." } }
+    ],
+    tricks: [
+      { title: { th: "หลอกล่อสกิล Excitement", en: "Bait Excitement" }, tag: "rescuing", detail: { th: "ทำท่าง้างช่วยหลอกให้ฮันเตอร์กด Excitement ก่อนค่อยยิง", en: "Fake rescue to force hunter Excitement before shooting." } }
+    ],
+    counters: [
+      { characterId: "geisha", characterName: { th: "เกอิชา (Geisha)", en: "Geisha" }, reason: { th: "มักพก Excitement มาล้างสตั๊นปืน", en: "Often equips Excitement trait to cleanse flare stun." }, tip: { th: "ยิงระยะประชิดหลังดึงเพื่อนลงมาแล้ว", en: "Fire at close range after executing the rescue." } }
+    ],
+    partners: [
+      { characterId: "forward", characterName: { th: "ฟอร์เวิร์ด (Forward)", en: "Forward" }, synergy: { th: "คอมโบปืน + บอลชนสตั๊นยาว 10 วินาที", en: "Chains flare stun with rugby tackle for 10s lockout." } }
+    ]
+  },
+  {
+    id: "prospector",
+    name: { th: "นักสำรวจแร่ (Prospector)", en: "Prospector" },
+    title: { th: "นอร์ตัน แคมป์เบลล์ (Norton Campbell)", en: "Norton Campbell" },
+    type: "survivor",
+    role: "kiter",
+    difficulty: 4,
+    tier: "A",
+    image: "/images/heroes/prospector.svg",
+    youtubeVideoId: "s3G9n8Gq0f8",
+    quote: { th: "ขั้วแม่เหล็กผลักหรือดูด ทุกอย่างอยู่ในมือของฉัน", en: "Repulsion and attraction bend to my will." },
+    overview: {
+      th: "ควบคุมขั้วแม่เหล็กดูดหรือผลักฮันเตอร์ไปชนกำแพงให้ติดสตั๊น ช่วยเพื่อนจากบอลลูนได้ยอดเยี่ยม",
+      en: "Uses magnetic polarity to repel or attract hunters into walls for stuns and balloon saves."
+    },
+    colorAccent: "#EA580C",
+    stats: { decoding: 3, kiting: 5, rescuing: 4, support: 4 },
+    abilities: [
+      { id: "prosp_mag", name: { th: "อุกกาบาตแม่เหล็ก (Meteorite Magnet)", en: "Meteorite Magnet" }, type: "active", description: { th: "โยนแม่เหล็กดูดหรือผลักชนกำแพงติดสตั๊น", en: "Attracts or repels hunters into obstacles for stuns." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายแม่เหล็กพริ้ว 39", en: "Magnetic Kiter 39" }, direction: "39 (ขวา-ซ้าย)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Knee Jerk Reflex", en: "Knee Jerk Reflex" }], description: { th: "วิ่งเร็วข้ามไม้พร้อมผลักฮันเตอร์ออก", en: "High mobility with repulsive magnetic zones." } }
+    ],
+    tricks: [
+      { title: { th: "ช่วยเพื่อนจากบอลลูน (Balloon Save)", en: "Balloon Save" }, tag: "rescuing", detail: { th: "ติดแม่เหล็กตอนฮันเตอร์ยกลูกโป่ง ผลักชนกำแพงเพื่อนจะหลุดฟรี", en: "Attach magnet during balloon pick-up to stun against terrain." } }
+    ],
+    counters: [
+      { characterId: "sculptor", characterName: { th: "ประติมากร (Sculptor)", en: "Sculptor" }, reason: { th: "รูปปั้นโจมตีระยะไกลไม่สนแม่เหล็ก", en: "Ranged statue summons bypass magnet zones." }, tip: { th: "ใช้แม่เหล็กดีดตัวเองออกจากวงล้อมรูปปั้น", en: "Magnet-pull yourself clear of statue crossfire." } }
+    ],
+    partners: [
+      { characterId: "enchantress", characterName: { th: "แม่มดเสน่ห์ (Enchantress)", en: "Enchantress" }, synergy: { th: "ช่วยกันสตั๊นสลับกันต่อเนื่อง", en: "Alternates curse stuns with magnetic wall slams." } }
+    ]
+  },
+  {
+    id: "forward",
+    name: { th: "ฟอร์เวิร์ด (Forward)", en: "Forward" },
+    title: { th: "วิลเลียม เอลลิส (William Ellis)", en: "William Ellis" },
+    type: "survivor",
+    role: "rescuer",
+    difficulty: 4,
+    tier: "A",
+    image: "/images/heroes/forward.svg",
+    youtubeVideoId: "g5D1Yv7f7s4",
+    quote: { th: "ไม่มีกำแพงไหนขวางการพุ่งชนของลูกรักบี้ลูกนี้ได้!", en: "No barrier can withstand this rugby ball!" },
+    overview: {
+      th: "นักวิ่งรักบี้พลังสูง พุ่งกระแทกฮันเตอร์ชนกำแพงให้ติดสตั๊น ช่วยเพื่อนจากบอลลูนได้ฉับไว",
+      en: "Sprints with rugby ball to tackle hunters into obstacles, instantly freeing ballooned teammates."
+    },
+    colorAccent: "#EF4444",
+    stats: { decoding: 1, kiting: 5, rescuing: 5, support: 4 },
+    abilities: [
+      { id: "fwd_ball", name: { th: "ลูกรักบี้พุ่งชน (Rugby Tackle)", en: "Rugby Tackle" }, type: "active", description: { th: "พุ่งชนฮันเตอร์กระแทกกำแพงติดสตั๊นยาว", en: "High speed tackle crashing hunter into obstacles." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายพุ่งกู้ภัย 36", en: "Charger Rescuer 36" }, direction: "36 (ขวา-ล่าง)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Tide Turner", en: "Tide Turner" }], description: { th: "พุ่งชนฮันเตอร์ก่อนช่วยเพื่อน", en: "Stun camping hunter before untying ally." } }
+    ],
+    tricks: [
+      { title: { th: "จังหวะชนลูกโป่ง (Balloon Stun Timing)", en: "Balloon Stun Timing" }, tag: "rescuing", detail: { th: "รอจังหวะก้มหยิบเพื่อนขึ้นผูกลูกโป่ง พุ่งชนทันที", en: "Charge right during balloon pick-up animation." } }
+    ],
+    counters: [
+      { characterId: "dream-witch", characterName: { th: "แม่มดแห่งความฝัน (Dream Witch)", en: "Dream Witch" }, reason: { th: "มีบริวารหลายตัว ชนตัวหนึ่ง อีกตัวก็เดินมาตีต่อ", en: "Multiple followers diminish single-target stun value." }, tip: { th: "เก็บลูกบอลไว้ช่วยเพื่อนจังหวะจำเป็นเท่านั้น", en: "Conserve durability strictly for decisive saves." } }
+    ],
+    partners: [
+      { characterId: "seer", characterName: { th: "ซีเออร์ (Seer)", en: "Seer" }, synergy: { th: "ใส่นกกันดาเมจตอนพุ่งเข้าชน", en: "Owl shield protects Forward during dangerous dashes." } }
+    ]
+  },
+  {
+    id: "enchantress",
+    name: { th: "แม่มดเสน่ห์ (Enchantress)", en: "Enchantress" },
+    title: { th: "แพทริเซีย ดอร์วัล (Patricia Dorval)", en: "Patricia Dorval" },
+    type: "survivor",
+    role: "kiter",
+    difficulty: 2,
+    tier: "A",
+    image: "/images/heroes/enchantress.svg",
+    youtubeVideoId: "7L3bBw8U_eI",
+    quote: { th: "คำสาปของลิงวูดูจะตอบแทนความเจ็บปวดกลับคืนไป", en: "The ape curse returns every pain." },
+    overview: {
+      th: "สะสมสแต็คคำสาปเมื่ออยู่ใกล้ฮันเตอร์หรือโดนตี กดช็อตสตั๊นขัดจังหวะการฟันได้ทันทีโดยไม่ต้องเล็ง",
+      en: "Accumulates curse stacks to discharge instant point-blank stuns and cancel hunter swings."
+    },
+    colorAccent: "#7C3AED",
+    stats: { decoding: 3, kiting: 5, rescuing: 3, support: 4 },
+    abilities: [
+      { id: "ench_curse", name: { th: "คำสาปรูปปั้นลิง (Ape Curse Stun)", en: "Ape Curse Stun" }, type: "active", description: { th: "สตั๊นสั้น 1 ชั้น หรือสตั๊นยาว 3 ชั้น", en: "Short stun at 1 stack; heavy stun at 3 stacks." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายคำสาป 39", en: "Curse Kiter 39" }, direction: "39 (ขวา-ซ้าย)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Knee Jerk Reflex", en: "Knee Jerk Reflex" }], description: { th: "วนลูปไม้เก็บสแต็คและสปรินต์หนี", en: "Loop pallet areas to stack charges." } }
+    ],
+    tricks: [
+      { title: { th: "ช็อตยกเลิกการง้างฟัน (Attack Cancel)", en: "Attack Cancel" }, tag: "kiting", detail: { th: "เห็นฮันเตอร์ยกแขนง้างฟัน กด 1 สแต็คทันที", en: "Pop 1 stack right when hunter starts swing animation." } }
+    ],
+    counters: [
+      { characterId: "photographer", characterName: { th: "ช่างภาพ (Photographer)", en: "Photographer" }, reason: { th: "ตีในโลกภาพถ่ายไม่ให้สแต็คคำสาป", en: "Mirror world hits award no curse stacks." }, tip: { th: "หลบเข้าตึกเมื่อกล้องถ่ายรูปทำงาน", en: "Seek indoor cover when cameras activate." } }
+    ],
+    partners: [
+      { characterId: "prospector", characterName: { th: "นักสำรวจแร่ (Prospector)", en: "Prospector" }, synergy: { th: "ช่วยกันสตั๊นสลับจังหวะ", en: "Chains curse and magnetic stuns together." } }
+    ]
+  },
+  {
+    id: "doctor",
+    name: { th: "หมอ (Doctor)", en: "Doctor" },
+    title: { th: "เอมิลี่ เดล (Emily Dale)", en: "Emily Dale" },
+    type: "survivor",
+    role: "support",
+    difficulty: 1,
+    tier: "B",
+    image: "/images/heroes/doctor.svg",
+    youtubeVideoId: "kL9xQ9_rGls",
+    quote: { th: "เข็มฉีดยานี้จะเยียวยาทุกบาดแผล", en: "This syringe tends to every wound." },
+    overview: {
+      th: "พกเข็มฉีดยาไม่มีวันหมด ฮีลตัวเองและเพื่อนรวดเร็วมาก ลบล้างเศษดาเมจ 0.5 ได้ดีที่สุด",
+      en: "Infinite syringe healing; cleanses 0.5 chip damage with unparalleled speed."
+    },
+    colorAccent: "#06B6D4",
+    stats: { decoding: 3, kiting: 3, rescuing: 3, support: 5 },
+    abilities: [
+      { id: "doc_heal", name: { th: "เข็มฉีดยารักษา (Syringe)", en: "Syringe" }, type: "active", description: { th: "รักษาตัวเองและเพื่อนได้ไม่จำกัดจำนวนครั้ง", en: "Heals self and allies without item depletion." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายหมอเดินเร็ว 39", en: "Medic Kiter 39" }, direction: "39 (ขวา-ซ้าย)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Knee Jerk Reflex", en: "Knee Jerk Reflex" }], description: { th: "วิ่งหนีไปแอบฉีดยาในจุดปลอดภัย", en: "Gain distance to execute self-heals." } }
+    ],
+    tricks: [
+      { title: { th: "ฉีดยาหลังไม้ระหว่างจู๊ค", en: "Pallet Hit & Heal" }, tag: "kiting", detail: { th: "จังหวะฮันเตอร์ทำลายไม้ ให้รีบกดฉีดยาทันที", en: "Take advantage of pallet-break animations to heal." } }
+    ],
+    counters: [
+      { characterId: "geisha", characterName: { th: "เกอิชา (Geisha)", en: "Geisha" }, reason: { th: "ไล่บี้ติดตัวไม่เปิดโอกาสให้ฉีดยา", en: "Relentless dashes deny healing windows." }, tip: { th: "จู๊คเฉพาะในอาคารกำแพงทึบสูง", en: "Stick to high solid building loops." } }
+    ],
+    partners: [
+      { characterId: "mercenary", characterName: { th: "ทหารรับจ้าง (Mercenary)", en: "Mercenary" }, synergy: { th: "ช่วยฮีลนาอิบได้เร็วมาก", en: "Quickly restores wounded Mercenaries." } }
+    ]
+  },
+  {
+    id: "gardener",
+    name: { th: "คนทำสวน (Gardener)", en: "Gardener" },
+    title: { th: "เอ็มม่า วูดส์ (Emma Woods)", en: "Emma Woods" },
+    type: "survivor",
+    role: "support",
+    difficulty: 1,
+    tier: "B",
+    image: "/images/heroes/gardener.svg",
+    youtubeVideoId: "s3G9n8Gq0f8",
+    quote: { th: "กล่องเครื่องมือนี้จะรื้อทำลายเก้าอี้และปกป้องพ่อ", en: "My toolbox dismantles chairs to protect those I love." },
+    overview: {
+      th: "มีโล่พิทักษ์พ่อ 5 วินาทีตอนเริ่มเกมและเมื่ออยู่ใกล้เก้าอี้ สามารถพกกล่องเครื่องมือไปพังเก้าอี้จรวดได้",
+      en: "Starts with a 5s protective shield and dismantles rocket chairs with her toolbox."
+    },
+    colorAccent: "#16A34A",
+    stats: { decoding: 3, kiting: 4, rescuing: 3, support: 4 },
+    abilities: [
+      { id: "gard_box", name: { th: "กล่องเครื่องมือรื้อเก้าอี้ (Toolbox)", en: "Toolbox" }, type: "active", description: { th: "พังเก้าอี้จรวดรอบแผนที่", en: "Dismantles rocket chairs around the map." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายจู๊คเกราะ 39", en: "Shield Kiter 39" }, direction: "39 (ขวา-ซ้าย)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Knee Jerk Reflex", en: "Knee Jerk Reflex" }], description: { th: "ใช้โล่ซับดาเมจต้นเกม", en: "Leverage shield to survive initial encounters." } }
+    ],
+    tricks: [
+      { title: { th: "พังเก้าอี้ก่อนเพื่อนโดนอุ้ม", en: "Pre-Dismantle" }, tag: "rescuing", detail: { th: "พังเก้าอี้ใกล้จุดที่เพื่อนกำลังจะล้ม บังคับฮันเตอร์เดินไกล", en: "Break adjacent chairs so hunter cannot hook teammate in time." } }
+    ],
+    counters: [
+      { characterId: "photographer", characterName: { th: "ช่างภาพ (Photographer)", en: "Photographer" }, reason: { th: "เก้าอี้ซ่อมเองได้เมื่อโลกภาพถ่ายปิด", en: "Chairs restore automatically when Photo World collapses." }, tip: { th: "เน้นปั่นเครื่องแทนการพังเก้าอี้", en: "Prioritize decoding over chair breaking." } }
+    ],
+    partners: [
+      { characterId: "forward", characterName: { th: "ฟอร์เวิร์ด (Forward)", en: "Forward" }, synergy: { th: "พังเก้าอี้แล้วฟอร์เวิร์ดชนให้เพื่อนดิ้นหลุด", en: "Dismantled chairs give Forward more time to land balloon stuns." } }
+    ]
+  },
+  {
+    id: "prisoner",
+    name: { th: "นักโทษ ('Prisoner')", en: "'Prisoner'" },
+    title: { th: "ลูก้า บัลซ่า (Luca Balsa)", en: "Luca Balsa" },
+    type: "survivor",
+    role: "decoder",
+    difficulty: 2,
+    tier: "A",
+    image: "/images/heroes/prisoner.svg",
+    youtubeVideoId: "9o9fQpL5a9c",
+    quote: { th: "กระแสไฟฟ้าและการเชื่อมต่อจะเร่งความเร็วให้เรา", en: "Electrical currents and connections accelerate our escape." },
+    overview: {
+      th: "เชื่อมต่อเครื่องถอดรหัส 2 เครื่องส่งเปอร์เซ็นต์หากันได้ และปล่อยกระแสไฟฟ้าช็อตสตั๊นฮันเตอร์ได้ 1 ครั้ง",
+      en: "Connects two ciphers to transmit decoding progress and discharges an electric shock stun."
+    },
+    colorAccent: "#0D9488",
+    stats: { decoding: 5, kiting: 3, rescuing: 2, support: 4 },
+    abilities: [
+      { id: "pris_connect", name: { th: "เชื่อมต่อวงจร (Circuit Connection)", en: "Circuit Connection" }, type: "active", description: { th: "เชื่อมสายไฟส่ง % ปั่นเครื่องข้ามแผนที่", en: "Transfers cipher decoding progress between connected stations." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายถอดรหัสชัวร์ 36", en: "Decoder Anchor 36" }, direction: "36 (ขวา-ล่าง)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Tide Turner", en: "Tide Turner" }], description: { th: "ส่งเปอร์เซ็นต์ช่วยทีมและมีสปีดท้ายเกม", en: "Maximizes remote cipher pressure and endgame survival." } }
+    ],
+    tricks: [
+      { title: { th: "ช็อตสตั๊นก่อนข้ามหน้าต่าง", en: "Electric Vault Shock" }, tag: "kiting", detail: { th: "กดปล่อยคลื่นไฟฟ้าช็อตฮันเตอร์ตอนประชิดตัวแล้วรีบข้ามหน้าต่าง", en: "Discharge electric shock right before vaulting to prevent terror shock." } }
+    ],
+    counters: [
+      { characterId: "wu-chang", characterName: { th: "อู๋ฉาง (Wu Chang)", en: "Wu Chang" }, reason: { th: "ปาร่มวาร์ปมาตามสายไฟได้ทันที", en: "Teleports umbrella directly to connected ciphers." }, tip: { th: "ตัดสายไฟเมื่อเห็นเสาเริ่มสั่น", en: "Sever connections when cipher antennas vibrate." } }
+    ],
+    partners: [
+      { characterId: "mercenary", characterName: { th: "ทหารรับจ้าง (Mercenary)", en: "Mercenary" }, synergy: { th: "ส่งเปอร์เซ็นต์ไปช่วยเครื่องที่ตัวช่วยปั่นค้างไว้", en: "Pushes cipher progress to machines left by rescuers." } }
+    ]
+  },
+  {
+    id: "antiquarian",
+    name: { th: "ผู้เชี่ยวชาญของโบราณ (Antiquarian)", en: "Antiquarian" },
+    title: { th: "ฉี สืออี (Qi Shiyi)", en: "Qi Shiyi" },
+    type: "survivor",
+    role: "kiter",
+    difficulty: 4,
+    tier: "S",
+    image: "/images/heroes/antiquarian.svg",
+    youtubeVideoId: "g5D1Yv7f7s4",
+    quote: { th: "เพลงกระบี่ขลุ่ยไผ่จะสลายทุกลมปราณของศัตรู", en: "Flute strikes disarm and dismantle any foe." },
+    overview: {
+      th: "นักจู๊คระดับท็อปเมต้า ใช้ขลุ่ยไม้ไผ่ฟาดฮันเตอร์ ปลดอาวุธทำให้ฮันเตอร์ฟันไม่ได้ และกระโดดข้ามสิ่งกีดขวางได้อย่างพริ้วไหว",
+      en: "Premier tournament kiter. Strikes with a bamboo flute to disarm hunters (preventing attacks) and vaults obstacles."
+    },
+    colorAccent: "#047857",
+    stats: { decoding: 3, kiting: 5, rescuing: 4, support: 4 },
+    abilities: [
+      { id: "anti_strike", name: { th: "กระบวนท่าฟาดขลุ่ย (Flute Strike & Disarm)", en: "Flute Strike & Disarm" }, type: "active", description: { th: "ฟาดฮันเตอร์ให้ติดสตั๊นและปลดอาวุธห้ามฟัน", en: "Stuns and disarms the hunter, locking their attack ability." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายต่อสู้ 39", en: "Combat Kiter 39" }, direction: "39 (ขวา-ซ้าย)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Flywheel Effect", en: "Flywheel Effect" }], description: { th: "ผสมสปีดไม้เข้ากับคอมโบฟาดขลุ่ย 3 ทิศทาง", en: "High mobility chained into multi-directional flute strikes." } }
+    ],
+    tricks: [
+      { title: { th: "คอมโบฟาด 3 ทิศปลดอาวุธยาวนาน", en: "Triple Strike Disarm" }, tag: "kiting", detail: { th: "ฟาดซ้าย ขวา และหน้า ผลักฮันเตอร์ชนกำแพงปลดอาวุธได้นานกว่า 6 วินาที", en: "Chain left, right, and front strikes to disarm hunter for 6+ seconds." } }
+    ],
+    counters: [
+      { characterId: "sculptor", characterName: { th: "ประติมากร (Sculptor)", en: "Sculptor" }, reason: { th: "โดนรูปปั้นบีบระหว่างร่ายรำกระบี่ขลุ่ย", en: "Statues interrupt flute channeling animations." }, tip: { th: "อย่ารำขลุ่ยในที่แคบ", en: "Avoid martial strikes in tight corridors." } }
+    ],
+    partners: [
+      { characterId: "seer", characterName: { th: "ซีเออร์ (Seer)", en: "Seer" }, synergy: { th: "กางนกให้ตอนเข้าคลุกวงในฟาดขลุ่ย", en: "Owl protects Qi Shiyi during close-quarters disarm engagements." } }
+    ]
+  },
+  {
+    id: "little-girl",
+    name: { th: "เด็กหญิง ('Little Girl')", en: "'Little Girl'" },
+    title: { th: "เมมโมรี่ (Memory)", en: "Memory" },
+    type: "survivor",
+    role: "support",
+    difficulty: 2,
+    tier: "A",
+    image: "/images/heroes/little-girl.svg",
+    youtubeVideoId: "7L3bBw8U_eI",
+    quote: { th: "ความทรงจำในอดีตจะนำพาฉันกลับไปหาเธอ", en: "Faded memories lead me back to your side." },
+    overview: {
+      th: "สิงร่างเพื่อนร่วมทีมเพิ่มสปีดการปั่นและกระโดดไม้ วาร์ปข้ามแผนที่ไปหาเพื่อนได้ และปล่อยคลื่นความทรงจำผลักฮันเตอร์ออก",
+      en: "Synchronizes with allies to boost decoding and vaulting, teleports globally, and emits shockwaves."
+    },
+    colorAccent: "#EC4899",
+    stats: { decoding: 4, kiting: 4, rescuing: 2, support: 5 },
+    abilities: [
+      { id: "lg_sync", name: { th: "สิงร่างความทรงจำ (Memory Sync)", en: "Memory Sync" }, type: "active", description: { th: "สิงเกาะเพื่อนเพื่อเพิ่มความเร็วปั่นและกระโดดไม้", en: "Attaches onto allies to boost action speeds." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายซัพพอร์ตวาร์ป 39", en: "Sync Support 39" }, direction: "39 (ขวา-ซ้าย)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Knee Jerk Reflex", en: "Knee Jerk Reflex" }], description: { th: "วาร์ปไปช่วยเพื่อนปั่นและผลักฮันเตอร์", en: "Teleports to coordinate dual ciphers and push hunters away." } }
+    ],
+    tricks: [
+      { title: { th: "ปล่อยกระดาษผลักจังหวะฮันเตอร์ง้างฟัน", en: "Shockwave Cancel" }, tag: "kiting", detail: { th: "โยนกระดาษบันทึกลงพื้นผลักฮันเตอร์กระเด็นขัดจังหวะการฟัน", en: "Drop memory fragment to blast hunter back during swing." } }
+    ],
+    counters: [
+      { characterId: "wu-chang", characterName: { th: "อู๋ฉาง (Wu Chang)", en: "Wu Chang" }, reason: { th: "กระดิ่งขัดจังหวะการวาร์ปและสิงร่าง", en: "Soul bell cancels teleport channeling." }, tip: { th: "วาร์ปเฉพาะเมื่ออยู่นอกระยะกระดิ่ง", en: "Teleport only when outside bell range." } }
+    ],
+    partners: [
+      { characterId: "mercenary", characterName: { th: "ทหารรับจ้าง (Mercenary)", en: "Mercenary" }, synergy: { th: "สิงร่างนาอิบช่วยให้เดินเร็วขึ้นมาก", en: "Syncs onto Mercenary for supercharged rescue speed." } }
+    ]
+  },
+  {
+    id: "cheerleader",
+    name: { th: "เชียร์ลีดเดอร์ (Cheerleader)", en: "Cheerleader" },
+    title: { th: "ลิลี่ บาร์เรีย (Lily Barriere)", en: "Lily Barriere" },
+    type: "survivor",
+    role: "support",
+    difficulty: 3,
+    tier: "A",
+    image: "/images/heroes/cheerleader.svg",
+    youtubeVideoId: "s3G9n8Gq0f8",
+    quote: { th: "เสียงเชียร์นี้จะปลุกพลังและรีเซ็ตคูลดาวน์ให้พวกเราทุกคน!", en: "My cheers invigorate hope and refresh all cooldowns!" },
+    overview: {
+      th: "ใช้พู่เชียร์เพิ่มสปีดให้ตัวเองและเพื่อนร่วมทีม สามารถส่งเสียงเชียร์รีเซ็ตคูลดาวน์สกิลไอเทมของเพื่อนได้ทันที!",
+      en: "Uses pom-poms to grant movement speed boosts and refresh teammates' item cooldowns instantly."
+    },
+    colorAccent: "#E11D48",
+    stats: { decoding: 3, kiting: 5, rescuing: 3, support: 5 },
+    abilities: [
+      { id: "cheer_inspire", name: { th: "ส่งเสียงเชียร์ฟื้นฟู (Inspire & Cheer)", en: "Inspire & Cheer" }, type: "active", description: { th: "มอบสปีดและรีเซ็ตคูลดาวน์สกิลให้เพื่อน", en: "Grants movement speed and resets targeted ally's skill cooldowns." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายวิ่งเชียร์ 39", en: "Speed Cheer 39" }, direction: "39 (ขวา-ซ้าย)", keyTalents: [{ th: "Borrowed Time", en: "Borrowed Time" }, { th: "Flywheel Effect", en: "Flywheel Effect" }], description: { th: "พุ่งตัวด้วยพู่เชียร์และช่วยซัพพอร์ตทีม", en: "Supercharges personal evasion while boosting team." } }
+    ],
+    tricks: [
+      { title: { th: "รีเซ็ตปลอกแขนนาอิบ / น้ำหอมเวร่า", en: "Cooldown Reset Synergy" }, tag: "support", detail: { th: "ส่งเสียงเชียร์ให้นักจู๊คทำให้ใช้ไอเทมได้อีกรอบทันที", en: "Cheer kiters to immediately restore their spent defensive items." } }
+    ],
+    counters: [
+      { characterId: "sculptor", characterName: { th: "ประติมากร (Sculptor)", en: "Sculptor" }, reason: { th: "รูปปั้นหยุดสปีดวิ่งของเชียร์ลีดเดอร์", en: "Statues physically block acceleration paths." }, tip: { th: "สปรินต์ออกนอกแนวบีบของรูปปั้น", en: "Angle speed dashes away from converging statues." } }
+    ],
+    partners: [
+      { characterId: "perfumer", characterName: { th: "ช่างน้ำหอม (Perfumer)", en: "Perfumer" }, synergy: { th: "รีเซ็ตคูลดาวน์น้ำหอมให้ใช้ต่อได้ทันที", en: "Refreshes Euphoria cooldown for continuous rewinding." } }
+    ]
+  }
+];
+
+const hunters = [
+  {
+    id: "sculptor",
+    name: { th: "ประติมากร (Sculptor)", en: "Sculptor" },
+    title: { th: "กะลาเทีย (Galatea)", en: "Galatea" },
+    type: "hunter",
+    role: "control",
+    difficulty: 4,
+    tier: "S",
+    image: "/images/heroes/sculptor.svg",
+    youtubeVideoId: "g5D1Yv7f7s4",
+    quote: { th: "รูปปั้นหินทุกชิ้นมีจิตวิญญาณ และพวกมันจะบดขยี้เจ้า", en: "Every stone sculpture has a soul to crush you." },
+    overview: {
+      th: "ฮันเตอร์สาวบนรถเข็น เรียกรวมรูปปั้นหินคู่บีบอัดศัตรูจากระยะไกล ขัดขวางการปั่นเครื่องและการช่วยเก้าอี้ได้อย่างสมบูรณ์แบบ",
+      en: "Formidable wheelchair sculptor. Summons pairs of moving statues from afar, dominating camping and cipher disruption."
+    },
+    colorAccent: "#EF4444",
+    stats: { chase: 4, camping: 5, control: 5, mobility: 2 },
+    abilities: [
+      { id: "sculpt_pair", name: { th: "รูปปั้นคู่บีบอัด (Statue Pair)", en: "Statue Pair" }, type: "active", description: { th: "ปล่อยรูปปั้นสองตัววิ่งเข้าหากัน ทำดาเมจ 0.5", en: "Summons converging statues inflicting 0.5 chip damage." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายกดดันระยะไกล (Trump Card + Detention)", en: "Trump Card + Detention" }, direction: "ล่าง-ขวา", keyTalents: [{ th: "Detention", en: "Detention" }, { th: "Trump Card", en: "Trump Card" }], description: { th: "สลับสกิลเป็นเทเลพอร์ตช่วงท้ายเกม", en: "Switches traits late-game and downs survivors at exit gates." } }
+    ],
+    tricks: [
+      { title: { th: "ดักบีบหน้าไม้และหน้าต่าง (Pallet Squeeze)", en: "Pallet Squeeze" }, tag: "chasing", detail: { th: "เรียกดักรูปปั้นตอนเซอร์ไวเวอร์กำลังกระโดดข้ามไม้", en: "Summon statues right as survivor commits to vaulting." } }
+    ],
+    counters: [
+      { characterId: "forward", characterName: { th: "ฟอร์เวิร์ด (Forward)", en: "Forward" }, reason: { th: "พุ่งชนรถเข็นขัดจังหวะการเล็งรูปปั้น", en: "Rugby tackle interrupts statue aiming." }, tip: { th: "พก Excitement หรือหลบหลังเสา", en: "Carry Excitement trait to counter tackles." } }
+    ],
+    partners: []
+  },
+  {
+    id: "dream-witch",
+    name: { th: "แม่มดแห่งความฝัน (Dream Witch)", en: "Dream Witch" },
+    title: { th: "ยิดห์รา (Yidhra)", en: "Yidhra" },
+    type: "hunter",
+    role: "control",
+    difficulty: 5,
+    tier: "S",
+    image: "/images/heroes/dream-witch.svg",
+    youtubeVideoId: "s3G9n8Gq0f8",
+    quote: { th: "มนุษย์เป็นเพียงสิ่งมีชีวิตชั่วคราวในความฝันของข้า", en: "Mortals are merely transient flickers in my dream." },
+    overview: {
+      th: "ฮันเตอร์ที่เล่นยากและเก่งที่สุดในระดับทัวร์นาเมนต์ ร่างจริงล่องหน บังคับบริวารหลายตัวเฝ้าเครื่องและล้อมจับทั่วแผนที่",
+      en: "Highest skill ceiling and deadliest tournament hunter. Main body is invisible, commanding multiple leech followers across the map."
+    },
+    colorAccent: "#A855F7",
+    stats: { chase: 4, camping: 5, control: 5, mobility: 4 },
+    abilities: [
+      { id: "dw_leech", name: { th: "ปรสิตบริวาร (Leech Follower)", en: "Leech Follower" }, type: "active", description: { th: "เพาะบริวารติดตัวเซอร์ไวเวอร์ สลับจิตเข้าบังคับได้ทันที", en: "Infects survivors with followers, shifting consciousness instantaneously." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายคุมเครื่องระดับสูง (Insolence + Trump Card)", en: "Multi-Control Tournament" }, direction: "ซ้าย-ขวา", keyTalents: [{ th: "Trump Card", en: "Trump Card" }, { th: "Insolence", en: "Insolence" }], description: { th: "สลับสกิล Patroller และ Blink หลายตัว", en: "Cycles multiple traits across distinct followers." } }
+    ],
+    tricks: [
+      { title: { th: "ประกบสองด้าน (Pincer Ambush)", en: "Pincer Ambush" }, tag: "chasing", detail: { th: "ดักบริวารไว้หน้าไม้แล้วบังคับอีกตัวต้อนศัตรูเข้ามา", en: "Station one leech ahead at pallet while herding with the second." } }
+    ],
+    counters: [
+      { characterId: "priestess", characterName: { th: "นักบวชหญิง (Priestess)", en: "Priestess" }, reason: { th: "เปิดวาร์ปพาหนีบริวารที่เดินช้า", en: "Portals counter slow follower movement speeds." }, tip: { th: "ทำลายวาร์ปทันทีที่เห็น", en: "Destroy portals immediately on sight." } }
+    ],
+    partners: []
+  },
+  {
+    id: "geisha",
+    name: { th: "เกอิชา (Geisha)", en: "Geisha" },
+    title: { th: "มิชิโกะ (Michiko)", en: "Michiko" },
+    type: "hunter",
+    role: "chase",
+    difficulty: 3,
+    tier: "A",
+    image: "/images/heroes/geisha.svg",
+    youtubeVideoId: "9o9fQpL5a9c",
+    quote: { th: "การร่ายรำนี้จะจบลงด้วยคราบน้ำตาแห่งความตาย", en: "This dance culminates in tears of demise." },
+    overview: {
+      th: "ฮันเตอร์สาวสุดฮิต ปาผีเสื้อวิญญาณแล้วพุ่งทะยานผ่านสิ่งกีดขวางไปประชิดตัวได้อย่างรวดเร็ว ไล่ล่ากดดันได้ดีเยี่ยม",
+      en: "Most popular chase hunter. Throws phantom butterflies and dashes through terrain directly towards survivors."
+    },
+    colorAccent: "#EF4444",
+    stats: { chase: 5, camping: 3, control: 3, mobility: 5 },
+    abilities: [
+      { id: "geisha_fly", name: { th: "ระบำผีเสื้อพุ่งทะยาน (Dash Hit)", en: "Dash Hit" }, type: "active", description: { th: "พุ่งทะลุไม้และหน้าต่างไปหาผีเสื้อ", en: "Dashes through dropped pallets towards targeted butterflies." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายปิดหน้าต่าง 36 (Confined Space + Detention)", en: "Confined Space & Detention" }, direction: "บน-ล่าง", keyTalents: [{ th: "Confined Space", en: "Confined Space" }, { th: "Detention", en: "Detention" }], description: { th: "ปิดทางวนตามบ้านใหญ่และทุบไม้เร็ว", en: "Blocks safe loops in buildings and smashes pallets quickly." } }
+    ],
+    tricks: [
+      { title: { th: "ปาผีเสื้อข้ามไม้ดักหน้า (Pallet Butterfly Dash)", en: "Pallet Butterfly Dash" }, tag: "chasing", detail: { th: "ปาผีเสื้อข้ามไม้แล้วกดพุ่งทันทีเพื่อวาร์ปไปฟันข้างหลัง", en: "Toss butterfly past dropped pallet and dash immediately." } }
+    ],
+    counters: [
+      { characterId: "seer", characterName: { th: "ซีเออร์ (Seer)", en: "Seer" }, reason: { th: "เดินถอยหลังสบตาขัดจังหวะการพุ่งได้ดี", en: "Moonwalk stare cancels dash initiates." }, tip: { th: "ปาผีเสื้อเยื้องมุมด้านข้างหลบสายตา", en: "Angle butterflies diagonally behind walls." } }
+    ],
+    partners: []
+  },
+  {
+    id: "photographer",
+    name: { th: "ช่างภาพ (Photographer)", en: "Photographer" },
+    title: { th: "โจเซฟ (Joseph)", en: "Joseph" },
+    type: "hunter",
+    role: "control",
+    difficulty: 4,
+    tier: "A",
+    image: "/images/heroes/photographer.svg",
+    youtubeVideoId: "7L3bBw8U_eI",
+    quote: { th: "ภาพถ่ายจะหยุดเวลาและเก็บความงดงามไว้ชั่วนิรันดร์", en: "Photographs freeze time for eternity." },
+    overview: {
+      th: "ถ่ายรูปสร้างโลกเสมือนเพื่อโจมตีร่างเงาทำดาเมจย้อนหลัง และลดความคืบหน้าการปั่นเครื่องรหัสลงครึ่งหนึ่ง มีดาเมจ 1.5 เท่า",
+      en: "Snaps cameras into Photo Worlds, slashes mirror images for delayed damage, and halves cipher speeds with 1.5x damage attacks."
+    },
+    colorAccent: "#60A5FA",
+    stats: { chase: 3, camping: 3, control: 5, mobility: 4 },
+    abilities: [
+      { id: "photo_world", name: { th: "โลกภาพถ่าย (Photo World)", en: "Photo World" }, type: "active", description: { th: "ถ่ายรูปหยุดเวลาและทำดาเมจ 1.5 หลอด", en: "Captures game state snapshot and deals 1.5 damage." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายคุมโลกภาพถ่าย (Trump Card + Detention)", en: "Photo Dominance" }, direction: "ล่าง-ขวา", keyTalents: [{ th: "Trump Card", en: "Trump Card" }, { th: "Detention", en: "Detention" }], description: { th: "ยื้อเกมและเทเลพอร์ตตบตัวบาดเจ็บ", en: "Stalls cipher progress and teleports to injured targets." } }
+    ],
+    tricks: [
+      { title: { th: "ก้าวเท้าข้ามมิติ (Time Jump)", en: "Time Jump" }, tag: "chasing", detail: { th: "กดย้อนรอยเท้ากลับไปตำแหน่ง 15 วิก่อนดักหน้าเซอร์ไวเวอร์", en: "Snap back to previous footsteps to ambush looping survivors." } }
+    ],
+    counters: [
+      { characterId: "doctor", characterName: { th: "หมอ (Doctor)", en: "Doctor" }, reason: { th: "ฮีลดาเมจ 1.5 และ 0.5 ได้เร็วมาก", en: "Heals 1.5 and 0.5 chip damage with rapid speed." }, tip: { th: "ตามล่ากำจัดหมอเป็นคนแรก", en: "Eliminate Doctor first before team stabilizes." } }
+    ],
+    partners: []
+  },
+  {
+    id: "wu-chang",
+    name: { th: "อู๋ฉาง (Wu Chang)", en: "Wu Chang" },
+    title: { th: "เซียปี่อาน & ฟ่านอู๋จิ้ว (Xie Bi'an & Fan Wujiu)", en: "Xie Bi'an & Fan Wujiu" },
+    type: "hunter",
+    role: "patrol",
+    difficulty: 4,
+    tier: "A",
+    image: "/images/heroes/wu-chang.svg",
+    youtubeVideoId: "kL9xQ9_rGls",
+    quote: { th: "ขาวและดำ ร่มและกระดิ่ง ความตายไม่มีทางหลีกเลี่ยง", en: "White and Black; soul umbrella and ringing bell spell doom." },
+    overview: {
+      th: "สองวิญญาณในร่างเดียว สลับระหว่างร่างขาว (เดินเร็ว ตีไกล ดูดวิญญาณ) และร่างดำ (ตีเร็ว ทุบไม้ไว สั่นกระดิ่งกลับทิศปุ่มเดิน) วาร์ปด้วยร่มได้ทั่วแมพ",
+      en: "Dual-soul specter. Switches between White Guard (high speed, immense reach) and Black Guard (rapid swings, control-inverting bell) with global umbrella teleports."
+    },
+    colorAccent: "#6B7280",
+    stats: { chase: 4, camping: 4, control: 4, mobility: 5 },
+    abilities: [
+      { id: "wu_umbrella", name: { th: "โยนร่มสลับร่างวาร์ป (Summon Soul)", en: "Summon Soul" }, type: "active", description: { th: "ปาร่มเทเลพอร์ตข้ามแผนที่พร้อมสลับร่าง", en: "Hurls umbrella to teleport across map while switching guard forms." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายเทเลพอร์ตเฝ้าประตู (Detention + Insolence)", en: "Insolence & Detention" }, direction: "ซ้าย-ล่าง", keyTalents: [{ th: "Detention", en: "Detention" }, { th: "Insolence", en: "Insolence" }], description: { th: "ปลดล็อคสกิลร่มเร็วและวาร์ปเฝ้าประตู 2 ฝั่ง", en: "Accelerates presence for early umbrella and guards both exit gates." } }
+    ],
+    tricks: [
+      { title: { th: "ปาร่มดักหน้าเครื่องปั่น (Cipher Snipe)", en: "Cipher Snipe" }, tag: "patrolling", detail: { th: "มองเสาเครื่องที่สั่น ปาร่มลงกลางเครื่องฟัน Terror Shock", en: "Spot vibrating antennas and parachute directly for terror shocks." } }
+    ],
+    counters: [
+      { characterId: "forward", characterName: { th: "ฟอร์เวิร์ด (Forward)", en: "Forward" }, reason: { th: "พุ่งชนร่างขาวที่กำลังบินดูดวิญญาณได้ง่าย", en: "White Guard is vulnerable to tackles during soul siphon float." }, tip: { th: "สลับเป็นร่างดำสั่นกระดิ่งขัดจังหวะการพุ่ง", en: "Switch to Black Guard and ring bell to redirect his dash." } }
+    ],
+    partners: []
+  },
+  {
+    id: "bloody-queen",
+    name: { th: "ราชินีสีเลือด (Bloody Queen)", en: "Bloody Queen" },
+    title: { th: "แมรี่ (Mary)", en: "Mary" },
+    type: "hunter",
+    role: "chase",
+    difficulty: 3,
+    tier: "S",
+    image: "/images/heroes/bloody-queen.svg",
+    youtubeVideoId: "9o9fQpL5a9c",
+    quote: { th: "กระจกเงานี้จะสะท้อนความตายของพวกเจ้า", en: "This mirror reflects your unavoidable demise." },
+    overview: {
+      th: "เสกกระจกน้ำสร้างร่างเงาสะท้อน ฟันทะลุกำแพงและสิ่งกีดขวางได้จากระยะไกล ข้ามแผ่นไม้และหน้าต่างได้อย่างง่ายดาย",
+      en: "Summons aqua mirrors to project reflection clones, striking survivors through walls and terrain."
+    },
+    colorAccent: "#F43F5E",
+    stats: { chase: 5, camping: 4, control: 4, mobility: 4 },
+    abilities: [
+      { id: "bq_mirror", name: { th: "กระจกเงาน้ำ (Aqua Mirror)", en: "Aqua Mirror" }, type: "active", description: { th: "เสกร่างเงากระจกฟันทะลุสิ่งกีดขวางและสลับตำแหน่งได้", en: "Spawns mirror reflection striking through obstacles and repositions." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายกระจกล่า (Insolence + Detention)", en: "Mirror Hunter" }, direction: "ซ้าย-ล่าง", keyTalents: [{ th: "Detention", en: "Detention" }, { th: "Insolence", en: "Insolence" }], description: { th: "ปลดล็อคกระจกเงาระยะไกลต้นเกม", en: "Accelerates early mirror cooldowns and closes gates." } }
+    ],
+    tricks: [
+      { title: { th: "เล็งกระจก 45 องศาตัดมุมเลี้ยว", en: "45-Degree Mirror Snipe" }, tag: "chasing", detail: { th: "วางกระจกเยื้อง 45 องศาตัดหน้าจุดเลี้ยวของเซอร์ไวเวอร์", en: "Place mirror at 45 degrees ahead of survivor corner turns." } }
+    ],
+    counters: [
+      { characterId: "seer", characterName: { th: "ซีเออร์ (Seer)", en: "Seer" }, reason: { th: "กางนกป้องกันดาเมจจากร่างกระจก", en: "Owl blocks mirror reflection strikes." }, tip: { th: "หลอกง้างฟันให้ใช้นกก่อน", en: "Bait owl with fake mirror approaches." } }
+    ],
+    partners: []
+  },
+  {
+    id: "night-watch",
+    name: { th: "เวรยามราตรี (Night Watch)", en: "Night Watch" },
+    title: { th: "อิธาคัว (Ithaqua)", en: "Ithaqua" },
+    type: "hunter",
+    role: "chase",
+    difficulty: 3,
+    tier: "S",
+    image: "/images/heroes/night-watch.svg",
+    youtubeVideoId: "s3G9n8Gq0f8",
+    quote: { th: "สายลมพายุหิมะจะดูดกลืนทุกร่างเข้าสู่ความเหน็บหนาว", en: "Winter blizzards drag all warmth into the void." },
+    overview: {
+      th: "ฮันเตอร์ผู้ควบคุมสายลม ดูดดึงเซอร์ไวเวอร์เข้ามาหาตัว หรือสร้างพายุลมกระโดดข้ามแผ่นไม้และหน้าต่างได้อย่างรวดเร็ว",
+      en: "Master of winter gales. Drags survivors towards himself and vaults pallets at breakneck speeds."
+    },
+    colorAccent: "#38BDF8",
+    stats: { chase: 5, camping: 4, control: 3, mobility: 5 },
+    abilities: [
+      { id: "nw_wind", name: { th: "สายลมดูดดึง & ลมข้ามไม้ (Wind Walk & Vortex)", en: "Wind Walk & Vortex" }, type: "active", description: { th: "ดูดดึงเซอร์ไวเวอร์และใช้ลมกระโดดข้ามไม้ทันที", en: "Sucks survivors in and wind-vaults over dropped pallets." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายพายุไล่ล่า 36 (Confined Space + Detention)", en: "Gale Chaser" }, direction: "บน-ล่าง", keyTalents: [{ th: "Confined Space", en: "Confined Space" }, { th: "Detention", en: "Detention" }], description: { th: "ปิดหน้าต่างและดูดตัวเข้ามาฟันอย่างต่อเนื่อง", en: "Denies vault loops and drags targets into melee range." } }
+    ],
+    tricks: [
+      { title: { th: "ดูดดึงขัดจังหวะการดึงไม้ (Pallet Pull Vortex)", en: "Pallet Pull Vortex" }, tag: "chasing", detail: { th: "กดดูดลมจังหวะเซอร์ไวเวอร์กำลังจะดึงไม้ลง", en: "Trigger vortex right when survivor attempts to pull down pallets." } }
+    ],
+    counters: [
+      { characterId: "antiquarian", characterName: { th: "ผู้เชี่ยวชาญของโบราณ (Antiquarian)", en: "Antiquarian" }, reason: { th: "ฟาดขลุ่ยสวนจังหวะโดนดูดเข้ามาประชิด", en: "Flute strikes counter close-range vortex pulls." }, tip: { th: "ใช้ลมข้ามไม้ก่อนเข้าประชิด", en: "Wind-vault to displace before engaging." } }
+    ],
+    partners: []
+  },
+  {
+    id: "opera-singer",
+    name: { th: "นักร้องโอเปร่า (Opera Singer)", en: "Opera Singer" },
+    title: { th: "แซงเกรีย (Sangria)", en: "Sangria" },
+    type: "hunter",
+    role: "chase",
+    difficulty: 4,
+    tier: "S",
+    image: "/images/heroes/opera-singer.svg",
+    youtubeVideoId: "g5D1Yv7f7s4",
+    quote: { th: "บทเพลงแห่งเงาจะพาฉันโผบินสังหารในความมืด", en: "The shadow aria propels my lethal leap." },
+    overview: {
+      th: "ฮันเตอร์ตัวท็อปแบนในการแข่งระดับโปร ดำดิ่งลงในเงามืดเคลื่อนที่ด้วยความเร็วสูงสุดขีด กระโดดข้ามอาณาเขตเงาอย่างต่อเนื่อง",
+      en: "Perennial tournament first-ban. Dives into shadow realms to glide at supersonic speeds, chaining shadow leaps."
+    },
+    colorAccent: "#E11D48",
+    stats: { chase: 5, camping: 3, control: 4, mobility: 5 },
+    abilities: [
+      { id: "opera_leap", name: { th: "ดำดิ่งอาณาเขตเงา (Shadow Realm Leap)", en: "Shadow Realm Leap" }, type: "active", description: { th: "ดำลงเงาเพื่อวิ่งด้วยความเร็วสูงและกระโดดต่อเนื่อง", en: "Submerges in shadows for immense acceleration." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายเงาอำมหิต (Detention + Insolence)", en: "Shadow Fury" }, direction: "ซ้าย-ล่าง", keyTalents: [{ th: "Detention", en: "Detention" }, { th: "Insolence", en: "Insolence" }], description: { th: "เร่งสปีดกระโดดเงาและปิดประตูทางออก", en: "Maximizes shadow transition speed and endgame downs." } }
+    ],
+    tricks: [
+      { title: { th: "วนกระโดดเงารอบบ้านใหญ่", en: "Continuous Shadow Chain" }, tag: "chasing", detail: { th: "กระโดดข้ามเงาตามแนวกำแพงไม่ให้เกจความเร็วลดลง", en: "Chain shadow jumps along wall edges to maintain max momentum." } }
+    ],
+    counters: [
+      { characterId: "seer", characterName: { th: "ซีเออร์ (Seer)", en: "Seer" }, reason: { th: "กางนกบล็อกดาเมจความเร็วสูง", en: "Owl blocks high-speed ambush hits." }, tip: { th: "ใช้สปีดเงาไล่ติดตัวต่อทันทีหลังนกหมด", en: "Utilize shadow speed to chase down immediately after owl expires." } }
+    ],
+    partners: []
+  },
+  {
+    id: "guard-26",
+    name: { th: "การ์ด 26 (Guard 26 / Bonbon)", en: "Guard 26 / Bonbon" },
+    title: { th: "บงบง (Bonbon)", en: "Bonbon" },
+    type: "hunter",
+    role: "camp",
+    difficulty: 3,
+    tier: "A",
+    image: "/images/heroes/guard-26.svg",
+    youtubeVideoId: "7L3bBw8U_eI",
+    quote: { th: "ติ๊กต่อก ติ๊กต่อก... ระเบิดเวลาทำงาน!", en: "Tick tock... Time bombs armed and ready!" },
+    overview: {
+      th: "หุ่นเพนกวินวางระเบิดลูกโซ่ สามารถวางระเบิดต่อแถวทำดาเมจ 0.5 ได้อย่างต่อเนื่อง เฝ้าเก้าอี้จรวดได้โหดที่สุดในเกม",
+      en: "Penguin bomb-master. Deploys chain bombs dealing 0.5 damage, setting up unavoidable chair camping zones."
+    },
+    colorAccent: "#F59E0B",
+    stats: { chase: 3, camping: 5, control: 4, mobility: 2 },
+    abilities: [
+      { id: "bon_bomb", name: { th: "ระเบิดเวลาลูกโซ่ (Chain Bomb)", en: "Chain Bomb" }, type: "active", description: { th: "วางระเบิดต่อลูกโซ่ระเบิดพร้อมกัน", en: "Plants interlocking cross-bombs that detonate in sequence." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายเฝ้าเก้าอี้ระเบิด (Trump Card + Detention)", en: "Bomb Fortress" }, direction: "ล่าง-ขวา", keyTalents: [{ th: "Trump Card", en: "Trump Card" }, { th: "Detention", en: "Detention" }], description: { th: "วางระเบิดดักทางตัวช่วยเก้าอี้", en: "Trap paths to intercept incoming rescuers." } }
+    ],
+    tricks: [
+      { title: { th: "ระเบิดลูกโซ่ 3 ต่อดักทางเข้าเก้าอี้", en: "3-Way Chain Trap" }, tag: "camping", detail: { th: "โยนระเบิดลูกแรกไว้ไกล ลูกสองกลางทาง ลูกสามหน้าเก้าอี้", en: "Toss bombs in a line from 15m to chair for instant double hits." } }
+    ],
+    counters: [
+      { characterId: "mercenary", characterName: { th: "ทหารรับจ้าง (Mercenary)", en: "Mercenary" }, reason: { th: "เกราะหน่วงดาเมจช่วยให้ทนระเบิดได้", en: "Delayed damage allows Mercenary to push through bomb barrage." }, tip: { th: "วางระเบิดให้ระเบิดหลายจังหวะซ้อนกัน", en: "Stagger detonation timings to stack damage intervals." } }
+    ],
+    partners: []
+  },
+  {
+    id: "naiad",
+    name: { th: "พรายน้ำ (Naiad)", en: "Naiad" },
+    title: { th: "เกรซ (Grace)", en: "Grace" },
+    type: "hunter",
+    role: "control",
+    difficulty: 3,
+    tier: "A",
+    image: "/images/heroes/naiad.svg",
+    youtubeVideoId: "kL9xQ9_rGls",
+    quote: { th: "สายน้ำอันลึกล้ำจะโอบล้อมและจมพวกเจ้าลงสู่ก้นบึ้ง", en: "Deep waters envelop and submerge all souls." },
+    overview: {
+      th: "ปาตรีศูลและว่ายน้ำสร้างแอ่งน้ำขัง เซอร์ไวเวอร์ที่อยู่ในน้ำจะติดสแต็คความชื้นจนจมน้ำเสียดาเมจ 0.5 ถึง 1 หลอด",
+      en: "Hurls harpoons to carve water pools; survivors in water accumulate humidity stacks to take water damage."
+    },
+    colorAccent: "#10B981",
+    stats: { chase: 4, camping: 5, control: 5, mobility: 4 },
+    abilities: [
+      { id: "naiad_water", name: { th: "แอ่งน้ำขัง & ตรีศูล (Water Abyss)", en: "Water Abyss" }, type: "active", description: { th: "ลากเส้นเชื่อมสายน้ำปิดล้อมพื้นที่", en: "Draws water circuits around loops to trap survivors." } }
+    ],
+    recommendedPerks: [
+      { name: { th: "สายน้ำล้อมเมือง 36 (Confined Space + Detention)", en: "Abyss Hunter" }, direction: "บน-ล่าง", keyTalents: [{ th: "Confined Space", en: "Confined Space" }, { th: "Detention", en: "Detention" }], description: { th: "ล้อมน้ำรอบบ้านใหญ่ไม่ให้เซอร์ไวเวอร์วนไม้", en: "Circles entire structures with water to force exits." } }
+    ],
+    tricks: [
+      { title: { th: "ล้อมน้ำปิดทางเก้าอี้จรวด (Chair Water Ring)", en: "Chair Water Ring" }, tag: "camping", detail: { th: "ปาตรีศูลข้ามเก้าอี้และว่ายน้ำวนรอบเก้าอี้เป็นวงกลม", en: "Swim a full circle around the chair to saturate rescuer with 100% water." } }
+    ],
+    counters: [
+      { characterId: "priestess", characterName: { th: "นักบวชหญิง (Priestess)", en: "Priestess" }, reason: { th: "เจาะวาร์ปข้ามแอ่งน้ำได้โดยไม่เหยียบน้ำ", en: "Portals bypass water rings completely." }, tip: { th: "ดึงตรีศูลกลับมาเพื่อฟันขัดจังหวะวาร์ป", en: "Recall harpoon to dash strike during portal entry." } }
+    ],
+    partners: []
+  }
+];
+
+const tierList = {
+  survivors: {
+    S: ["mechanic", "seer", "priestess", "mercenary", "antiquarian"],
+    A: ["perfumer", "coordinator", "prospector", "forward", "enchantress", "prisoner", "little-girl", "cheerleader"],
+    B: ["doctor", "gardener"],
+    C: []
+  },
+  hunters: {
+    S: ["sculptor", "dream-witch", "bloody-queen", "night-watch", "opera-singer"],
+    A: ["geisha", "photographer", "wu-chang", "guard-26", "naiad"],
+    B: [],
+    C: []
+  }
+};
+
+fs.writeFileSync(path.join(__dirname, '../src/data/survivors.json'), JSON.stringify(survivors, null, 2), 'utf8');
+fs.writeFileSync(path.join(__dirname, '../src/data/hunters.json'), JSON.stringify(hunters, null, 2), 'utf8');
+fs.writeFileSync(path.join(__dirname, '../src/data/tier-list.json'), JSON.stringify(tierList, null, 2), 'utf8');
+
+console.log(`Successfully updated database: ${survivors.length} survivors, ${hunters.length} hunters`);

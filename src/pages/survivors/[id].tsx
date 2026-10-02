@@ -19,106 +19,92 @@ export default function SurvivorDetailPage({ character }: SurvivorDetailProps) {
 
   if (!character) return null;
 
-  const accentColor = character.colorAccent || '#10B981';
-
   return (
     <Layout
       pageTitle={character.name[lang]}
       pageDescription={character.overview[lang]}
     >
-      {/* Back button */}
-      <div style={{ marginBottom: '18px' }}>
-        <Link
-          href="/survivors"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontSize: '13px',
-            color: 'var(--text-dim)',
-            padding: '6px 12px',
-            borderRadius: '6px',
-            background: 'rgba(255, 255, 255, 0.04)',
-            border: '1px solid var(--border-subtle)',
-          }}
-        >
+      <div style={{ marginBottom: '20px' }}>
+        <Link href="/survivors" className="btn btn-sm btn-ghost">
           <span>←</span>
           <span>{t('labels.backToList')}</span>
         </Link>
       </div>
 
-      {/* Header Banner */}
-      <div
-        className="detail-header"
-        style={{
-          borderLeft: `4px solid ${accentColor}`,
-        }}
-      >
-        <div className="detail-header-top">
-          <div
-            className="detail-avatar"
-            style={{
-              borderColor: accentColor,
-              boxShadow: `0 0 25px ${accentColor}44`,
-            }}
-          >
-            {character.name[lang].slice(0, 1)}
-          </div>
+      {/* KRIDA Hero Detail Banner */}
+      <div className="hero-detail-banner">
+        <div className="hero-detail-portrait">
+          <img
+            src={character.image || `/images/heroes/${character.id}.svg`}
+            alt={character.name[lang]}
+          />
+        </div>
 
-          <div className="detail-title-area">
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center', marginBottom: '8px' }}>
-              <span className={`tier-badge tier-${character.tier.toLowerCase()}`}>
-                Tier {character.tier}
+        <div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center', marginBottom: '10px' }}>
+            <span className="chip chip-survivor">Survivor</span>
+            <span className={`chip chip-tier ${character.tier.toLowerCase()}`}>Tier {character.tier}</span>
+            {character.role && <span className="chip chip-role">{t(`roles.${character.role}`)}</span>}
+
+            <div style={{ marginLeft: 'auto', color: '#FBBF24', fontSize: '13px' }}>
+              {'★'.repeat(character.difficulty)}
+              <span style={{ color: 'rgba(255,255,255,0.18)' }}>
+                {'★'.repeat(5 - character.difficulty)}
               </span>
-              {character.role && (
-                <span className="role-badge" style={{ color: '#34D399', borderColor: '#10B98144' }}>
-                  {t(`roles.${character.role}`)}
-                </span>
-              )}
-              <div
-                className="difficulty-stars"
-                title={`${t('labels.difficulty')}: ${character.difficulty}/5`}
-                style={{ marginLeft: 'auto' }}
-              >
-                {'★'.repeat(character.difficulty)}
-                <span style={{ color: 'rgba(255,255,255,0.15)' }}>
-                  {'★'.repeat(5 - character.difficulty)}
-                </span>
-              </div>
             </div>
-
-            <h1 className="detail-name">{character.name[lang]}</h1>
-            <div className="detail-subname">{character.title[lang]}</div>
-
-            <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '14px' }}>
-              {character.overview[lang]}
-            </p>
-
-            {character.quote && (
-              <blockquote className="detail-quote" style={{ borderLeftColor: accentColor }}>
-                "{character.quote[lang]}"
-              </blockquote>
-            )}
           </div>
+
+          <h1 style={{ font: '800 clamp(26px, 3.5vw, 40px) Outfit, Prompt, sans-serif', marginBottom: '4px' }}>
+            {character.name[lang]}
+          </h1>
+          <div className="mono" style={{ fontSize: '14px', color: 'var(--blue-lift)', marginBottom: '16px' }}>
+            {character.title[lang]}
+          </div>
+
+          <p style={{ fontSize: '15px', color: 'var(--ink-2)', lineHeight: 1.6, marginBottom: '16px' }}>
+            {character.overview[lang]}
+          </p>
+
+          {character.quote && (
+            <div className="notice" style={{ fontStyle: 'italic' }}>
+              "{character.quote[lang]}"
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Main Guide Content Grid */}
+      {/* Responsive Video Guide Embed if available */}
+      {character.youtubeVideoId && (
+        <section style={{ marginBottom: '32px' }}>
+          <div className="page-head" style={{ marginBottom: '14px' }}>
+            <div>
+              <span className="eyebrow">{lang === 'th' ? 'วิดีโอแนะนำ' : 'Video Tutorial'}</span>
+              <h2 style={{ font: '700 22px Outfit, Prompt, sans-serif' }}>
+                {lang === 'th' ? 'คลิปแนะนำเทคนิคและการเล่นจริง' : 'Mastery Video Guide'}
+              </h2>
+            </div>
+          </div>
+
+          <div className="video-embed-box">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${character.youtubeVideoId}?rel=0`}
+              title={`${character.name[lang]} Guide Video`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </section>
+      )}
+
+      {/* Main Guide Sections */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
-        {/* Abilities */}
-        <AbilityPanel abilities={character.abilities} accentColor={accentColor} />
-
-        {/* Perks / Persona */}
-        <PerkPanel perks={character.recommendedPerks} accentColor={accentColor} />
-
-        {/* Tricks */}
-        <TricksPanel tricks={character.tricks} accentColor={accentColor} />
-
-        {/* Relations: Counters and Partners */}
+        <AbilityPanel abilities={character.abilities} accentColor="var(--blue-lift)" />
+        <PerkPanel perks={character.recommendedPerks} accentColor="var(--orange)" />
+        <TricksPanel tricks={character.tricks} accentColor="var(--blue-lift)" />
         <RelationsPanel
           counters={character.counters}
           partners={character.partners}
-          accentColor={accentColor}
+          accentColor="var(--orange)"
         />
       </div>
     </Layout>

@@ -34,74 +34,75 @@ export const SearchBar: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close search when route changes
   useEffect(() => {
     setIsOpen(false);
     setQuery('');
   }, [router.asPath]);
 
   return (
-    <div className="search-container" ref={dropdownRef}>
-      <div className="search-input-wrapper">
-        <span className="search-icon">🔍</span>
-        <input
-          type="text"
-          className="search-input"
-          placeholder={t('nav.searchPlaceholder')}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => query.trim() && setIsOpen(true)}
-        />
-        {query && (
-          <button
-            onClick={() => setQuery('')}
-            style={{
-              position: 'absolute',
-              right: '12px',
-              color: 'var(--text-dim)',
-              fontSize: '14px',
-              padding: '4px',
-            }}
-          >
-            ✕
-          </button>
-        )}
-      </div>
+    <div className="search-bar-wrap" ref={dropdownRef}>
+      <span className="search-icon-pos">🔍</span>
+      <input
+        type="text"
+        className="search-input"
+        placeholder={t('nav.searchPlaceholder')}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onFocus={() => query.trim() && setIsOpen(true)}
+      />
+      {query && (
+        <button
+          onClick={() => setQuery('')}
+          style={{
+            position: 'absolute',
+            right: '12px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            color: 'var(--ink-3)',
+            fontSize: '12px',
+            padding: '4px',
+          }}
+        >
+          ✕
+        </button>
+      )}
 
       {isOpen && results.length > 0 && (
-        <div className="search-results-dropdown">
+        <div className="search-dropdown">
           {results.map((char) => (
             <Link
               key={char.id}
               href={`/${char.type}s/${char.id}`}
-              className="search-result-item"
+              className="search-item"
             >
-              <div
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '8px',
-                  background: char.type === 'survivor' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)',
-                  border: `1px solid ${char.type === 'survivor' ? '#10B981' : '#EF4444'}`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 800,
-                  fontSize: '13px',
-                  color: char.type === 'survivor' ? '#34D399' : '#F87171',
-                }}
-              >
-                {char.name[lang].slice(0, 1)}
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--text-main)' }}>
-                  {char.name[lang]}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '6px',
+                    background: '#1e293b',
+                    overflow: 'hidden',
+                    flexShrink: 0,
+                  }}
+                >
+                  <img
+                    src={char.image || `/images/heroes/${char.id}.svg`}
+                    alt={char.name[lang]}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
                 </div>
-                <div style={{ fontSize: '11px', color: 'var(--text-dim)' }}>
-                  {char.title[lang]} • {char.type === 'survivor' ? 'Survivor' : 'Hunter'}
+                <div>
+                  <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--ink)' }}>
+                    {char.name[lang]}
+                  </div>
+                  <div style={{ fontSize: '11px', color: 'var(--ink-3)' }}>
+                    {char.title[lang]} • {char.type === 'survivor' ? 'Survivor' : 'Hunter'}
+                  </div>
                 </div>
               </div>
-              <span className={`tier-badge tier-${char.tier.toLowerCase()}`}>
+
+              <span className={`chip chip-tier ${char.tier.toLowerCase()}`}>
                 {char.tier}
               </span>
             </Link>
@@ -110,10 +111,7 @@ export const SearchBar: React.FC = () => {
       )}
 
       {isOpen && query.trim() && results.length === 0 && (
-        <div
-          className="search-results-dropdown"
-          style={{ padding: '16px', textAlign: 'center', color: 'var(--text-dim)', fontSize: '13px' }}
-        >
+        <div className="search-dropdown" style={{ padding: '16px', textAlign: 'center', color: 'var(--ink-3)', fontSize: '13px' }}>
           {lang === 'th' ? `ไม่พบตัวละครที่ตรงกับ "${query}"` : `No characters found matching "${query}"`}
         </div>
       )}

@@ -67,6 +67,7 @@ export interface Character {
   counters: CounterInfo[];      // Who counters this character
   counteredBy?: CounterInfo[];  // Who this character counters
   partners?: PartnerInfo[];     // Best allies
+  image?: string;
   youtubeVideoId?: string;
 }
 
