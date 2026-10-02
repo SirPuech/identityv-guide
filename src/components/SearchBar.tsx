@@ -79,18 +79,25 @@ export const SearchBar: React.FC = () => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div
                   style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '6px',
-                    background: '#1e293b',
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '8px',
+                    background: char.type === 'hunter'
+                      ? 'radial-gradient(circle, rgba(239,68,68,0.25), #0f172a)'
+                      : 'radial-gradient(circle, rgba(37,99,235,0.25), #0f172a)',
                     overflow: 'hidden',
                     flexShrink: 0,
+                    padding: '2px',
+                    border: '1px solid var(--line)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                 >
                   <img
                     src={getAssetUrl(char.image || `/images/heroes/${char.id}.png`)}
                     alt={char.name[lang]}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                     onError={(e) => {
                       const target = e.currentTarget;
                       if (!target.src.endsWith('.svg')) {

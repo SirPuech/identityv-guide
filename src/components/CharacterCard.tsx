@@ -20,9 +20,19 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
       href={`/${character.type}s/${character.id}`}
       className="hero-card"
     >
-      <div className="hero-card-banner">
+      <div className={`hero-card-banner ${!isSurvivor ? 'hunter-banner' : ''}`}>
         {character.image ? (
-          <img src={getAssetUrl(character.image)} alt={character.name[lang]} loading="lazy" />
+          <img
+            src={getAssetUrl(character.image)}
+            alt={character.name[lang]}
+            loading="lazy"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.endsWith('.svg')) {
+                target.src = getAssetUrl(`/images/heroes/${character.id}.svg`);
+              }
+            }}
+          />
         ) : (
           <div className="hero-placeholder-art">
             {character.name[lang].slice(0, 1)}

@@ -34,7 +34,7 @@ export default function HunterDetailPage({ character }: HunterDetailProps) {
 
       {/* KRIDA Hero Detail Banner */}
       <div className="hero-detail-banner" style={{ borderColor: 'rgba(239, 68, 68, 0.3)' }}>
-        <div className="hero-detail-portrait" style={{ borderColor: '#EF4444' }}>
+        <div className="hero-detail-portrait" style={{ borderColor: '#EF4444', background: 'radial-gradient(circle at 50% 35%, rgba(239, 68, 68, 0.22) 0%, rgba(15, 23, 42, 0.95) 75%)' }}>
           <img
             src={getAssetUrl(character.image || `/images/heroes/${character.id}.png`)}
             alt={character.name[lang]}

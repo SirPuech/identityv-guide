@@ -112,19 +112,23 @@ export default function TeamBuilderPage() {
                 <>
                   <div
                     style={{
-                      width: '48px',
-                      height: '48px',
+                      width: '52px',
+                      height: '52px',
                       borderRadius: '10px',
-                      background: '#1e293b',
+                      background: 'radial-gradient(circle at 50% 35%, rgba(37, 99, 235, 0.25) 0%, rgba(15, 23, 42, 0.95) 75%)',
                       overflow: 'hidden',
                       flexShrink: 0,
                       border: '1px solid var(--blue-lift)',
+                      padding: '3px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                     }}
                   >
                     <img
                       src={getAssetUrl(char.image || `/images/heroes/${char.id}.png`)}
                       alt={char.name[lang]}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                       onError={(e) => {
                         const target = e.currentTarget;
                         if (!target.src.endsWith('.svg')) {
@@ -266,18 +270,23 @@ export default function TeamBuilderPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <div
                     style={{
-                      width: '42px',
-                      height: '42px',
+                      width: '46px',
+                      height: '46px',
                       borderRadius: '8px',
-                      background: '#1e293b',
+                      background: 'radial-gradient(circle, rgba(37,99,235,0.2), #0f172a)',
                       overflow: 'hidden',
                       flexShrink: 0,
+                      padding: '2px',
+                      border: '1px solid var(--line)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                     }}
                   >
                     <img
                       src={getAssetUrl(s.image || `/images/heroes/${s.id}.png`)}
                       alt={s.name[lang]}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                       onError={(e) => {
                         const target = e.currentTarget;
                         if (!target.src.endsWith('.svg')) {

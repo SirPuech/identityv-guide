@@ -69,18 +69,23 @@ export default function MatchupPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <div
                 style={{
-                  width: '64px',
-                  height: '64px',
+                  width: '68px',
+                  height: '68px',
                   borderRadius: 'var(--r)',
-                  background: '#1e293b',
+                  background: 'radial-gradient(circle at 50% 35%, rgba(239, 68, 68, 0.25) 0%, rgba(15, 23, 42, 0.95) 75%)',
                   overflow: 'hidden',
                   border: '2px solid #EF4444',
+                  padding: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
                 <img
                   src={getAssetUrl(hunter.image || `/images/heroes/${hunter.id}.png`)}
                   alt={hunter.name[lang]}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.src.endsWith('.svg')) {
